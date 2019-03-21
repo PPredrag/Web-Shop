@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/pera', function () {
+    return view('dashboard/indexDashboard');
+});
 
 Route::get('/welcome',['as'=>'welcome','uses'=>'MainMenuController@main']);
 Route::get('/shop',['as'=>'shop','uses'=>'MainMenuController@shop']);
@@ -25,6 +28,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/women','MainMenuController@women')->name('women');
 Route::get('/kids','MainMenuController@kids')->name('kids');
 Route::get('/about','MainMenuController@about')->name('about');
-Route::get('/test','MainMenuController@test');
+Route::get('/sliderPictures','PicturesController@getSliderPictures')->name('sliderPictures');
+Route::post('/imageAdd','PicturesController@imageAdd')->name('imageAdd');
+Route::get('/','PicturesController@insertPicturesSlider')->name('pic');
+Route::get('/showPictureToDelete', 'PicturesController@showPictureToDelete')->name('showPictureToDelete');
+Route::get('/deleteOnePictureSlider/{id}','PicturesController@deleteOnePictureSlider')->name('deleteOnePictureSlider');
 
+
+
+
+Route::get('/test','PicturesController@insertPicturesSlider');
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Test;
 use DB;
+use App\Picture;
 use Illuminate\Support\Facades\Auth;
 use Exception;
 
@@ -27,16 +28,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Picture $picture)
     {
+
     try{
           if($pera = Auth::user()->status == 1)
         {   
-            return view('dashboard/dashboard');
+            return view('dashboard/indexDashboard');
         }
-        else
-        {
-            return view('welcome');
+        else{
+                // get pictures data from Picture model
+            $data = $picture->getPisturesSlider();
+            return view('welcome')->with(array('data'=>$data));
         }  
     }catch(Exception $e)
     {

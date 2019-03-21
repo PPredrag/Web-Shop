@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Footwear;
 use App\Number;
+use App\Shop;
+use App\Product;
+use App\Picture;
 use DB;
 
 class MainMenuController extends Controller
 {
 	// Return view home
-    public function main(){
-    	return view('welcome');
+    public function main(Picture $picture){
+        $data = $picture->getPisturesSlider();
+        return view('welcome')->with(array('data'=>$data));
     }
     // Return view men
     public function shop(){
@@ -43,10 +47,14 @@ class MainMenuController extends Controller
     }
     public function test(){
 
-      $footwear = Footwear::find(1);
-           // dd($footwear);
-        $footwear->numbers->attach(1);
-        return view('test');
+     /*$shop = Shop::find(2);
+            //dd($shop);
+        $shop->products()->attach(4);
+        return view('test');*/
+
+      $product = Product::find(2);  // trazi id iz Baze
+      $product->shops()->attach(2); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu 
+       return view('test');
     }
 
 
