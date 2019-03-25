@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        td{padding:4px;border:solid #ccc 1px}
+    </style>
+    <script type="text/javascript" src="../jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var css1={color:'red',border:'solid red 2px',padding:'2px 5px',background:'#000'},
+                css2={color:'blue',border:'solid blue 2px',padding:'2px 5px',background:'#000'},
+                css3={color:'green',border:'solid green 2px',padding:'2px 5px',background:'#000'},
+                css4={color:'orange',border:'solid orange 2px',padding:'2px 5px',background:'#000'},
+                css5={color:'yellow',border:'solid yellow 2px',padding:'2px 5px',background:'#000'};
+
+            // $('div').css(css1);      // div - tagovi
+            // $('span').css(css1);     // span - tagovi
+            // $('p').css(css2);        // p - tagovi
+            // $('strong').css(css3);   // strong - tagovi
+            // $('em').css(css4);       // em - tagovi
+            // $('td').css(css5);       // td - tagovi
+            // $('td em').css(css5);    // em tagovi koji se nalaze u td tagu
+            // $('#a10').css(css5);     // elementi koji imaju id "a10"
+            // $('.test').css(css5);    // elementi sa klasom test
+            // $('td>em').css(css5);    // em tagovi koji se nalaze direktno u td tagu ( ne nalaze se u nekom drugom tagu koji je u td-u)
+            // $('div[id]').css(css5);          // div-ovi koji imaju id atribut
+            // $('div[id][class]').css(css5);   // div-ovi koji imaju id atribut i class atribut
+            // $('div[id=a10]').css(css5);      // div-ovi koji imaju id atribut jednak a10 (već smo imali isti primer zapisan na drugi način)
+            // $('div[id^=a1]').css(css5);
+            // $('div[id$=2]').css(css5);
+            // $('div[id!=a02]').css(css5);
+            // $('td:nth-child(2)').css(css5);
+            // $('td:nth-child(2n+0)').css(css2);
+            // $('td:nth-child(2n+1)').css(css3);
+            // $('td:nth-child(2n+2)').css(css4);
+            // $('p:nth-child(n+2)').css(css4);
+            // $('p:nth-child(3n+2)').css(css5);
+            // $('p:nth-child(-n+3)').css(css3);
+        });
+
+    </script>
+<body>
+<table>
+    <tr>
+        <td>a 1</td>
+        <td>a 2</td>
+        <td>a 3</td>
+        <td>a 4</td>
+        <td>a 5</td>
+    </tr>
+    <tr>
+        <td>a 1</td>
+        <td>a 2</td>
+        <td>a 3</td>
+        <td>a 4</td>
+        <td>a 5</td>
+    </tr>
+    <tr>
+        <td><em>i 1</em></td>
+        <td><em>i 2</em></td>
+        <td><em>i 3</em></td>
+        <td><em>i 4</em></td>
+        <td><em>i 5</em></td>
+    </tr>
+    <tr>
+        <td><span><em>s 1</em></span></td>
+        <td><span><em>s 2</em></span></td>
+        <td><span><em>s 3</em></span></td>
+        <td><span><em>s 4</em></span></td>
+        <td><span><em>s 5</em></span></td>
+    </tr>
+    <tr>
+        <td>a 1</td>
+        <td>a 2</td>
+        <td>a 3</td>
+        <td>a 4</td>
+        <td>a 5</td>
+    </tr>
+    <tr>
+        <td>a 1</td>
+        <td>a 2</td>
+        <td>a 3</td>
+        <td>a 4</td>
+        <td>a 5</td>
+    </tr>
+</table>
+    <div>
+        <ul>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+            <li>
+                <p><span>tekst linka 1 <strong>bold tekst 1 <em>italic tekst 1 </em></strong></span></p>
+
+                <p><span>tekst linka 2 <strong>bold tekst 2 <em>italic tekst 2 </em></strong></span></p>
+
+                <p><span>tekst linka 3 <strong>bold tekst 3 <em>italic tekst 3 </em></strong></span></p>
+            </li>
+        </ul>
+    </div>
+
+
+<div id="a01">div id a01</div>
+<div id="a02">div id a02</div>
+<div id="a03">div id a03</div>
+<div id="a04">div id a04</div>
+<div id="a05">div id a05</div>
+<div id="a06">div id a06</div>
+<div id="a07" class='test'>div id a07</div>
+<div id="a08">div id a08</div>
+<div id="a09">div id a09</div>
+<div id="a10">div id a10</div>
+<div id="a11">div id a11</div>
+<div id="a12">div id a12</div>
+<div id="a13">div id a13</div>
+<div id="a14" class='test'>div id a14</div>
+<div id="a15">div id a15</div>
+<div id="a16">div id a16</div>
+<div id="a17">div id a17</div>
+<div id="a18">div id a18</div>
+<div id="a19">div id a19</div>
+<div id="a20">div id a20</div>
+
+
+
+</body>
+</html>

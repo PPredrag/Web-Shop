@@ -1,0 +1,11 @@
+table {
+	width: 720px;
+}
+table, th, td {
+   border: 3px solid #4d88ff;
+   border-collapse: collapse;
+   text-align: left;
+}
+#blue {
+	background-color: #b3d1ff;
+}

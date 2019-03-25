@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+    overflow-y: scroll;
+	overflow-x:hidden;
+}
+
+body{
+	margin:0;
+	padding-top:20px;
+	padding-bottom:20px;
+	background: -webkit-linear-gradient(rgb(192,192,192),rgb(100,100,100));
+	background: -o-linear-gradient(rgb(192,192,192),rgb(100,100,100));
+	background: -moz-linear-gradient(rgb(192,192,192),rgb(100,100,100));
+	background: linear-gradient(rgb(192,192,192),rgb(100,100,100));
+	background: -ms-linear-gradient(top, #C0C0C0, #646464);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C0C0C0', endColorstr='#646464',GradientType=0);
+    zoom: 1;
+	background-color:rgb(100,100,100);
+	background-repeat:no-repeat;
+	font-family:Roboto, "Times New Roman", Times, serif;
+	}
+	
+#wrapper{
+	overflow:hidden;
+	width:960px;
+	background-color:rgb(153,153,255);
+	margin:0 auto;
+	border:solid 2px black;
+	}
+	
+	
+#header{
+	height:70px;
+	background:rgb(51,51,153);
+	background: -webkit-linear-gradient(rgb(136,136,216), rgb(51,51,153));
+	background: -o-linear-gradient(rgb(136,136,216), rgb(51,51,153));
+	background: -moz-linear-gradient(rgb(136,136,216), rgb(51,51,153));
+	background: linear-gradient(rgb(136,136,216), rgb(51,51,153));
+	background: -ms-linear-gradient(top, #8888D8, #333399);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8888D8', endColorstr='#333399',GradientType=0);
+    zoom: 1;
+	border-bottom:solid 2px black;
+	}	
+
+.header_deo{
+	overflow:hidden;
+	position:relative;
+	width:210px;
+	height:70px;
+	background:rgb(192,192,192);
+	background: -webkit-linear-gradient(#FFF, rgb(192,192,192));
+	background: -o-linear-gradient(#FFF, rgb(192,192,192));
+	background: -moz-linear-gradient(#FFF,rgb(192,192,192));
+	background: linear-gradient(#FFF, rgb(150,150,150));
+	background: -ms-linear-gradient(top, #FFFFFF, #969696);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#969696',GradientType=0);
+    zoom: 1;
+	color:rgb(51,51,153);
+	text-align:center;
+	}
+
+#upload{
+	float:left;
+	border-right:solid 2px black;
+	display:inline;
+	}
+	
+#password{
+	float:right;
+	right:0;
+	border-left:solid 2px black;
+	display:inline;
+	}	
+	
+#naslov{
+	position:relative;
+	padding:0;
+	margin:14px 0 0 18px;
+	text-align:center;
+	color:#FFF;
+	font-size:32px;
+	display:inline;
+	}		
+
+#form_upload{
+	margin:2px 0 0 2px;
+	font-size:11px;
+	}
+
+#submit_upload, #reset,#reset_pass,#submit_pass{
+	width:70px;
+	font-size:11px;
+	}	
+	
+#div_slika{
+	overflow:hidden;
+	float:left;
+	margin:5px 0 15px 5px;
+	padding:5px;
+	}
+
+#div_za_slike{
+	margin-left:44px;
+	}
+	
+#slika{
+	width:200px;
+	margin:0;
+	}	
+
+#dugme{
+	display:table;
+	margin:0 auto;
+	}

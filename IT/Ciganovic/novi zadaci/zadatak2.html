@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Izdavač</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<style>
+				#wrapper {
+					width:800px;
+					margin:0 auto;
+				}
+			</style>
+			
+			<h2>Stranica za pregled Izdavača</h2>
+
+			<form id="izdavac" action="zadatak2.php" method="POST">
+				<fieldset>
+				<br>
+				Prikaži izdavača po:<br><br>
+				<input type="radio" name="izdavac" value="naziv" checked />Nazivu izdavača&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="izdavac" value="status" />Statusu izdavača<br><br>
+				<input type="submit" name="potvrdi" value="Potvrdi" />
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

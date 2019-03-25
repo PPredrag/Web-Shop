@@ -1,0 +1,64 @@
+<!-- Korisno -->
+
+<!-- HTML dokument isto vraća i prečica "html:5" -->
+!
+
+<!-- HTML tag, bilo koji, napiše se samo ime taga, možete isprobati sa bilo kojim drugim tagom -->
+div
+span
+a
+img
+
+<!-- Ispisivanje jednog taga u drugom -->
+div>span
+span>a
+
+<!-- Uključivanje eksternog css-a -->
+link:css
+
+<!-- Uključivanje favicon-a -->
+link:favicon
+
+<!-- Element sa pridruženom klasom, ako se ne upiše ime taga, podrazumevaće se da smo upisali div, 2. primer pokauje uključivanje 2 klase istovremeno -->
+div.zuto
+.okruglo.zeleno
+
+<!-- Element sa pridruženim id-om, ako se ne upiše ime taga, podrazumevaće se da smo upisali div -->
+span#drugi
+
+<!-- Pravljenje liste sa upisanim prvim elementom (li tagom) -->
+ul+
+ol+
+
+<!-- Pravljenje selekt liste sa upisanim prvim option tagom -->
+select+
+
+<!-- Pravljenje tabele sa 4 reda i 5 kolona -->
+table>tr*4>td*5
+
+<!-- Ispisivanje lorem-ipsum teksta  -->
+lorem
+
+<!-- 5 paragrafa sa lorem ipsum  -->
+lorem*5
+
+<!-- Tekstualno polje (input type text) možete isprobati i input:c, input:r , input:p, input:s -->
+input:t
+
+
+
+<!-- manje bitni primeri, demonstracija šta sve možete da uradite sa zen-codingom, ovde nisu izlistane sve prečice ali su najkorisnije tu -->
+
+!>table+
+
+head>title+meta:utf+script
+
+ul>li*5>a
+
+ul>li*5>a{tekst $}
+
+#tekst$*5+ul>li*5>a[href=#tekst$]{tekst $}
+
+(form:post>p*5>label[for=id_$]+input:t[id=id_$])
+
+(form:post>p*5>label[for=id_$]+input:t[id=id_$])+(div*5>div+a>span)

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				/*
+					remove() - Brise odabrani element (i njegove potomke)
+					empty() - Brise potomke iz odabranog elementa
+				*/
+				
+				$("#tst1").click(function(){
+					$("#ptst1").remove();
+				});
+				$("#tst2").click(function(){
+					$("#ptst2").empty();
+				});
+				$("#tst3").click(function(){
+					$("div").empty(".id", ".style");
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="ptst1" style = "padding: 10px; border: 1px solid black;">
+			Paragraf 
+			<div id="ptst11">Potomak</div>
+		</div>
+		<div id="ptst2" style = "padding: 10px; border: 1px solid black;">
+			Paragraf 
+			<div id="ptst21">Potomak</div>
+		</div>
+
+		<button id="tst1">remove()</button>
+		<button id="tst2">empty()</button>
+		<button id="tst3">remove() with filter</button>
+	</body>
+</html>

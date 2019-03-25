@@ -1,0 +1,114 @@
+<html>
+<head>
+<script type="text/javascript">
+document.title="Prva Vezba";
+var pera=new Date();
+var x=pera.getHours();
+console.log(x);
+if (x>0 && x<8)
+{
+  document.write("<body bgcolor='white' color='‪#‎FFFF00‬'> Valjda je promenio boju </body>");;
+}
+ else if (x>8 && x<14)
+ {
+ document.write("<body bgcolor='#00FF00' text='pink'> Valjda je promenio boju </body>");
+ }
+ else 
+ {
+ document.write("jebi ga3");
+ }
+/*  // confirm 
+			   
+			   var poruka = false;
+			   var poruka = confirm("Da li si ti Pera?");
+			   var odgovor = "Bravo ti si pera";
+			   var negativan = "Ti nisi Pera";
+			    if (!poruka)
+				{
+				 odgovor = "Ti nisi Pera";
+				} 
+			    alert(odgovor);
+			    		   
+		      //  prompt
+			var ime = prompt("Unesi ime")
+			if ( ime != null && ime != undefined)
+			{
+              alert("Dobro dosli: " + ime);			  
+			}
+			else if (ime == null)
+			{
+			 alert("Niste uneli ime")
+			}   PROMT   
+			//do while
+			var x = 1;
+			do {
+			  if (x % 3 ==0)
+			  alert(x);
+			  x++;
+			
+			} while (x<5);
+			var x=1;
+			 // for petlja
+			 for (i=x; i<10; i++)
+			 {
+			   alert(i);
+			 } 
+			 
+			  //  zadatak - Generisati dva slučajna broj iz intervala od 0 do 100. 
+	//- Prikazati korisniku oba broja i pitati ga da li je prvi broj veći od drugog.
+	//- U odnosu na tačnost odgovor, prikazati odgovarajuću poruku 
+	
+	
+			 var x = Math.ceil(Math.random(0,100)*100);
+			 var y = Math.ceil(Math.random(0,100)*100);
+			 var odgovor = confirm ("Generisana su dva broja: " + x + "drugi je: " + y + "Da li je prvi veci od drugog?")
+			  if (( x > y && odgovor) || (x < y && !odgovor))
+			  {
+			    alert("Bravo vi znate matematiku")
+			  } 
+			  else 
+			  {
+			    alert("Morate jos da ucite")
+			  } 
+			  // setTimeout 
+			  function zdravoSvete()
+			  {
+			   console.log("Upis u log iz funkcije");
+			  }
+			  setTimeout(zdravoSvete,10000);
+			  console.log("Prvi ");
+			  console.log("Drugi");
+			  // setInterval
+			 function setovanjeintervala() 
+			 {
+			   console.log("Upis is funkcije");
+			 }
+			 console.log("Prvi upis");
+			 console.log("Drugi upis");
+             setInterval(setovanjeintervala,1000);		
+              
+     //- Omogućiti poziv funkcije u vremenskom rasponu od 1000ms
+	 //- Nakon 10000ms trebalo bi ukiniti intervalski poziv funkcije
+	    function zdravoSvete()
+			{
+				console.log("Upis u log iz funkcije");
+			}
+			
+			function prekiniInterval()
+			{
+				console.log("Prekidam interval");
+				clearInterval(idIntervala);
+			}
+			
+			console.log("Prvi upis u log");
+			var idIntervala = setInterval(zdravoSvete, 1000);
+			setTimeout(prekiniInterval, 10000);
+			console.log("Drugi upis u log");*/
+	   
+		  
+</script>
+</head>
+<body></body>
+
+</html>
+

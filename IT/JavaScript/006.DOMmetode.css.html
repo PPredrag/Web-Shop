@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				/*
+					addClass() - Dodaje klasu
+					removeClass() - Brise klasu
+					toggleClass() - Menja - dodaje/uklanja klasu u zavisnosti od trenutnog statusa
+				*/
+				
+				$("#tst1").click(function(){
+					$("div").addClass("pera");
+				});
+				
+				$("#tst2").click(function(){
+					$("div").removeClass("pera");
+				});
+				
+				$("#tst3").click(function(){
+					$("div").toggleClass("pera");
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="ptst1" style = "padding: 10px; border: 1px solid black;">
+			Paragraf 
+			<div id="ptst11">Potomak</div>
+		</div>
+		<div id="ptst2" style = "padding: 10px; border: 1px solid black;">
+			Paragraf 
+			<div id="ptst21">Potomak</div>
+		</div>
+
+		<button id="tst1">addClass()</button>
+		<button id="tst2">removeClass()</button>
+		<button id="tst3">toggleClass</button>
+	</body>
+</html>

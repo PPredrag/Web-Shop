@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Zadatak</title>
+		<link rel="StyleSheet" href="style.css" type="text/css">
+		<script src="js/validacija.js"></script> 
+	</head>
+	<body>
+		<h1>Konktakt forma</h1>
+		<div>
+			<div id="errorMessage" class="errorMessage">
+			</div>
+			<form name="konktaktForma" method="GET" action="todo.php" onsubmit="return IsFormValid2()">
+				<div class="wr5">
+					<div class="fleft w100 wr5">
+					Ime: 
+					</div>
+					<div class="fleft">
+						<input type="text" id="ime" name="ime" onblur="CheckField(this)"></input> <!-- onblur="CheckField('ime', this.value)" -->
+						<span id="imeError" class="errorMessage"></span>
+					</div>
+					<div class="clr">
+					</div>
+				</div>
+				<div class="wr5">
+					<div class="fleft w100 wr5">
+					Broj telefona: 
+					</div>
+					<div class="fleft">
+						<input type="text" id="phone" name="brTel" onblur="CheckField(this)"></input>
+						<span id="phoneError" class="errorMessage"></span>
+					</div>
+					<div class="clr">
+					</div>
+				</div>
+				<div class="wr5">
+					<div class="fleft w100 wr5">
+					E-mail: 
+					</div>
+					<div class="fleft">
+						<input type="text" id="mail" name="mejl" onblur="CheckField(this)"></input>
+						<span id="mailError" class="errorMessage"></span>
+					</div>
+					<div class="clr">
+					</div>
+				</div>
+				<div class="wr5">
+					<div class="fleft w100 wr5">
+					Poruka: 
+					</div>
+					<div class="fleft">
+						<textarea type="text" id="message" name="poruka" rows="5" onblur="CheckField(this)"></textarea>
+						<span id="messageError" class="errorMessage"></span>
+					</div>
+					<div class="clr">
+					</div>
+				</div>
+				<div class="wr5">
+					<input type="reset" value="Ponisti"/>
+					<input type="submit" value="Posalji"/>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

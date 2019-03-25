@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Pogodi koji sam broj zamislio od 0 do 9, imaš 3 pokušaja</p>
+<script type="text/javascript">
+
+    var a=Math.floor(Math.random()*10);
+    console.log(a);
+    var pogodio=false;
+    var poruka="Pogodi koji sam broj zamislio";
+    var pokusaji=1;// broj pokušaja
+    for(pokusaji=1;pokusaji<=3;pokusaji++){
+        if(pogodio==false){
+            var b=prompt(poruka);
+            if(a>b){
+                poruka="Traženi broj je veći";
+            }else if(a<b){
+                poruka="Traženi broj je manji";
+            }else if(a==b){
+                poruka="Čestitamo pogodili ste traženi broj iz "+pokusaji+" pokušaja";
+                alert(poruka);
+                pogodio=true;
+            }else{
+                // nemoguće
+                pogodio=true;
+                console.log("Nešto čudno se desilo!!");
+            }
+        }
+    }
+    if(pogodio==false){
+        alert("Niste uspeli da pogodite traženi broj iz 3 pokušaja");
+    }
+</script>
+</body>
+</html>

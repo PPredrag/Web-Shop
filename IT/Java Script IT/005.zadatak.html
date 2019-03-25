@@ -1,0 +1,38 @@
+<!--
+	005 - Zadatak
+	
+	- Generisati dva slučajna broj iz intervala od 0 do 100. 
+	- Prikazati korisniku oba broja i pitati ga da li je prvi broj veći od drugog.
+	- U odnosu na tačnost odgovor, prikazati odgovarajuću poruku
+-->
+
+
+
+
+
+
+<html>
+	<head>
+		<script>
+			
+			
+			//prvo definišemo slučajne brojeve
+			var prviBroj = Math.ceil(Math.random() * 100);
+			var drugiBroj = Math.ceil(Math.random() * 100);
+			
+			var odgovor = confirm("Generisana su dva slučajna broja: " + prviBroj + " i " + drugiBroj + ". Da li je prvi broj veći od drugog?");
+			if ((prviBroj > drugiBroj && odgovor) || (prviBroj <= drugiBroj && !odgovor))
+			{
+				alert("Bravo! Umete da prepoznate veci broj");
+			}
+			else
+			{
+				alert(":(");
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSSANI</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300|Open+Sans:300italic,400italic,700italic,400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">    
+
+	$(document).ready(function() {
+		$(window).on("scroll", function() {
+			var odVrha = $(window).scrollTop();
+			$("#topLink").toggleClass("down", (odVrha > 300));
+		});
+	});
+		
+</script>
+
+
+<script type="text/javascript">
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+</script>
+
+
+<script>
+$(document).ready(function() {
+		
+	var respmenu 		= $('#respmenu');
+	var	menu 			= $('#nav>ul');
+
+	$(respmenu).on('click', function(e) {
+		e.preventDefault();
+		menu.slideToggle();
+	});
+	
+	$(window).resize(function(){
+		var sirina = $(window).width();
+		if(sirina > 768 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}	
+	});
+	
+});	
+	
+
+
+</script>
+
+
+</head>
+
+<body>
+
+
+	<header id="header" class="negativ">
+    
+        <div class="wrapper">
+            <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#header" class="dugme">Modeli</a></li>
+                    <li><a href="#drugi" class="dugme">Work</a></li>
+                    <li><a href="#about" class="dugme">About</a></li>
+					<li><a href="#about" class="dugme">Dodatak</a></li>
+                </ul>
+                <a href="#" id="respmenu">Prikaži/sakrij navigaciju</a>
+            </nav>
+        </div>
+    </header>
+
+
+	<section id="prvi" class="negativ">
+    	<div class="wrapper">
+        	<h1>Lorem ipsum dolor sit amet</h1>
+        	<p>Donec tristique mollis tincidunt. Aliquam posuere vestibulum est id vehicula. Integer et massa vitae ipsum porttitor lobortis.</p>
+       	 	<p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo, quis ornare libero porta nec. Duis egestas turpis sit amet massa placerat, vitae faucibus ipsum pharetra. Proin tincidunt at lacus non cursus. Aenean ultricies fringilla lacus ac pulvinar. Praesent venenatis est in nulla scelerisque, eu tincidunt sem interdum. Cras ipsum ipsum, vestibulum nec dui malesuada, laoreet rhoncus odio. Etiam posuere aliquet leo, quis posuere est elementum porttitor. </p>
+        	<p><a href="#" class="dugme">Neko&nbsp;dugme&nbsp;&raquo;</a></p>
+        </div>
+    </section>
+    
+    <section id="drugi">
+    	
+        <div class="wrapper">
+	
+            <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#header" class="dugme">Modeli</a></li>
+                    <li><a href="#drugi" class="dugme">Work</a></li>
+                    <li><a href="#about" class="dugme">About</a></li>
+					<li><a href="#about" class="dugme">Dodatak</a></li>
+                </ul>
+                <a href="#" id="respmenu">Prikaži/sakrij navigaciju</a>
+            </nav>
+        </div>
+        
+            <h2>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</h2>
+            <p>Donec tristique mollis tincidunt. Aliquam posuere vestibulum est id vehicula. Integer et massa vitae ipsum porttitor lobortis.</p>
+            <p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo, quis ornare libero porta nec. Duis egestas turpis sit amet massa placerat, vitae faucibus ipsum pharetra.</p>
+        
+            <article class="tri">
+            <a href="#">
+                <img src="images/tri1.jpg" alt="tri1">
+                <div class="triTekst">
+                	<h2>Lorem ipsum</h2>
+                	<p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo.</p>
+                </div>
+            </a>
+            </article>
+        
+            <article class="tri">
+            <a href="#">
+                <img src="images/tri2.jpg" alt="tri2">
+                <div class="triTekst">
+                	<h2>Lorem ipsum</h2>
+                	<p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo.</p>
+                </div>
+            </a>
+            </article>
+        
+            <article class="tri">
+            <a href="#">
+                <img src="images/tri3.jpg" alt="tri3">
+                <div class="triTekst">
+                	<h2>Lorem ipsum</h2>
+                	<p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo.</p>
+                </div>
+            </a>
+            </article>
+            
+        </div>
+        
+    </section>
+    
+    
+
+    <section id="idea" class="negativ">
+    	<div class="wrapper">
+            <img src="images/sijalica.png" alt="lightbulb" id="sijalica">
+            <h2>New idea!</h2>
+             <p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo, quis ornare libero porta nec. Duis egestas turpis sit amet massa placerat, vitae faucibus ipsum pharetra. Proin tincidunt at lacus non cursus. Aenean ultricies fringilla lacus ac pulvinar. Praesent venenatis est in nulla scelerisque, eu tincidunt sem interdum. Cras ipsum ipsum, vestibulum nec dui malesuada, laoreet rhoncus odio. Etiam posuere aliquet leo, quis posuere est elementum porttitor. </p>
+         </div>
+    </section>
+    
+    
+
+	<section id="about">
+    	
+        <div class="wrapper">
+        
+        <h2>About CSSANI</h2>
+        <p>Donec tristique mollis tincidunt. Aliquam posuere vestibulum est id vehicula. Integer et massa vitae ipsum porttitor lobortis. Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo, quis ornare libero porta nec. Duis egestas turpis sit amet massa placerat, vitae faucibus ipsum pharetra. Proin tincidunt at lacus non cursus. Aenean ultricies fringilla lacus ac pulvinar. Praesent venenatis est in nulla scelerisque, eu tincidunt sem interdum. Cras ipsum ipsum, vestibulum nec dui malesuada, laoreet rhoncus odio. Etiam posuere aliquet leo, quis posuere est elementum porttitor. </p>
+        <p>Donec tristique mollis tincidunt. Aliquam posuere vestibulum est id vehicula. Integer et massa vitae ipsum porttitor lobortis.</p>
+        <p>Cras non maximus nunc. Nunc nec velit sit amet ex elementum porttitor ac non velit. Curabitur venenatis congue justo, quis ornare libero porta nec. Duis egestas turpis sit amet massa placerat, vitae faucibus ipsum pharetra. Proin tincidunt at lacus non cursus. Aenean ultricies fringilla lacus ac pulvinar. Praesent venenatis est in nulla scelerisque, eu tincidunt sem interdum. Cras ipsum ipsum, vestibulum nec dui malesuada, laoreet rhoncus odio. Etiam posuere aliquet leo, quis posuere est elementum porttitor. </p>
+        <p><a href="#" class="dugme">Neko&nbsp;dugme&nbsp;&raquo;</a></p>
+        
+   
+        
+        </div>
+        
+    </section>
+    
+    
+    <section id="videoback" class="negativ">
+        <video autoplay loop muted poster="background.jpg" id="bgvid">
+            <source src="video/background.webm" type="video/webm">
+            <source src="video/background.mp4" type="video/mp4">
+        </video>
+        
+        <div class="wrapper">
+        	<p><img src="images/logo.png" alt="cssani logo"></p>
+        	<h2>Duis egestas turpis sit amet massa placerat</h2>
+        	<p>Donec tristique mollis tincidunt. Aliquam posuere vestibulum est id vehicula. Integer et massa vitae ipsum porttitor lobortis.</p>
+		</div>
+        
+    </section>
+    
+    
+    
+    
+    <footer id="footer" class="negativ">
+    	<p>Copyright &copy; 2015 CSSANI</p>
+    </footer>
+    
+    
+    <a href="#header" id="topLink">Back to TOP</a>
+    
+
+</body>
+</html>
+
+
+
+

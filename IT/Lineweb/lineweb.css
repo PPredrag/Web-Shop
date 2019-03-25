@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+background-image:url(slike/background.png);
+margin:0;
+padding:0;
+}
+#wrapper {
+width:1200px;
+margin:0 auto;
+background-color:#ffffff;
+}
+#header {
+background-color:#921113;
+overflow:hidden;
+border-bottom: 4px solid #ccc;
+}
+#nav {
+float:left;
+}
+#logo {
+float:left;
+border-right:2px solid #ccc;
+}
+.img1{
+	vertical-align:bottom;
+}/* slika je inline element, ponasa se kao tekst i browser je odmah smesta na 'base line' kao slovo A dok recimo slovo g propada ispod 'base line' i zato se pojavljuje par pixela ispod slike koje treba da 'ubijemo'
+vertical align svojstvo se koristi za tekst, spustili smo sliku na dole i time sve podigli na gore jer slika 'nosi' header
+cesto se postavlja za sve slike na sajtu ovo svojstvo*/
+
+#nav ul {
+margin:0;
+padding:0;
+list-style:none;
+}/*list-style:none -skida tacke ispred liste*/
+#nav ul li {
+float:left;/*slaze elemente jedan PORED drugog 	WORK ABOUT CONTAC*/
+}
+#nav ul li a {
+display:block;/*proveriti na 3/9 snimku zastose stavlja BLOK*/
+color:#fff;
+font-weight:bold;
+font-family:Verdana;
+text-decoration:none; /*skida crtice ispod liste*/
+padding:30px 15px;
+height:20px;
+}
+#nav ul li a:link, /*proveriti na 3/9 snimku */
+#nav ul li a:visited {
+ color:#fff;   /*proveriti na 3/9 snimku */
+}
+#nav ul li a :hover{
+	background:red;
+	color#808080;
+}/*proveriti na 3/9 snimku */
+
+#nav ul li a:active {
+	color:#333;
+	background-color:#9B9B9B;
+}
+#nav ul li ul {
+	position:absolute;
+	background:rgba(146, 17, 19,0.4);/*proveriti na 3/9 snimku */
+	display:none;
+	z-index:200;
+}
+#nav ul li ul li {
+	float:none;/*proveriti na 3/9 snimku, pomaze da budu jedan ISPOD drugog EMPLOEMENT CARRERS*/
+}
+
+#nav ul li:hover ul {
+	display:block;/*proveriti na 3/9 snimku */
+}
+#front {
+	position:relative;
+	z-index:100;
+} /*roditelj dobije relative zbog deteta slike koja ima absolute
+     kada hocu sliku na sliku da nalepim noseca slika RODITELJ
+	 mora da bude relative a ona koja se nalepljje mora da bude 
+	 absolute i posle joj zadajem kordinate*/
+.front-over {
+	position:absolute;
+	bottom:70px;
+	right:50px;
+	}
+#main {
+	width:800px;
+	padding:0px;
+	margin:0px;
+	float:left;
+}	
+.vest1{
+overflow:hidden;
+padding:10px;
+margin:0px;
+}
+
+.text1 {
+width:480px;
+margin:0px;
+padding:0px;
+float:left;
+}
+h3 {
+border-bottom:solid red 3px;
+} 
+.kafa {
+	margin:0px;
+	padding:0px;
+    float:left;
+}
+.vest2{
+	padding:10px;
+	margin:0px;
+}
+.vest3{
+	overflow:hidden;
+	width:780px;
+	margin:0px;
+	padding:10px;
+}
+.latest1 {
+	float:left;
+	width:350px;
+	margin:0;
+	padding:0;
+}
+.latest2 {
+	float:right;
+	width:350px;
+    margin:0;
+    padding:0; 
+}
+.img3{
+    float:left;
+	margin:15px;
+}
+.img2{
+    float:left;
+	margin:15px;
+}
+.read{
+  text-decoration:none;
+  color:red;
+}
+h4 {
+font-family:Verdana;
+color:gray;
+}
+#sidebar{
+	width:370px;
+	background-color:#d9d9d9;
+	float:right;
+	margin-left:10px;
+	padding:10px;
+}
+#wraper2{
+overflow:hidden;
+}
+.h4 {
+border-bottom:4px solid #a6a6a6;
+color:black;
+}
+.drugalista ul{
+margin:0px;
+padding:0px;
+list-style:none;
+
+}
+.drugalista ul li {
+float:left;
+}
+.drugalista ul li a{
+text-decoration:none;
+display:block;
+color:white;
+background-color:#595959;
+margin:5px;
+padding:5px;
+}
+.drugalista ul li a:link,
+.drugalista ul li a:visited{
+background-color:#595959;
+}
+.drugalista ul li a:hover{
+	background:red;
+	color#808080;
+}
+#reklama {
+padding:0;
+margin:40px;
+margin-top:200px;
+}
+#footer{
+margin:20px auto;
+text-align:center;
+padding:10px;
+border-top:2px solid #595959;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

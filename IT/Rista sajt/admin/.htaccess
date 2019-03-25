@@ -1,0 +1,4 @@
+﻿AuthType Basic
+AuthName "Unesite korisničko ime i lozinku"
+AuthUserFile C:/wamp/www/Zavrsni_rad/admin/.htpasswd
+Require valid-user

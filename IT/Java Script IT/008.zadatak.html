@@ -1,0 +1,34 @@
+<!--
+	008 - zadatak
+	
+	- Omogućiti poziv funkcije u vremenskom rasponu od 1000ms
+	- Nakon 10000ms trebalo bi ukiniti intervalski poziv funkcije
+-->
+
+<html>
+	<head>
+		<script>
+			
+			
+			function zdravoSvete()
+			{
+				console.log("Upis u log iz funkcije");
+			}
+			
+			function prekiniInterval()
+			{
+				console.log("Prekidam interval");
+				clearInterval(idIntervala);
+			}
+			
+			console.log("Prvi upis u log");
+			var idIntervala = setInterval(zdravoSvete, 1000);
+			setTimeout(prekiniInterval, 10000);
+			console.log("Drugi upis u log");
+			
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+
+THE ENGLISH BOOK DOO
+Staro Sajmiçte 29 Beograd
+PIB: 101885870
+
+STANJE ZALIHA KOMISION ZAVOD ZA UDZBENIKE NA DAN 31.12.18
+ARTIKLI: ...
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄ ÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+æifra          Naziv artikla                       JM   KOLI^INA      PRO.CENA      VREDNOST
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+9780194003766  Happy House 2 SB SE                 kom         98        720,00     70.560,00
+9780194003827  Happy House 2 AB PK SE              kom         27        480,00     12.960,00
+9780194369305  Headway Advanced SB                 kom          9      1.136,36     10.227,28 *
+9780194386876  Headway Advanced WB-                kom         10        494,55      4.945,46 *
+9780194387507  Headway Inter 3rd Ed SB             kom          6      1.099,09      6.594,55 *
+9780194387552  Headway Inter 3rd Ed WB-key         kom          9        494,55      4.450,91 *
+9780194392990  Headway Upper Inter 3rd SB          kom          8      1.118,18      8.945,45 *
+9780194393027  Headway Upper Inter 3rd WB-         kom         10        494,55      4.945,46 *
+9780194551502  Solutions Elementary SB PK          kom         12      1.096,36     13.156,37 *
+9780194551557  Solutions Elementary WB             kom         11        448,18      4.930,00 *
+9780194551656  Solutions Pre Inter SB PK           kom         34      1.096,36     37.276,36 *
+9780194551700  Solutions Pre Inter WB              kom         37        448,18     16.582,73 *
+9780194551809  Solutions Inter SB PK               kom         20      1.096,36     21.927,27 *
+9780194551854  Solutions Inter WB                  kom          1        448,18        448,18 *
+9780194551953  Solutions Upper Inter SB PK         kom         17      1.096,36     18.638,18 *
+9780194552004  Solutions Upper Inter WB            kom         15        448,18      6.722,73 *
+9780194552103  Solutions Advanced SB               kom         15      1.096,36     16.445,45 *
+9780194552158  Solutions Advanced WB               kom         15        448,18      6.722,73 *
+9780194715096  Headway Elem 3rd Ed SB              kom          9      1.063,64      9.572,72 *
+9780194715119  Headway Elem 3rd Ed WB-key          kom          9        494,55      4.450,91 *
+9780194715850  Headway Pre Inter 3rd SB            kom         10      1.063,64     10.636,36 *
+9780194715874  Headway Pre Inter 3rd WB-           kom         10        494,55      4.945,46 *
+9780194718899  Headway Upper 4th WB -Key PK        kom         12        494,55      5.934,55 *
+9780194733847  Happy Street 1 CB SE                kom        127        720,00     91.440,00
+9780194733854  Happy Street 2 CB SE                kom        182        720,00    131.040,00
+9780194733885  Happy Street 1 AB PK SE             kom         39        480,00     18.720,00
+9780194733892  Happy Street 2 AB PK SE             kom         73        480,00     35.040,00
+9780194763004  Project 1 NE SB                     kom        133        750,00     99.750,00
+9780194763387  Project 1 NE WB                     kom        118        510,00     60.180,00
+9780194764346  Project 5 SB SE                     kom        104        750,00     78.000,00
+9780194764353  Project 5 WB PK SE                  kom         50        510,00     25.500,00
+9780194764391  Project 2 SB SE                     kom         79        750,00     59.250,00
+9780194764407  Project 3 SB SE                     kom         76        750,00     57.000,00
+9780194764414  Project 4 SB SE                     kom         93        750,00     69.750,00
+9780194764476  Project 2 WB SE                     kom         63        510,00     32.130,00
+9780194764483  Project 3 WB SE                     kom         21        510,00     10.710,00
+9780194764490  Project 4 WB SE                     kom         60        510,00     30.600,00
+9780194764704  NE Project 1 SB SE                  kom        176        750,00    132.000,00
+9780194764711  NE Project 2 SB SE                  kom         68        750,00     51.000,00
+9780194764728  NE Project 3 SB SE                  kom        117        750,00     87.750,00
+9780194764735  NE Project 4 SB SE                  kom        129        750,00     96.750,00
+9780194764742  NE Project 5 SB SE                  kom        104        750,00     78.000,00
+9780194765053  NE Project 1 WB PK SE               kom         85        510,00     43.350,00
+9780194765060  NE Project 2 WB PK SE               kom         37        510,00     18.870,00
+9780194765077  NE Project 3 WB PK SE               kom         62        510,00     31.620,00
+9780194765084  NE Project 4 WB PK SE               kom         68        510,00     34.680,00
+9780194765091  NE Project 5 WB PK SE               kom         77        510,00     39.270,00
+9780194766074  Matrix Pre Inter NE SB              kom         15      1.093,64     16.404,54 *
+9780194766081  Matrix Pre Inter NE WB              kom         15        442,73      6.640,91 *
+9780194766142  Matrix Inter NE SB                  kom         15      1.136,36     17.045,46 *
+9780194766159  Matrix Inter NE WB                  kom         15        442,73      6.640,91 *
+9780194766210  Matrix Upper Inter NE SB            kom         15      1.136,36     17.045,46 *
+9780194766227  Matrix Upper Inter NE WB            kom         15        442,73      6.640,91 *
+9780194769129  Headway Elem 4TH Ed SB IT PK        kom         20      1.082,73     21.654,54 *
+9780194770224  Headway Inter 4th Ed WB- PK         kom         10        494,55      4.945,46 *
+9780194770538  Headway Elem 4TH Ed WB-key+IC.      kom         19        494,55      9.396,37 *
+9780194771818  Headway Upper 4th SB PK             kom         10      1.136,36     11.363,64 *
+9780230009141  Inside Out Upper 2ndSBPK staro      kom         12        990,00     11.880,00
+9780230009158  Inside Out Upp-Int 2nd WB PK-       kom         15        420,00      6.300,00
+9780230723382  Gateway A2 SB                       kom         20        990,00     19.800,00
+9780230723399  Gateway A2 WB                       kom         20        420,00      8.400,00
+9780230723443  Gateway B1 SB                       kom         13        990,00     12.870,00
+9780230723450  Gateway B1 WB                       kom         13        420,00      5.460,00
+9780230723504  Gateway B1+ SB                      kom         14        990,00     13.860,00
+9780230723511  Gateway B1+ WB                      kom         16        420,00      6.720,00
+9780230723566  Gateway B2 SB                       kom         13        990,00     12.870,00
+9780230723573  Gateway B2 WB                       kom         14        420,00      5.880,00
+9780230723627  Gateway B2+ SB                      kom         12        990,00     11.880,00
+9780230723634  Gateway B2+ WB                      kom         23        420,00      9.660,00
+9781405085991  Inside Out Ele 2nd Ed WB-key        kom         15        420,00      6.300,00
+9781405099493  Inside Out Ele 2nd SB PK staro      kom         14        990,00     13.860,00
+9781405099547  Inside Out PreInt2ndSBPK            kom         11        990,00     10.890,00
+9781405099554  Inside Out Pre-Int 2ndWBPk-Key      kom         14        420,00      5.880,00
+9781405099677  Inside Out Int 2nd SB PK staro      kom         15        990,00     14.850,00
+9781405099684  Inside Out Int 2nd Ed WBPk-key      kom         15        420,00      6.300,00
+---------------------------------------------------------------------------------------------
+UKUPNO                                                      2.963  2.015.857,31
