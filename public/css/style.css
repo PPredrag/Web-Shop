@@ -1,0 +1,53 @@
+.red{
+	color:#ad0505 !important;
+}
+
+/*Border aroud div*/
+#border{
+	border: 1px solid #e5e5e5;
+
+}
+#sivaBojaSlova{
+	color: #e65540;
+}
+#spanPadding{
+	padding: 15px !important;
+}
+.block2-overlay{
+	background-color: rgba(0,0,0,0) !important;
+}
+.bg4{
+	background-color:white !important;
+	color: black !important;
+	border: 2px solid #d4d4d6;
+}
+#muskaObuca{
+	background-color: #f2f2f2 !important;
+}
+#nasloviPocetna{
+	color: #7b7e82 !important;
+}
+
+#crvena{
+	color:red;
+}
+#sredina{
+	text-align: center !important ;
+}
+#shoesNumber{
+	border: 2px solid #e5e5e5;
+	padding: 2% 4% 2% 4%;
+	margin-top: 2px !important;
+
+}
+#shoesNumber:hover{
+	background-color: #bf1e1e;
+	color: #e2e0e0;
+
+}
+#darkRed{
+	color: #aa0319!important;
+}
+#hoverDiv:hover{
+	background-color: #eae3e3;
+}

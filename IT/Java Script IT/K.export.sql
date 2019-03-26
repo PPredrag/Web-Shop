@@ -1,1 +1,0 @@
-INSERT INTO K VALUES ('k1','Osma ofanziva','roman'),('k2','Nemam vise vremena','poezija'),('k3','Pionirska trilogija','roman'),('k4','Srpskohrvatsko-engleski recnik','leksikografija'),('k5','An Introduction to Database Systems','racunarstvo'),('k6','Trazim pomilovanje','poezija');

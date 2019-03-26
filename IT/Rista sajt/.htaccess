@@ -1,5 +1,0 @@
-﻿ErrorDocument 400 /Zavrsni_rad/include/error.html
-ErrorDocument 401 /Zavrsni_rad/include/error.html
-ErrorDocument 403 /Zavrsni_rad/include/error.html
-ErrorDocument 404 /Zavrsni_rad/include/error.html
-ErrorDocument 500 /Zavrsni_rad/include/error.html
