@@ -21,8 +21,8 @@
 				@endif
 			</div>
 			<div class="form-group{{ $errors->has('picture') ? ' has-error' : '' }}">
-				<label for="exampleFormControlFile1">Odaberi Sliku</label>
-				<input type="file" class="form-control-file" id="exampleFormControlFile1" name="picture">
+				<label for="pictureButton">Odaberi Sliku</label>
+				<input type="file" class="form-control-file" id="pictureButton" name="picture" >
 				@if ($errors->has('picture'))
 				<span class="help-block">
 					<strong>{{ $errors->first('picture') }}</strong>

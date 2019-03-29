@@ -45,16 +45,18 @@ class MainMenuController extends Controller
     public function contact(){
         return view('contact/contact');
     }
-    public function test(){
+    public function test(Number $number){
 
      /*$shop = Shop::find(2);
             //dd($shop);
         $shop->products()->attach(4);
-        return view('test');*/
+        return view('test');
 
-      $product = Product::find(1);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
-      $product->shops()->attach([1,3,4]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu 
-       return redirect()->back();
+      $product = Footwear::find(1);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
+      $product->numbers()->attach(15,['qty'=>10]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu 
+       return redirect()->back();*/
+
+       dd($number->getData()); // ovako instanciram funkciju iz Number Modela
     }
 
 

@@ -15,10 +15,7 @@
        Nova Kolekcija
         </h2>
         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn" >
-            <!-- Button 
-            <a href="{{ route('shop')}}" class="flex-c-m size2 bo-rad-0 s-text2 bgwhite hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>-->
+          
         </div>
     </div>
 </div>
@@ -289,38 +286,38 @@ PROIZVODI NA POPUSTU
             <img src="{{ asset('images/kids/dp3.jpg') }}" alt="IMG-BLOG">
         </a>
     </div>
-        <div class="block3-txt p-t-14">
+        <div class="block3-txt p-t-14" style="padding: 10px;">
             <h4 class="p-b-7">
             <a href="" class="m-text11">
-                Black Friday Guide: Best Sales & Discount Codes
+                Ženske Patike Savršene za šetnju. Otporne na vodu.....
             </a>
             </h4>
-            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-            <span class="s-text6">on</span> <span class="s-text7">July 22, 2017</span>
+             <span class="s-text6">Od</span> <span class="s-text7">Gordana</span>
+            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
             <p class="s-text8 p-t-16">
-                Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames
+               ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
             </p>
         </div>
     </div>
 </div>
 <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
     <!-- Block3  PROIZVODI NA POPUSTU-->
-    <div class="block3" id="border">
+    <div class="block3" id="border" style="padding: 10px;">
         <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
         <a href="{{route('sale')}}" class="block3-img dis-block hov-img-zoom">
             <img src="{{ asset('images/kids/dp4.jpg') }}" alt="IMG-BLOG">
         </a>
     </div>
-        <div class="block3-txt p-t-14">
+        <div class="block3-txt p-t-14" style="padding: 10px;">
             <h4 class="p-b-7">
             <a href="blog-detail.php" class="m-text11">
-                The White Sneakers Nearly Every Fashion Girls Own
+                Ženske Patike Savršene za šetnju. Otporne na vodu.....
             </a>
             </h4>
-            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-            <span class="s-text6">on</span> <span class="s-text7">July 18, 2017</span>
+            <span class="s-text6">Od</span> <span class="s-text7">Jelena</span>
+            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
             <p class="s-text8 p-t-16">
-                Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+                ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
             </p>
         </div>
     </div>
@@ -333,16 +330,16 @@ PROIZVODI NA POPUSTU
             <img src="{{ asset('images/men/pm5.jpg') }}" alt="IMG-BLOG">
         </a>
     </div>
-        <div class="block3-txt p-t-14">
+        <div class="block3-txt p-t-14" style="padding: 10px;">
             <h4 class="p-b-7">
             <a href="blog-detail.php" class="m-text11">
-                The White Sneakers Nearly Every Fashion Girls Own
+                Ženske Patike Savršene za šetnju. Otporne na vodu.....
             </a>
             </h4>
-            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-            <span class="s-text6">on</span> <span class="s-text7">July 18, 2017</span>
+            <span class="s-text6">Od</span> <span class="s-text7">Milica</span>
+            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
             <p class="s-text8 p-t-16">
-                Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+                ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
             </p>
         </div>
     </div>
@@ -363,17 +360,12 @@ PROIZVODI NA POPUSTU
 <div class="block4 wrap-pic-w" id="border">
 <img src="{{ asset('images/women/pz1.jpg') }}" alt="IMG-INSTAGRAM">
 <a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
+
     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
         <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
         </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
+
     </div>
 </a>
 </div>
@@ -381,17 +373,12 @@ PROIZVODI NA POPUSTU
 <div class="block4 wrap-pic-w" id="border">
 <img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-INSTAGRAM">
 <a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
+    
     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
         <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+            ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
         </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
+      
     </div>
 </a>
 </div>
@@ -399,17 +386,12 @@ PROIZVODI NA POPUSTU
 <div class="block4 wrap-pic-w" id="border">
 <img src="{{ asset('images/women/pz3.jpg') }}" alt="IMG-INSTAGRAM">
 <a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
+  
     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
         <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
         </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
+       
     </div>
 </a>
 </div>
@@ -417,17 +399,12 @@ PROIZVODI NA POPUSTU
 <div class="block4 wrap-pic-w" id="border">
 <img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-INSTAGRAM">
 <a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
+   
     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
         <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
         </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
+       
     </div>
 </a>
 </div>

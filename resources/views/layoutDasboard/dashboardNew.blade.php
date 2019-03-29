@@ -4,16 +4,19 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ config('app.name', 'Admin Panel') }}</title>
+        <title>Dashboard</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="{{ asset('AssetDashboard/css/bootstrap.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+
         <!-- FONTAWESOME STYLES-->
         <link href="{{ asset('AssetDashboard/css/font-awesome.css') }}" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
         <link href="{{ asset('AssetDashboard/css/custom.css') }}" rel="stylesheet" />
         <!-- GOOGLE FONTS-->
         <link href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans') }}" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/util.css')}}">
          </head>
     <body>
         
@@ -32,9 +35,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{route('welcome')}}" target="_blank">Poseti Sajt</a></li>
-                            <li><a href="#">Open Ticket</a></li>
-                            <li><a href="#">Report Bug</a></li>
+                            <li><a href="{{route('welcome')}}" target="_blank"><b class="red">POSETI SAJT</b></a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,15 +44,15 @@
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-                        <li class="text-center user-image-back">
+                        <!--<li class="text-center user-image-back">
                             <img src="assets/img/find_user.png" class="img-responsive" />
                             
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{route('home')}}"><i class="fa fa-desktop "></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-picture-o "></i>Slike<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-picture-o  "></i>Slike<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('sliderPictures')}}">Početni Slider</a>
@@ -83,44 +84,59 @@
                             <a href="{{route('unosProizvoda')}}"><i class="fa fa-edit "></i>Unos Proizvoda </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table "></i>Table Examples</a>
+                            <a href="#"><i class="fa fa-trash-o "></i><span class="red">Brisanje Proizvoda</span></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap "></i>Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-table "></i>Statistika Proizvoda</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user "></i>Korisnici<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Link</a>
+                                    <a href="#">Pregledaj Korisnike</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Link</a>
+                                    <a href="#">Obrisi Korisnike</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                    <a href="#">Status Korisnika<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        <li>
+                                       <li>
+                                            <a href="#">Promeni Status</a>
+                                        </li>
+                                        <!--<li>
                                             <a href="#">Third Level Link</a>
                                         </li>
                                         <li>
                                             <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </li>
                             </ul>
+                        </li> 
+                        <li>
+                            <a href="#"><i class="fa fa-money "></i>Zarada</a>
+                        </li>
+                       
+                        <li>
+                            <a href="#"><i class="fa fa-tag fa-lg"></i>Proizvodi na Popustu<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Promeni Cenu Proizvoda</a>
+                                </li>
+                               <!-- <li>
+                                    <a href="#">Glavna Strana</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sve Slike</a>
+                                </li> -->
+                            </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-qrcode "></i>Tabs & Panels</a>
+                            <a href="#"><i class="fa fa-truck"></i>Nas Kontakt</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o"></i>Mettis Charts</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit "></i>Last Link </a>
-                        </li>
-                        <li>
-                            <a href="blank.html"><i class="fa fa-table "></i>Blank Page</a>
+                            <a href="blank.html"><i class="fa fa-hand-o-left"></i>O Nama</a>
                         </li>
                     </ul>
                 </div>
@@ -178,7 +194,8 @@
     <script type="text/javascript" src=" {{ asset('vendor/slick/slick.min.js') }}"></script>
     <script type="text/javascript" src=" {{ asset('js/slick-custom.js') }}"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src=" {{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('vendor/sweetalert/sweetalert.min.js') }}">
+    </script>
     <script type="text/javascript">
         
 

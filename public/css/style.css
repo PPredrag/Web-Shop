@@ -51,3 +51,89 @@
 #hoverDiv:hover{
 	background-color: #eae3e3;
 }
+#pictureButton{
+	background-color: red !important;
+}
+/* Colors for iport color in DB*/
+.krug1{
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+}
+.krug2{
+  height: 25px;
+  width: 25px;
+  background-color: #f4b609;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug3{
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug4{
+  height: 25px;
+  width: 25px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug5{
+  height: 25px;
+  width: 25px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug6{
+  height: 25px;
+  width: 25px;
+  background-color: pink;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug7{
+  height: 25px;
+  width: 25px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug8{
+  height: 25px;
+  width: 25px;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+
+}
+.krug9{
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+
+}.krug10{
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: inline-block;
+
+}
+#padingRight{
+	padding-right:0 !important;
+}

@@ -8,5 +8,6 @@ class Footwear extends Model
 {
     public function numbers(){
     	return $this->belongsToMany('App\Number');
+
     }
 }

@@ -541,6 +541,7 @@
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
     <script type="text/javascript">
+        /*
     $('.block2-btn-addcart').each(function(){
     var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
     $(this).on('click', function(){
@@ -552,7 +553,7 @@
     $(this).on('click', function(){
     swal(nameProduct, "is added to wishlist !", "success");
     });
-    });
+    });*/
     </script>
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/noui/nouislider.min.js') }}"></script>

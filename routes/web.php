@@ -42,3 +42,7 @@ Route::post('/enterProductData','DashboardController@enterProductData')->name('e
 
 Route::get('/test','MainMenuController@test');
 
+Route::get('/test2', function () {
+    return view('dashboard/insertNumberQty');
+});
+
