@@ -19,7 +19,7 @@ class CreateFootwearNumberTable extends Migration
             $table->integer('number_id')->unsigned();
             $table->foreign('number_id')->references('id')->on('number')->onDelete('cascade');
             $table->integer('qty');
-            $table->primary(['footwear_id','number_id']);
+           
 
         });
     }

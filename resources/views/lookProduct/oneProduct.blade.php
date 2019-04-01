@@ -21,6 +21,8 @@
 				</div>
 			</div>
 		</div>
+
+
 		<!-- One Pruduct Details-->
 		<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" >
 			<h4 class="h4 t-center" id="nasloviPocetna" style="margin-bottom:5%;">
@@ -75,7 +77,21 @@
 				<button type="button" class="btn btn-success btn-lg btn-block">Dodaj U Korpu</button>
 			</a>
 		
-		</div>
+		</div>	
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<!-- block1 -->
+					<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+						<img src="{{ asset('images/football/k1.jpg') }}" alt="IMG-BENNER">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<!-- block1 -->
+					<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+						<img src="{{ asset('images/football/k1.jpg') }}" alt="IMG-BENNER">
+					</div>
+				</div>
+			</div>
 		<!-- Main Information-->
 		<section class="shipping bgwhite p-t-62 p-b-46">
 			<hr>

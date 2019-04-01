@@ -50,13 +50,26 @@ class MainMenuController extends Controller
      /*$shop = Shop::find(2);
             //dd($shop);
         $shop->products()->attach(4);
-        return view('test');
+        return view('test');*/
+        $broj  = array(15,23,14,21,22);
+        $kol = array(24,21,5,6,81);
+        $mergeArray = array_combine($broj,$kol);
+            
 
-      $product = Footwear::find(1);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
-      $product->numbers()->attach(15,['qty'=>10]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu 
-       return redirect()->back();*/
+        $product = Footwear::find(6);
+        
 
-       dd($number->getData()); // ovako instanciram funkciju iz Number Modela
+        foreach ($mergeArray as $key => $value) {
+            $product->numbers()->attach( [ $key  => ['qty'=> $value ]]);
+        }
+        
+        
+
+     // $product = Footwear::find(7);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
+      //$product->numbers()->attach([31 => ['qty'=> 45],32 => ['qty' => 5]]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu 
+       //return redirect()->back();
+
+       //dd($number->getData()); // ovako instanciram funkciju iz Number Modela
     }
 
 

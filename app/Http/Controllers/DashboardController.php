@@ -37,7 +37,7 @@ class DashboardController extends Controller
         try {
 
                 $name = $request['nazivModela'];
-                $brand = $request['nazivBrenda'];
+                $brand = $request['nazivBrenda'];   
                 $description = $request['opis'];
                 $color = $request['color1'];
                 $color2 = $request['color2'];
@@ -87,12 +87,16 @@ class DashboardController extends Controller
 
                 // data from Number Table
                 $dataNumber = $number->getData();
-                session()->flash('nazivModelaF',$name);
+                session()->put([
+                        'data'=>$dataNumber,
+                        'id' => $idShoes  
+                ]);
                 DB::commit();
                 return view('dashboard/insertNumberQty')->withSuccess('Uspešno ste uneli podatke Obuće. Molim unesite količinu i veličinu')->with([
                                                          'data'=> $dataNumber,
                                                           'id' => $idShoes  
                                                          ]);
+
 
             
         } catch (Exception $e) {
@@ -100,5 +104,23 @@ class DashboardController extends Controller
             return view('error');
         }
     	
+    }
+
+
+    public function insertQty(Request $request ,$id ,Number $number){
+
+        $idFootweare = $id;
+        $footweareNumber = $request['number'];
+        $footweareQty = $request['qty'];
+
+
+        $product = Footwear::find($idFootweare);
+        $product->numbers()->attach($footweareNumber,['qty'=> $footweareQty]);
+
+        
+         /* $product = Footwear::find(1);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
+      $product->numbers()->attach(15,['qty'=>10]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu */
+       return view('dashboard/insertProducts');
+
     }
 }

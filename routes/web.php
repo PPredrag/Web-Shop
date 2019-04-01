@@ -36,13 +36,11 @@ Route::get('/deleteOnePictureSlider/{id}','PicturesController@deleteOnePictureSl
 Route::get('/unosProizvoda','DashboardController@insertDataViwe')->name('unosProizvoda');
 Route::get('/lookProduct','PregledajController@lookProduct')->name('lookProduct');
 Route::post('/enterProductData','DashboardController@enterProductData')->name('enterProductData');
+Route::post('/insertQty/{id}','DashboardController@insertQty')->name('insertQty');
 
 
 
 
 Route::get('/test','MainMenuController@test');
 
-Route::get('/test2', function () {
-    return view('dashboard/insertNumberQty');
-});
 
