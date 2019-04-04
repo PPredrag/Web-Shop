@@ -58,7 +58,28 @@
                                     <a href="{{route('sliderPictures')}}">Početni Slider</a>
                                 </li>
                                 <li>
-                                    <a href="#">Glavna Strana</a>
+                                  
+                                    <a href="#">Glavna Strana<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="{{ route('newSeason')}}">Nova Sezona</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('newShoes')}}">Najnoviji Proizvodi</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Za najmlađe</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Proizvodi na popustu</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ženska Obuića</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Muška Obuća</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">Sve Slike</a>
@@ -196,7 +217,7 @@
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/sweetalert/sweetalert.min.js') }}">
     </script>
-    <script type="text/javascript">
+
         
 
 </html>

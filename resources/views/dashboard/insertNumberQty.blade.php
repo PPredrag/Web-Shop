@@ -6,9 +6,7 @@
 	<div class="panel-heading">
 		Panel za unos Novih Proizvoda
 	</div>
-	@if(session('success'))
-	<p class="help-block t-center" id="sakri"><b>{{session('success')}}</b></p>
-	@endif
+	
 	<div class="panel-body">
 		<div class="panel panel-success">
 	
@@ -37,7 +35,7 @@
 					<div class="form-group{{ $errors->has('qtyModel') ? ' has-error' : '' }}" >
 						<label for="qtyModel">Unesiti Količinu</label>
 						<input type="text" class="form-control" id="qtyModel" placeholder="Unesiti Količinu" name="qty" value="{{old('qtyModel')}}">
-						<small class="form-text text-muted">Unestite pun naziv modela</small>
+						<small class="form-text text-muted">Unestite količinu</small>
 						@if ($errors->has('qtyModel'))
 						<span class="help-block">
 							<strong>{{ $errors->first('qtyModel') }}</strong>
@@ -51,6 +49,10 @@
 			</div>
 		</div>
 	</div>
+	@if(session('success'))
+	<p class="help-block t-center" id="sakri"><b>{{session('success')}}</b></p>
+	@endif
+</div>
 	@endsection
 	@section('footer')
 	@endsection

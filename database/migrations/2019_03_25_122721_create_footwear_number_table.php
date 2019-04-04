@@ -14,6 +14,7 @@ class CreateFootwearNumberTable extends Migration
     public function up()
     {
         Schema::create('footwear_number', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('footwear_id')->unsigned();
             $table->foreign('footwear_id')->references('id')->on('footwear')->onDelete('cascade');
             $table->integer('number_id')->unsigned();

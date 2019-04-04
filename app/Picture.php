@@ -8,10 +8,11 @@ use DB;
 /*Model for Slider Images*/
 class Picture extends Model
 {
-    public function getPisturesSlider(){
 
-    	$status = "1";
-		$sliderPicture = DB::table('pictures')->where('status','=','1')->get();
+	// get all pictures from Picture Data Base
+    public function getPisturesSlider(){
+		$sliderPicture = DB::table('pictures')->get();
 		return $sliderPicture;
     }
+
 }

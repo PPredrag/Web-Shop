@@ -9,6 +9,7 @@ use DB;
 use App\Picture;
 use Illuminate\Support\Facades\Auth;
 use Exception;
+use App\Footwear;
 
 
 class HomeController extends Controller
@@ -28,7 +29,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Picture $picture)
+    public function index(Picture $picture, Footwear $footewear)
     {
 
     try{
@@ -39,7 +40,10 @@ class HomeController extends Controller
         else{
                 // get pictures data from Picture model
             $data = $picture->getPisturesSlider();
-            return view('welcome')->with(array('data'=>$data));
+            $dataPictures = $footewear->getPistures();
+           return view('welcome')->with([ 'data'=>$data,
+                                        'dataPictures'=>$dataPictures
+                                    ]);
         }  
     }catch(Exception $e)
     {

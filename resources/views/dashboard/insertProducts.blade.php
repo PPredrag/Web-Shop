@@ -11,6 +11,17 @@
 				@endif
 	<div class="panel-body">
 		<form method="post" action="{{route('enterProductData')}}"  enctype="multipart/form-data">
+			<!-- Form For Model Barcode -->
+			<div class="form-group{{ $errors->has('barCode') ? ' has-error' : '' }}" >
+				<label for="barCode">Bar Code Modela</label>
+				<input type="text" class="form-control" id="barCode" placeholder="Naziv Modela" name="barCode" value="{{old('barCode')}}">
+				<small class="form-text text-muted">Unestite Bar Code</small>
+				@if ($errors->has('barCode'))
+				<span class="help-block">
+					<strong>{{ $errors->first('barCode') }}</strong>
+				</span>
+				@endif
+			</div>
 			<!-- Form For Model Name -->
 			<div class="form-group{{ $errors->has('nazivModela') ? ' has-error' : '' }}" >
 				<label for="modelName">Naziv Modela</label>
@@ -206,6 +217,12 @@
 				</span>
 				@endif
 			</div>
+			<div class="form-group" >
+				
+				<div class="form-group">
+					<input type="hidden" class="form-control" id="price" placeholder="Unesite Cenu Proizvoda" name="statusPicture" value="">
+				</div>
+			</div>
 			
 			<div class="form-group{{ $errors->has('picture') ? ' has-error' : '' }}">
 				<label for="exampleFormControlFile1">Odaberi Sliku</label>
@@ -213,6 +230,24 @@
 				@if ($errors->has('picture'))
 				<span class="help-block">
 					<strong>{{ $errors->first('picture') }}</strong>
+				</span>
+				@endif
+			</div>
+			<div class="form-group{{ $errors->has('picture2') ? ' has-error' : '' }}">
+				<label for="exampleFormControlFile1">Odaberi Sliku 2</label>
+				<input type="file" class="form-control-file" id="exampleFormControlFile1" name="picture2">
+				@if ($errors->has('picture2'))
+				<span class="help-block">
+					<strong>{{ $errors->first('picture2') }}</strong>
+				</span>
+				@endif
+			</div>
+			<div class="form-group{{ $errors->has('picture3') ? ' has-error' : '' }}">
+				<label for="exampleFormControlFile1">Odaberi Sliku3</label>
+				<input type="file" class="form-control-file" id="exampleFormControlFile1" name="picture3">
+				@if ($errors->has('picture3'))
+				<span class="help-block">
+					<strong>{{ $errors->first('picture3') }}</strong>
 				</span>
 				@endif
 			</div>

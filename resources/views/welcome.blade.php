@@ -6,6 +6,8 @@
 <div class="slick1">
     <!-- Insert data from DB in Slider-->
 @foreach($data as $value)
+
+  @if($value->status==1)
 <div class="item-slick1 item1-slick1" style="background-image: url({{asset('images/sliderImages/' . $value->name  )}});">
     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
         <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown" id="sivaBojaSlova">
@@ -19,6 +21,7 @@
         </div>
     </div>
 </div>
+@endif
 @endforeach
 
 </div>
@@ -33,72 +36,27 @@ NOVA SEZONA
 </div>
 <div class="container">
 <div class="row">
-<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+@foreach($dataPictures as $value)
+
+  @if($value->statusPicture==0)
+    <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
     <!-- block1 -->
     <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/football/k1.jpg') }}" alt="IMG-BENNER">
+        <img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-BENNER">
         <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="{{route('lookProduct')}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
+            <a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
                 Pregledaj
             </a>
         </div>
     </div>
-    <!-- block1 -->
-    <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/football/k2.jpg') }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
-        </div>
-    </div>
+
 </div>
-<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-    <!-- block1 -->
-    <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/men/pm3.jpg') }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
-        </div>
-    </div>
-    <!-- block1 -->
-    <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/men/pm5.jpg') }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
-        </div>
-    </div>
-</div>
-<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-    <!-- block1 -->
-    <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
-        </div>
-    </div>
-    <!-- block2 -->
-     <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/women/pz3.jpg') }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
-        </div>
-    </div>
-</div>
+    @endif
+    @endforeach
+
+
+
 </div>
 </div>
 </section>

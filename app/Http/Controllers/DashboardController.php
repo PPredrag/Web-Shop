@@ -22,6 +22,7 @@ class DashboardController extends Controller
     public function enterProductData(Request $request, Number $number){
 
             $this->validate($request, [
+            'barCode'=>'required|numeric',
              'nazivModela'=>'required',
              'nazivBrenda'=>'required',
              'opis'=>'required', 
@@ -31,11 +32,13 @@ class DashboardController extends Controller
              'type'=>'required|not_in:0', 
              'price'=>'required|numeric',  
              'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+             'picture2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+             'picture3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]); 
 
             DB::beginTransaction();
         try {
-
+                $barCode = $request['barCode'];
                 $name = $request['nazivModela'];
                 $brand = $request['nazivBrenda'];   
                 $description = $request['opis'];
@@ -47,9 +50,12 @@ class DashboardController extends Controller
                 $sale = $request['sale'];
                 $price = $request['price'];
                 $priceNew = 0;
+                $statusPicture = 0;
+                $image2 = "pera";
+                $image3 = "laza";
            
 
-                // Insert Picture in a File
+                // Insert Picture 1  in a File
                 // get picture
                 $image = $request->file('picture');
                 // get original picure name to import in DB
@@ -66,9 +72,53 @@ class DashboardController extends Controller
                         $img->fit(1400, 1400, function ($constraint) {
                         $constraint->upsize();
                         })->save($destinationPath.'/'.$input['imagename']);
+                 }
 
-            }
+
+
+                  // Insert Picture 2  in a File
+                // get picture
+                $image = $request->file('picture2');
+                // get original picure name to import in DB
+                $file2 = $image->getClientOriginalName();
+                // store in variable picture name and extension
+                $input['imagename'] = $file2;
+                // where to store picture
+                $destinationPath = public_path('/images/productPictures');
+                $img = Image::make($image->getRealPath());
+                // Checck if picture exist in path
+                if(File::exists($destinationPath.'/'.$input['imagename'])){
+                return redirect()->back()->withSuccess('Slika broj 2 sa ovim nazivom postoji');
+                    }else{
+                        $img->fit(1400, 1400, function ($constraint) {
+                        $constraint->upsize();
+                        })->save($destinationPath.'/'.$input['imagename']);
+                 }
+
+
+
+                  // Insert Picture 3 in a File
+                // get picture
+                $image = $request->file('picture3');
+                // get original picure name to import in DB
+                $file3 = $image->getClientOriginalName();
+                // store in variable picture name and extension
+                $input['imagename'] = $file3;
+                // where to store picture
+                $destinationPath = public_path('/images/productPictures');
+                $img = Image::make($image->getRealPath());
+                // Checck if picture exist in path
+                if(File::exists($destinationPath.'/'.$input['imagename'])){
+                return redirect()->back()->withSuccess('Slika  broj 3 sa ovim nazivom postoji');
+                    }else{
+                        $img->fit(1400, 1400, function ($constraint) {
+                        $constraint->upsize();
+                        })->save($destinationPath.'/'.$input['imagename']);
+                 }
+
+
                 $insert = new Footwear();
+                $insert->barcode = $barCode;
                 $insert->name = $name;
                 $insert->brand = $brand;
                 $insert->description = $description;
@@ -80,17 +130,17 @@ class DashboardController extends Controller
                 $insert->statusSale = $sale; 
                 $insert->price = $price;
                 $insert->newPrice = $priceNew;
-                $insert->image = $file;
+                $insert->statusPicture = $statusPicture;
+                $insert->image2 = $file2;
+                $insert->image3 = $file3;
+                $insert->image1 = $file;
                 $insert->save();
                 $idShoes = $insert->id; 
           
 
                 // data from Number Table
                 $dataNumber = $number->getData();
-                session()->put([
-                        'data'=>$dataNumber,
-                        'id' => $idShoes  
-                ]);
+        
                 DB::commit();
                 return view('dashboard/insertNumberQty')->withSuccess('Uspešno ste uneli podatke Obuće. Molim unesite količinu i veličinu')->with([
                                                          'data'=> $dataNumber,
@@ -108,6 +158,7 @@ class DashboardController extends Controller
 
 
     public function insertQty(Request $request ,$id ,Number $number){
+  
 
         $idFootweare = $id;
         $footweareNumber = $request['number'];
@@ -120,7 +171,12 @@ class DashboardController extends Controller
         
          /* $product = Footwear::find(1);  // trazi id iz Baze moje slucaj NIKE PATIKE id = 1 
       $product->numbers()->attach(15,['qty'=>10]); // ubacuje u veznu tabelu  $product = id br.2 i id br.2 iz tabele Shops u pivot tabelu */
-       return view('dashboard/insertProducts');
+       //return view('dashboard/insertProducts');
+       /*return view('dashboard/insertNumberQty')->with([
+                                                         'data'=> $dataNumber,
+                                                          'id' => $idFootweare  
+                                                         ]);*/
+       return view('dashboard/insertProducts')->withSuccess('Uspešno ste uneli Veličinu i Broj Obuće');
 
     }
 }

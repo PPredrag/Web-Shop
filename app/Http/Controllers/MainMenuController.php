@@ -12,10 +12,15 @@ use DB;
 
 class MainMenuController extends Controller
 {
-	// Return view home
-    public function main(Picture $picture){
+	// Return view welcome
+    public function main(Picture $picture, Footwear $footewear){
         $data = $picture->getPisturesSlider();
-        return view('welcome')->with(array('data'=>$data));
+            $dataPictures = $footewear->getPistures();
+            //dd($dataPictures);
+           return view('welcome')->with([ 'data'=>$data,
+                                           'dataPictures'=>$dataPictures
+                                    ]);
+
     }
     // Return view men
     public function shop(){
@@ -45,6 +50,10 @@ class MainMenuController extends Controller
     public function contact(){
         return view('contact/contact');
     }
+
+
+
+
     public function test(Number $number){
 
      /*$shop = Shop::find(2);
@@ -54,9 +63,9 @@ class MainMenuController extends Controller
         $broj  = array(15,23,14,21,22);
         $kol = array(24,21,5,6,81);
         $mergeArray = array_combine($broj,$kol);
-            
 
-        $product = Footwear::find(6);
+
+        $product = Footwear::find(1);
         
 
         foreach ($mergeArray as $key => $value) {
@@ -72,5 +81,12 @@ class MainMenuController extends Controller
        //dd($number->getData()); // ovako instanciram funkciju iz Number Modela
     }
 
+public function test2(Number $number){
+    $data =$number->getPivotData();
+    dd($data);
+}
 
+public function test3(Footwear $footewear){
+    dd($footewear->getNumberFootwear());
+}
 }
