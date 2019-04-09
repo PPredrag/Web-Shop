@@ -261,6 +261,6 @@
 		Ovim Putem unosite Nove Proizvode
 	</div>
 </div>
-@endsection()
+@endsection
 @section('footer')
 @endsection

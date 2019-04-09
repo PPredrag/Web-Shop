@@ -282,7 +282,12 @@ margin: auto;
     width: 24%;
     float: left; 
     margin: 3px; 
-    border: 1px solid #917272;
+    border: 1px solid #cfd1d3;
+}
+#buttonDashboard{
+    margin-top: 10px;
+    width:24%; 
+    border: 1px solid #cfd1d3;
 }
 
 

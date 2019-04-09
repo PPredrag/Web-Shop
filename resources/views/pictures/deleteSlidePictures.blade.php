@@ -5,7 +5,7 @@
 @section('wrapper')
 <div>
 	@if(session('success'))
-	<p class="zeleno" id="sakri">{{session('success')}}aaaa</p>
+	<p class="zeleno" id="sakri">{{session('success')}}</p>
 	@endif
 </div>
 		<br>

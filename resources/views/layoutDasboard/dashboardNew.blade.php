@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="{{ asset('AssetDashboard/css/bootstrap.css') }}" rel="stylesheet" />
-
+        <script src="{{ asset('AssetDashboard/js/jquery-1.10.2.js') }}"></script>
+        <script type="text/javascript" src=" {{ asset('vendor/bootstrap/js/popper.js') }}"></script>
+        <script type="text/javascript" src=" {{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
         <!-- FONTAWESOME STYLES-->
         <link href="{{ asset('AssetDashboard/css/font-awesome.css') }}" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
         <link href="{{ asset('AssetDashboard/css/custom.css') }}" rel="stylesheet" />
         <!-- GOOGLE FONTS-->
+        <!-- METISMENU SCRIPTS -->
+        <script src="{{ asset('AssetDashboard/js/jquery.metisMenu.js') }}"></script>
         <link href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans') }}" rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="{{asset('css/util.css')}}">
-         </head>
+    </head>
     <body>
         
-    @yield('content')    
+        @yield('content')
         
         <div id="wrapper">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="adjust-nav">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <!-- Hamburger Meni-->
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
+                        
                         <a class="navbar-brand red" href="#"><i class="fa fa-square-o "></i>&nbsp; ADMIN PANEL</a>
                     </div>
+                    
+                    <form action="{{route('searchProduct')}}" id="searchPro" method="get"  style="width: 50%; float: left; margin-top: 10px; margin-left: 10%;">
+                        
+
+                        <div class="form-inline">
+                            <input type="text" class="form-control" name="search" style="width: 75%;" placeholder="Pretražite Proizvod">
+                            <input type="submit" class="btn btn-success" value="Pretražite">
+                        </div>
+                    </form>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{route('welcome')}}" target="_blank"><b class="red">POSETI SAJT</b></a></li>
@@ -58,7 +72,7 @@
                                     <a href="{{route('sliderPictures')}}">Početni Slider</a>
                                 </li>
                                 <li>
-                                  
+                                    
                                     <a href="#">Glavna Strana<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
@@ -100,7 +114,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="{{route('unosProizvoda')}}"><i class="fa fa-edit "></i>Unos Proizvoda </a>
                         </li>
@@ -122,7 +135,7 @@
                                 <li>
                                     <a href="#">Status Korisnika<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                       <li>
+                                        <li>
                                             <a href="#">Promeni Status</a>
                                         </li>
                                         <!--<li>
@@ -134,18 +147,18 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li> 
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-money "></i>Zarada</a>
                         </li>
-                       
+                        
                         <li>
                             <a href="#"><i class="fa fa-tag fa-lg"></i>Proizvodi na Popustu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Promeni Cenu Proizvoda</a>
                                 </li>
-                               <!-- <li>
+                                <!-- <li>
                                     <a href="#">Glavna Strana</a>
                                 </li>
                                 <li>
@@ -169,12 +182,12 @@
                     
                     <div class="row">
                         <div class="col-md-12">
-                    @yield('wrapper')
-
+                            @yield('wrapper')
+                            <p class="pera"></p>
                         </div>
                     </div>
                     <!-- /. ROW  -->
-     
+                    
                     
                     <!-- /. ROW  -->
                 </div>
@@ -184,30 +197,22 @@
         </div>
         <!-- /. WRAPPER  -->
         <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-       
         
         
     </body>
     @yield('footer')
-     <!-- JQUERY SCRIPTS -->
-        <script src="{{ asset('AssetDashboard/js/jquery-1.10.2.js') }}"></script>
-        <!-- BOOTSTRAP SCRIPTS -->
-        <script src="{{ asset('AssetDashboard/js/bootstrap.min.js') }}"></script>
-
-        <!-- METISMENU SCRIPTS -->
-        <script src="{{ asset('AssetDashboard/js/jquery.metisMenu.js') }}"></script>
-        <!-- CUSTOM SCRIPTS -->
-        <script src="{{ asset('AssetDashboard/js/custom.js') }}"></script>
-         <!--===============================================================================================-->
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ asset('AssetDashboard/js/bootstrap.min.js') }}"></script>
+    
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ asset('AssetDashboard/js/custom.js') }}"></script>
+    <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/animsition/js/animsition.min.js') }}"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src=" {{ asset('vendor/bootstrap/js/popper.js') }}"></script>
-    <script type="text/javascript" src=" {{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/select2/select2.min.js') }}"></script>
-
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/daterangepicker/moment.min.js') }}"></script>
     <script type="text/javascript" src=" {{ asset('vendor/daterangepicker/daterangepicker.js') }}"></script>
@@ -217,7 +222,5 @@
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/sweetalert/sweetalert.min.js') }}">
     </script>
-
-        
-
+    
 </html>

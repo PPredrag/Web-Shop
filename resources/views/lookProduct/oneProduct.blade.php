@@ -11,11 +11,10 @@
 	<div class="row">
 		<!-- One Pruduct Picture-->
 		<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" >
-			<h4 class="h4 t-center" id="nasloviPocetna">
-			Naziv Proizvoda
-			</h4>
 			@foreach($data as $value)
-			
+			<h4 class="h4 t-center" id="nasloviPocetna">
+			{{$value->name}}
+			</h4>		
 			<div class="hov-img-zoom pos-relative" id="border">
 				<img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-BANNER">
 				<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15" >
@@ -30,40 +29,42 @@
 			</h4>
 			
 			<ul class="list-inline text-center align-items-center">
-				@if(count($footwearData) > 0)
-			 		@foreach($footwearData as $value)				
-						<a href="#"><li class="list-inline-item" id="shoesNumber" onclick="pisi(this)">{{ $value->number_id}}</li></a>
-					@endforeach
-					@else
-						<a href="#"><li class="list-inline-item" id="shoesNumber" onclick="pisi(this)">Ovaj model više nije dostupan</li></a>
+				@if($qty != 0)
+				@foreach($footwearData as $value)
+				<a href="#"><li class="list-inline-item" id="shoesNumber" onclick="pisi(this)">{{ $value->number_id}}</li></a>
+				@endforeach
+				@else
+				<a href="#"><li class="list-inline-item" id="shoesNumber" onclick="pisi(this)">Ovaj model više nije dostupan</li></a>
 				@endif
 				
 			</ul>
 			<br>
 			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
-			Naziv Proizvoda
+			Barcode Proizvoda:&nbsp	@foreach($data as $value)
+			<span class="s-text11 t-center">
+				<b>{{$value->barcode}}</b>
+			</span>
+			@endforeach
 			</h6>
 			<hr>
-			@foreach($footwearData as $value)
+			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
+			Naziv Proizvoda:	@foreach($footwearData as $value)
 			<span class="s-text11 t-center">
 				<b>{{$value->name}}</b>
 			</span>
 			@endforeach
-			<hr>
-			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
-			Opis Proizvoda
 			</h6>
 			<hr>
-			@foreach($footwearData as $value)
+			
+			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
+			Opis Proizvoda:@foreach($footwearData as $value)
 			<span class="s-text11 t-center">
 				<b>{{$value->description}}</b>
 			</span>
 			@endforeach
-			<hr>
-			<br><br>
-			<h5 class="h5 t-center" id="darkRed" style="margin-bottom:5%; color:#7b7e82">
-			Specifikacija Proizvoda
-			</h5>
+			</h6>
+			
+			
 			<hr>
 			@foreach($footwearData as $value)
 			<span class="s-text11 t-center">
@@ -83,12 +84,14 @@
 			</span>
 			@endforeach
 			<hr>
+			@foreach($footwearData as $value)
 			<span class="s-text11 t-center" id="darkRed">
 				<h5 class="h5">
-				CENA  13500.00 din
+				CENA {{$value->price}} din
 				</h5>
 				
 			</span>
+			@endforeach
 			<hr>
 			<br>
 			<a href="#">
@@ -96,24 +99,33 @@
 			</a>
 			
 		</div>
-	
-			<div class="col-sm-6 col-md-6 col-lg-3">
-				@foreach($data as $value)
-				<!-- block1 -->
-				<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-					<img src="{{ asset('images/productPictures/' . $value->image2) }}" alt="IMG-BENNER">
-				</div>
-				@endforeach
+		
+		<div class="col-sm-6 col-md-6 col-lg-3">
+			@foreach($data as $value)
+			<!-- block1 -->
+			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+				<img src="{{ asset('images/productPictures/' . $value->image2) }}" alt="IMG-BENNER">
 			</div>
-			<div class="col-sm-6 col-md-6 col-lg-3">
-				@foreach($data as $value)
-				<!-- block1 -->
-				<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-					<img src="{{ asset('images/productPictures/' . $value->image3) }}" alt="IMG-BENNER">
-				</div>
-				@endforeach
+			@endforeach
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-3">
+			@foreach($data as $value)
+			<!-- block1 -->
+			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+				<img src="{{ asset('images/productPictures/' . $value->image3) }}" alt="IMG-BENNER">
 			</div>
-	
+			@endforeach
+		</div>
+		<!-- <div class="col-sm-6 col-md-6 col-lg-3">
+			@foreach($data as $value)
+
+			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+				<img src="{{ asset('images/banner/besplatna.png') }}" alt="IMG-BENNER">
+			</div>
+			@endforeach
+		</div> -->
+
+		
 		<!-- Main Information-->
 		<section class="shipping bgwhite p-t-62 p-b-46">
 			<hr>

@@ -179,4 +179,15 @@ class DashboardController extends Controller
        return view('dashboard/insertProducts')->withSuccess('Uspešno ste uneli Veličinu i Broj Obuće');
 
     }
+
+
+    public function shoesU(Footwear $footwear, $id){
+        $data = $footwear->getData($id);
+        //dd($data);
+
+        return view('dashboard/manageProducts')->with([
+                                                        'data'=>$data,
+                                                         'id'=>$id   
+                                                    ]);
+    }
 }

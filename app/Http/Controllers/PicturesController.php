@@ -67,6 +67,11 @@ class PicturesController extends Controller
 
 	}	
 
+	public function showPictureToDelete(){
+		$data = DB::table('pictures')->get();
+		return view('pictures/deleteSlidePictures')->with(['data'=>$data]);
+	}
+
 	 // Delete data from databAse and public folder imnage
 	 public function deleteOnePictureSlider(Picture $picture, $id)
 	{

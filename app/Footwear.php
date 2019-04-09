@@ -21,7 +21,7 @@ class Footwear extends Model
 
     public function getData($id){
 
-    	$data = DB::table('footwears')->select('image1','image2','image3')->where('id','=', $id)->get();	
+    	$data = DB::table('footwears')->where('id','=', $id)->get();	
     		return $data;
     }
 
@@ -30,4 +30,6 @@ class Footwear extends Model
         $numFoot = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')->select('footwear_number.qty','footwears.name','footwears.brand','footwears.description','footwears.category','footwears.price','footwears.type','footwears.material','footwear_number.number_id')->where('footwears.id','=', $id)->get();
         return $numFoot;
     }
+
+    
 }

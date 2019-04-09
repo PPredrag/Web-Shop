@@ -22,20 +22,24 @@ Route::get('/kids','MainMenuController@kids')->name('kids');
 Route::get('/about','MainMenuController@about')->name('about');
 Route::get('/sliderPictures','PicturesController@getSliderPictures')->name('sliderPictures');
 Route::post('/imageAdd','PicturesController@imageAdd')->name('imageAdd');
-
 		// Route for insert pictures in Main Page
 Route::get('/','PicturesController@insertPicturesSlider')->name('pic');
 Route::get('/showPictureToDelete', 'PicturesController@showPictureToDelete')->name('showPictureToDelete');
 Route::get('/deleteOnePictureSlider/{id}','PicturesController@deleteOnePictureSlider')->name('deleteOnePictureSlider');
 Route::get('/unosProizvoda','DashboardController@insertDataViwe')->name('unosProizvoda');
-Route::get('/lookProduct/{id}','PregledajController@lookProduct')->name('lookProduct');
 Route::post('/enterProductData','DashboardController@enterProductData')->name('enterProductData');
-Route::post('/insertQty/{id}','DashboardController@insertQty')->name('insertQty');
 Route::get('/newSeason','PicturesController@newSeason')->name('newSeason');
 Route::post('/imageAddNewSeason','PicturesController@imageAddNewSeason')->name('imageAddNewSeason');
 Route::get('/newShoes','PicturesController@newShoes')->name('newShoes');
 Route::post('/insertNewShoes','PicturesController@insertNewShoes')->name('insertNewShoes');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/searchProduct','PregledajController@serchProducts')->name('searchProduct');
+
+
+
+Route::post('/insertQty/{id}','DashboardController@insertQty')->name('insertQty');
+Route::get('/lookProduct/{id}','PregledajController@lookProduct')->name('lookProduct');
+Route::get('/shoesU/{id}','DashboardController@shoesU')->name('shoesU');
 
 
 

@@ -175,7 +175,7 @@ iframe {
 
 /* ------------------------------------ */
 .container {
-	max-width: 1200px;
+	max-width: 85%;
 }
 
 .slick-slide {
@@ -1762,7 +1762,7 @@ li.sale-noti > a {
 
 @media (max-width: 1360px) {
   .block4 {
-    width: calc(100% / 4);
+    width: calc(100% / 5);
   }
 }
 
