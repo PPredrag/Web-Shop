@@ -41,8 +41,10 @@ class HomeController extends Controller
                 // get pictures data from Picture model
             $data = $picture->getPisturesSlider();
             $dataPictures = $footewear->getPistures();
+            $newSeason = $footewear->getPicturesNewSeason();
            return view('welcome')->with([ 'data'=>$data,
-                                        'dataPictures'=>$dataPictures
+                                        'dataPictures'=>$dataPictures,
+                                        'newSeason'=>$newSeason
                                     ]);
         }  
     }catch(Exception $e)

@@ -36,9 +36,9 @@ NOVA SEZONA
 </div>
 <div class="container">
 <div class="row">
-@foreach($dataPictures as $value)
+@foreach($newSeason as $value)
 
-  @if($value->statusPicture==0)
+  @if($value->statusPicture==2)
     <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
     <!-- block1 -->
     <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">

@@ -59,10 +59,12 @@ class PicturesController extends Controller
 		// Insert pictures in slider and amin Page
 	public function insertPicturesSlider(Picture $picture, Footwear $footewear){
 			
-			$data = $picture->getPisturesSlider();
+			 $data = $picture->getPisturesSlider();
 			 $dataPictures = $footewear->getPistures();
+			 $newSeason = $footewear->getPicturesNewSeason();
           	 return view('welcome')->with([ 'data'=>$data,
-                                        'dataPictures'=>$dataPictures
+                                          'dataPictures'=>$dataPictures,
+                                          'newSeason'=>$newSeason
                                     ]);
 
 	}	
@@ -86,9 +88,14 @@ class PicturesController extends Controller
 		}
 		return redirect()->back()->withSuccess('Slika je uspesno Obrisana');
 	}
-		// Return a view for import pictures for main page Nova Sezona part
-	public function newSeason(){
-		return view('pictures/newSeason');
+
+
+		// Return a view for  pictures for main page Nova Sezona part
+	public function newSeason(Footwear $footewear){
+
+		$newSeason = $footewear->getPicturesNewSeason();
+		//dd($newSeason);
+		return view('pictures/newSeason')->with(['newSeason'=>$newSeason]);
 
 	}
 
@@ -176,6 +183,14 @@ class PicturesController extends Controller
 				DB::rollback();
 					return view('error');
 				}
+
+	}
+
+	// Delete picture from Main PAge New Season Part , it will change status from 2 to 0
+	public function deleteNewSeasonPicture($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0 ));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
 
 	}
 	

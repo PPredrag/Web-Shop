@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Footwear;
 use App\Number;
-
+use Illuminate\Support\Facades\Session;
 use DB;
 
 class PregledajController extends Controller
@@ -32,6 +32,7 @@ class PregledajController extends Controller
 
     public function serchProducts(Request $request){
        $search = $request['search'];
+       if($search != ""){
         $searchData = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
                                             ->select('footwear_number.qty','footwears.image1','footwears.image2','footwears.image3','footwears.barcode','footwears.name','footwears.brand','footwears.id')
                                             ->where('image1','like','%' . $search . '%')
@@ -40,11 +41,25 @@ class PregledajController extends Controller
                                             ->orWhere('image3','like','%' . $search . '%')
                                             ->orWhere('barcode','like','%' . $search . '%')   
                                             ->orWhere('image1','like','%' . $search . '%')
-                                            ->get();  
+                                            ->get(); 
+                                            
 
-
-
-        //dd($searchData);
+        $request->session()->flash('message', 'Rezultat Pretrage:');
         return view('dashboard/showSearch')->with(['searchData'=>$searchData]);
+        }
+        else {
+            $searchData = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                            ->select('footwear_number.qty','footwears.image1','footwears.image2','footwears.image3','footwears.barcode','footwears.name','footwears.brand','footwears.id')
+                                            ->where('image1','like','%' . $search . '%')
+                                            ->orWhere('image1','like','%' . $search . '%') 
+                                            ->orWhere('image2','like','%' . $search . '%')
+                                            ->orWhere('image3','like','%' . $search . '%')
+                                            ->orWhere('barcode','like','%' . $search . '%')   
+                                            ->orWhere('image1','like','%' . $search . '%')
+                                            ->take(0)
+                                            ->get();  
+        $request->session()->flash('message', 'Niste Uneli kriterijum za pretragu');
+        return view('dashboard/showSearch')->with(['searchData'=>$searchData]);
+       }
     }
 }

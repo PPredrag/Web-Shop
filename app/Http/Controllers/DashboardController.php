@@ -142,6 +142,7 @@ class DashboardController extends Controller
                 $dataNumber = $number->getData();
         
                 DB::commit();
+                $request->session()->flash('message', 'MOlim vas unesite broj i količinu');
                 return view('dashboard/insertNumberQty')->withSuccess('Uspešno ste uneli podatke Obuće. Molim unesite količinu i veličinu')->with([
                                                          'data'=> $dataNumber,
                                                           'id' => $idShoes  

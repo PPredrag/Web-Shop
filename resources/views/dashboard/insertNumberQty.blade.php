@@ -9,11 +9,12 @@
 	
 	<div class="panel-body">
 		<div class="panel panel-success">
-	
-			
-			@if(session('success'))
-			<p class="help-block t-center" id="sakri"><b>{{session('success')}}</b></p>
-			@endif	<div class="panel-body">
+			@if(session()->has('message'))
+			<div class="alert alert-success text-center">
+				{{ session()->get('message') }}
+			</div>
+			@endif
+			<div class="panel-body">
 				<form action="{{url('insertQty/' . $id )}}" method="post">
 					<div class="form-group{{ $errors->has('numberModel') ? ' has-error' : '' }}">
 						<div class="leftbar p-r-20 p-r-0-sm" id="padingRight">
@@ -53,6 +54,6 @@
 	<p class="help-block t-center" id="sakri"><b>{{session('success')}}</b></p>
 	@endif
 </div>
-	@endsection
-	@section('footer')
-	@endsection
+@endsection
+@section('footer')
+@endsection

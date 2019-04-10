@@ -14,11 +14,13 @@ class MainMenuController extends Controller
 {
 	// Return view welcome
     public function main(Picture $picture, Footwear $footewear){
-        $data = $picture->getPisturesSlider();
+            $data = $picture->getPisturesSlider();
             $dataPictures = $footewear->getPistures();
+            $newSeason = $footewear->getPicturesNewSeason();
             //dd($dataPictures);
            return view('welcome')->with([ 'data'=>$data,
-                                           'dataPictures'=>$dataPictures
+                                           'dataPictures'=>$dataPictures,
+                                           'newSeason'=>$newSeason
                                     ]);
 
     }

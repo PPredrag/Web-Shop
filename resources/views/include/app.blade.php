@@ -532,6 +532,7 @@
     dropdownParent: $('#dropDownSelect2')
     });
     </script>
+     <script src="{{ asset('js/sakri.js') }}"></script>
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/daterangepicker/moment.min.js') }}"></script>
     <script type="text/javascript" src=" {{ asset('vendor/daterangepicker/daterangepicker.js') }}"></script>

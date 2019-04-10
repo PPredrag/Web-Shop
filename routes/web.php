@@ -40,6 +40,7 @@ Route::get('/searchProduct','PregledajController@serchProducts')->name('searchPr
 Route::post('/insertQty/{id}','DashboardController@insertQty')->name('insertQty');
 Route::get('/lookProduct/{id}','PregledajController@lookProduct')->name('lookProduct');
 Route::get('/shoesU/{id}','DashboardController@shoesU')->name('shoesU');
+Route::get('/deleteNewSeasonPicture/{id}','PicturesController@deleteNewSeasonPicture')->name('deleteNewSeasonPicture');
 
 
 

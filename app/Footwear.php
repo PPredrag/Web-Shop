@@ -13,9 +13,9 @@ class Footwear extends Model
     	return $this->belongsToMany('App\Number');
 
     }
-       // Function to get selected data from Footweare
+       // Function to get ALL data from Footweare
     public function getPistures(){
-		$picture = DB::table('footwears')->select('id','statusPicture','image1')->get();
+		$picture = DB::table('footwears')->get();
 		return $picture;
     }
 
@@ -30,6 +30,12 @@ class Footwear extends Model
         $numFoot = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')->select('footwear_number.qty','footwears.name','footwears.brand','footwears.description','footwears.category','footwears.price','footwears.type','footwears.material','footwear_number.number_id')->where('footwears.id','=', $id)->get();
         return $numFoot;
     }
+
+    public function getPicturesNewSeason(){
+        $picture = DB::table('footwears')->where('statusPicture','=', 2)->get();
+        return $picture;
+    }
+    
 
     
 }

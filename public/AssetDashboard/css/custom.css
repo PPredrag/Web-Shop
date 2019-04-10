@@ -289,5 +289,11 @@ margin: auto;
     width:24%; 
     border: 1px solid #cfd1d3;
 }
+.newSeasonDiv{
+    width: 32%;
+    float: left; 
+    margin: 3px; 
+    border: 1px solid #cfd1d3;
+}
 
 

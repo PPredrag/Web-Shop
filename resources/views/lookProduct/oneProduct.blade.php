@@ -87,7 +87,7 @@
 			@foreach($footwearData as $value)
 			<span class="s-text11 t-center" id="darkRed">
 				<h5 class="h5">
-				CENA {{$value->price}} din
+				CENA {{$value->price}},00  din
 				</h5>
 				
 			</span>
@@ -95,7 +95,7 @@
 			<hr>
 			<br>
 			<a href="#">
-				<button type="button" class="btn btn-success btn-lg btn-block">Dodaj U Korpu</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block">Dodaj u korpu</button>
 			</a>
 			
 		</div>
@@ -116,14 +116,21 @@
 			</div>
 			@endforeach
 		</div>
-		<!-- <div class="col-sm-6 col-md-6 col-lg-3">
-			@foreach($data as $value)
+		 <div class="col-sm-6 col-md-6 col-lg-3">
+			
 
 			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
 				<img src="{{ asset('images/banner/besplatna.png') }}" alt="IMG-BENNER">
 			</div>
-			@endforeach
-		</div> -->
+	
+		</div> 
+		 <div class="col-sm-6 col-md-6 col-lg-3">		
+
+			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+				<img src="{{ asset('images/banner/besplatna2.png') }}" alt="IMG-BENNER">
+			</div>
+	
+		</div>
 
 		
 		<!-- Main Information-->

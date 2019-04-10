@@ -38,15 +38,7 @@
                         
                         <a class="navbar-brand red" href="#"><i class="fa fa-square-o "></i>&nbsp; ADMIN PANEL</a>
                     </div>
-                    
-                    <form action="{{route('searchProduct')}}" id="searchPro" method="get"  style="width: 50%; float: left; margin-top: 10px; margin-left: 10%;">
-                        
-
-                        <div class="form-inline">
-                            <input type="text" class="form-control" name="search" style="width: 75%;" placeholder="Pretražite Proizvod">
-                            <input type="submit" class="btn btn-success" value="Pretražite">
-                        </div>
-                    </form>
+                   
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{route('welcome')}}" target="_blank"><b class="red">POSETI SAJT</b></a></li>
@@ -57,7 +49,19 @@
             <!-- /. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
-                    <ul class="nav" id="main-menu">
+                    <ul class="nav" id="main-menu" style="background-color: gray !important;">
+                        <li>
+                            <form action="{{route('searchProduct')}}" id="searchPro" method="get" >
+                            <div class="search-product pos-relative bo4 of-hidden" style="border:0px; border-radius: 0px;">
+                            <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search" placeholder="Pretraži Proizvode..." style="border-width: 0 !important; font-size: 17px;">
+
+                            <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+                                <i class="fs-12 fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        </form>
+                        </li>
+                        <br>
                         <!--<li class="text-center user-image-back">
                             <img src="assets/img/find_user.png" class="img-responsive" />
                             
@@ -178,12 +182,13 @@
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper" >
                 
-                <div id="page-inner">
-                    
+                <div id="page-inner" style="background-image: url({{asset('images/banner/background1.jpg')}});">
+                    <h1 class="text-center red" >Dashboard Panel</h1>
+                    <br>
                     <div class="row">
                         <div class="col-md-12">
                             @yield('wrapper')
-                            <p class="pera"></p>
+                            
                         </div>
                     </div>
                     <!-- /. ROW  -->
@@ -206,6 +211,7 @@
     
     <!-- CUSTOM SCRIPTS -->
     <script src="{{ asset('AssetDashboard/js/custom.js') }}"></script>
+    <script src="{{ asset('js/sakri.js') }}"></script>
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
     <!--===============================================================================================-->
