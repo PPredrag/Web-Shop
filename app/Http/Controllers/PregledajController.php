@@ -13,7 +13,7 @@ class PregledajController extends Controller
 
 	// Function return view of one product with data from Footwear Model
     public function lookProduct(Footwear $footwear,$id){
-    	$idFootwear = $id;
+    	$id= $id;
     	//dd($idFootwear);
     	$data = $footwear->getData($id);
     	//dd($idFootwear);
@@ -27,6 +27,7 @@ class PregledajController extends Controller
     												 'data'=>$data,
                                        				 'footwearData'=>$footwearData,
                                                      'qty'=>$qty,
+                                                     'id'=>$id
                                                     ]);
     }
 
@@ -41,6 +42,8 @@ class PregledajController extends Controller
                                             ->orWhere('image3','like','%' . $search . '%')
                                             ->orWhere('barcode','like','%' . $search . '%')   
                                             ->orWhere('image1','like','%' . $search . '%')
+                                            ->orWhere('name','like','%' . $search . '%')
+                                            ->orWhere('category','like','%' . $search . '%')
                                             ->get(); 
                                             
 
@@ -56,6 +59,8 @@ class PregledajController extends Controller
                                             ->orWhere('image3','like','%' . $search . '%')
                                             ->orWhere('barcode','like','%' . $search . '%')   
                                             ->orWhere('image1','like','%' . $search . '%')
+                                            ->orWhere('name','like','%' . $search . '%')
+                                            ->orWhere('category','like','%' . $search . '%')
                                             ->take(0)
                                             ->get();  
         $request->session()->flash('message', 'Niste Uneli kriterijum za pretragu');

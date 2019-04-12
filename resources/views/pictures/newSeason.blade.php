@@ -30,7 +30,7 @@
 @endforeach
 </div>
 	<div class="panel-footer">
-		Ovim putem unosite slike koje ce biti prikazane na početnoj strani u Nova Sezona Delu.
+		Ovim putem brišete slike koje ce biti prikazane na početnoj strani u Nova Sezona Delu.
 	</div>
 		
 	

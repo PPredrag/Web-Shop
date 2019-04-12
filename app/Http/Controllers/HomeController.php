@@ -42,9 +42,20 @@ class HomeController extends Controller
             $data = $picture->getPisturesSlider();
             $dataPictures = $footewear->getPistures();
             $newSeason = $footewear->getPicturesNewSeason();
+            $newShoes = $footewear->getPisturesNewProducts();
+            $forKids = $footewear->getPicturesForKids();
+            $forSale = $footewear->getPicturesForSale();
+            $forMen = $footewear->getPicturesForMen();
+            $forWomen = $footewear->getPicturesForWomen();
+
            return view('welcome')->with([ 'data'=>$data,
                                         'dataPictures'=>$dataPictures,
-                                        'newSeason'=>$newSeason
+                                        'newSeason'=>$newSeason,
+                                        'newShoes'=>$newShoes,
+                                        'forKids'=>$forKids,
+                                        'forSale'=>$forSale,
+                                        'forMen'=>$forMen,
+                                        'forWomen'=>$forWomen
                                     ]);
         }  
     }catch(Exception $e)

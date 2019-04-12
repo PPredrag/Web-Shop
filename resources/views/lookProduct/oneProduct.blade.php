@@ -94,7 +94,8 @@
 			@endforeach
 			<hr>
 			<br>
-			<a href="#">
+			
+			<a href="{{url('addToCart/' . $id)}}">
 				<button type="button" class="btn btn-primary btn-lg btn-block">Dodaj u korpu</button>
 			</a>
 			

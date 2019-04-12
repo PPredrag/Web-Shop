@@ -31,11 +31,51 @@ class Footwear extends Model
         return $numFoot;
     }
 
+    // Get Pictures for main page in paart New Season
     public function getPicturesNewSeason(){
         $picture = DB::table('footwears')->where('statusPicture','=', 2)->get();
         return $picture;
     }
+
+    // Get Pictures for main page in paart new Products
+    public function getPisturesNewProducts(){
+        $data = DB::table('footwears')->where('statusPicture','=', 3)->get();
+        return $data;
+    }
+
+    // Get Pictures for main page in part Kids
+    public function getPicturesForKids(){
+
+        $data = DB::table('footwears')->where('statusPicture','=', 4)->get();
+        return $data;
+    }
     
+     // Get Pictures for main page in part Sale
+    public function getPicturesForSale(){
+
+        $data = DB::table('footwears')->where('statusPicture','=', 5)->get();
+        return $data;
+    }
+
+      // Get Pictures for main page in part Mens
+    public function getPicturesForMen(){
+
+        $data = DB::table('footwears')->where([['category','=','muska'],
+                                                ['statusPicture','=',6]
+                                               
+                                                ])->get();
+        return $data;
+    }
+    
+       // Get Pictures for main page in part Womens
+    public function getPicturesForWomen(){
+
+        $data = DB::table('footwears')->where([['category','=','zenska'],
+                                                ['statusPicture','=',7]
+                                               
+                                                ])->get();
+        return $data;
+    }
 
     
 }

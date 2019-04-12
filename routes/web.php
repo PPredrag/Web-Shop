@@ -34,18 +34,27 @@ Route::get('/newShoes','PicturesController@newShoes')->name('newShoes');
 Route::post('/insertNewShoes','PicturesController@insertNewShoes')->name('insertNewShoes');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/searchProduct','PregledajController@serchProducts')->name('searchProduct');
+Route::get('/forKids','PicturesController@forKids')->name('forKids');
+Route::get('/forSale','PicturesController@forSale')->name('forSale');
 
-
-
+Route::get('/deleteForMen/{id}','PicturesController@deleteForMen')->name('deleteForMen');
+Route::get('/deleteForWomen/{id}','PicturesController@deleteForWomen')->name('deleteForWomen');
+Route::get('/deleteForSale/{id}','PicturesController@deleteForSale')->name('deleteForSale');
+Route::get('/deleteForKids/{id}','PicturesController@deleteForKids')->name('deleteForKids');
+Route::get('/deleteNewShoesPicture/{id}','PicturesController@deleteNewShoesPicture')->name('deleteNewShoesPicture');
 Route::post('/insertQty/{id}','DashboardController@insertQty')->name('insertQty');
 Route::get('/lookProduct/{id}','PregledajController@lookProduct')->name('lookProduct');
 Route::get('/shoesU/{id}','DashboardController@shoesU')->name('shoesU');
 Route::get('/deleteNewSeasonPicture/{id}','PicturesController@deleteNewSeasonPicture')->name('deleteNewSeasonPicture');
+Route::get('/forMen','PicturesController@forMen')->name('forMen');
+Route::get('/forWomen','PicturesController@forWomen')->name('forWomen');
+Route::get('/addToCart/{id}','CartController@addToCart')->name('addToCart');
 
 
 
 
 
-Route::get('/test3','MainMenuController@test3');
+
+Route::get('/test3','PicturesController@forWomen');
 
 

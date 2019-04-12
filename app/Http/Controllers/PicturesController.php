@@ -62,13 +62,70 @@ class PicturesController extends Controller
 			 $data = $picture->getPisturesSlider();
 			 $dataPictures = $footewear->getPistures();
 			 $newSeason = $footewear->getPicturesNewSeason();
+			 $newShoes = $footewear->getPisturesNewProducts();
+			 $forKids = $footewear->getPicturesForKids();
+			 $forSale = $footewear->getPicturesForSale();
+			 $forMen = $footewear->getPicturesForMen();
+			 $forWomen = $footewear->getPicturesForWomen();
           	 return view('welcome')->with([ 'data'=>$data,
                                           'dataPictures'=>$dataPictures,
-                                          'newSeason'=>$newSeason
+                                          'newSeason'=>$newSeason,
+                                          'newShoes'=>$newShoes,
+                                          'forKids'=>$forKids,
+                                          'forSale'=>$forSale,
+                                          'forMen'=>$forMen,
+                                          'forWomen'=>$forWomen
                                     ]);
 
 	}	
 
+
+		// Return a view for  pictures for main page Nova Sezona part
+	public function newSeason(Footwear $footewear){
+
+		$newSeason = $footewear->getPicturesNewSeason();
+		//dd($newSeason);
+		return view('pictures/newSeason')->with(['newSeason'=>$newSeason]);
+
+	}
+
+	// Return a view for  pictures for main page NovaProducts part
+		public function newShoes(Footwear $footewear){
+			$newShoes = $footewear->getPisturesNewProducts();
+		
+			return view('pictures/newShoes')->with(['newShoes'=>$newShoes]);
+	}
+
+	// Return a view for  pictures for main page Kids part
+	public function forKids(Footwear $footewear){
+
+		$forKids = $footewear->getPicturesForKids();
+		return view('pictures/forKids')->with(['forKids'=>$forKids]);
+	}
+
+		// Return a view for  pictures for main page Sale part
+	public function forSale(Footwear $footewear){
+
+		$forSale = $footewear->getPicturesForSale();
+
+		return view('pictures/saleMainPage')->with(['forSale'=>$forSale]);
+	}
+
+		// Return a view for  pictures for main page Men part
+	public function forMen(Footwear $footewear){
+
+		$forMen = $footewear->getPicturesForMen();
+		//dd($forMen);
+		return view('pictures/menPictures')->with(['forMen'=>$forMen]);
+	}
+
+		// Return a view for  pictures for main page Men part
+	public function forWomen(Footwear $footewear){
+
+		$forWomen = $footewear->getPicturesForWomen();
+		//dd($forWomen);
+		return view('pictures/womenPictures')->with(['forWomen'=>$forWomen]);
+	}
 	public function showPictureToDelete(){
 		$data = DB::table('pictures')->get();
 		return view('pictures/deleteSlidePictures')->with(['data'=>$data]);
@@ -88,17 +145,6 @@ class PicturesController extends Controller
 		}
 		return redirect()->back()->withSuccess('Slika je uspesno Obrisana');
 	}
-
-
-		// Return a view for  pictures for main page Nova Sezona part
-	public function newSeason(Footwear $footewear){
-
-		$newSeason = $footewear->getPicturesNewSeason();
-		//dd($newSeason);
-		return view('pictures/newSeason')->with(['newSeason'=>$newSeason]);
-
-	}
-
 	 // Insert picture in main page in Nova Sezona
 	public function imageAddNewSeason(Request $request){
 
@@ -140,9 +186,6 @@ class PicturesController extends Controller
 				}
 
 
-	}
-	public function newShoes(){
-		return view('pictures/newShoes');
 	}
 
 	// Insert Pictures in New Products
@@ -193,6 +236,39 @@ class PicturesController extends Controller
 		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
 
 	}
-	
 
+	// Delete picture from Main Page New Products Part , it will change status from 3 to 0
+	public function deleteNewShoesPicture($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
+	}
+
+	// Delete picture from Main Page New Products Part , it will change status from 4 to 0
+	public function deleteForKids($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0 ));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
+	}
+
+	// Delete picture from Main Page aleProducts Part , it will change status from 5 to 0
+	public function deleteForSale($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0 ));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
+	}
+
+	// Delete picture from Main Page aleProducts Part , it will change status from 6 to 0
+	public function deleteForWomen($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0 ));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
+	}
+
+	// Delete picture from Main Page aleProducts Part , it will change status from 7 to 0
+	public function deleteForMen($id){
+
+		DB::table('footwears')->where('id',$id)->limit(1)->update(array('statusPicture' => 0 ));
+		return redirect()->back()->withSuccess('Uspešno ste uklonili sliku');
+	}
 }

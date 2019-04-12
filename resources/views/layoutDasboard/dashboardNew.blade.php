@@ -86,16 +86,16 @@
                                             <a href="{{ route('newShoes')}}">Najnoviji Proizvodi</a>
                                         </li>
                                         <li>
-                                            <a href="#">Za najmlađe</a>
+                                            <a href="{{ route('forKids')}}">Za najmlađe</a>
                                         </li>
                                         <li>
-                                            <a href="#">Proizvodi na popustu</a>
+                                            <a href="{{ route('forSale')}}">Proizvodi na popustu</a>
                                         </li>
                                         <li>
-                                            <a href="#">Ženska Obuića</a>
+                                            <a href="{{ route('forWomen')}}">Ženska Obuića</a>
                                         </li>
                                         <li>
-                                            <a href="#">Muška Obuća</a>
+                                            <a href="{{ route('forMen')}}">Muška Obuća</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -108,13 +108,7 @@
                                         <li>
                                             <a href="{{route('showPictureToDelete')}}">Brisanje Početni Slider</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Brisanje Glavna Strana</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Brisanje Sve Slike</a>
-                                        </li>
-                                    </ul>
+                                   </ul>
                                 </li>
                             </ul>
                         </li>

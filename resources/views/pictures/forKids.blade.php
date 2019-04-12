@@ -11,13 +11,13 @@
 	@endif
 </div>
 	<div class="panel-heading">
-		Panel za pregled Najnoviji proizvodi/Ovaj odeljak mora imati <span class="red">TAČNO 4 SLIKE</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($newShoes)}}</span>&nbsp proizvoda za Nova Sezona:</span>   
+		Panel za pregled Dečijih proizvoda/Ovaj odeljak mora imati <span class="red">TAČNO 2 SLIKE</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($forKids)}}</span>&nbsp proizvoda za Nova Sezona:</span>   
 	</div>
 	
 	<div class="panel-body">
-		@foreach($newShoes as $value)
+		@foreach($forKids as $value)
 
-<a href="{{url('deleteNewShoesPicture/' . $value->id)}}">
+<a href="{{url('deleteForKids/' . $value->id)}}">
 	<div class="newSeasonDiv" style="">
 	<img src="{{ asset('images/delete.jpg')}}" alt="" id="buttonPosition">		
 	<img src="{{ asset('images/productPictures/' . $value->image1)}}" alt="" class="slika25"></a>

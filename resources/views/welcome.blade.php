@@ -71,114 +71,36 @@ NAJNOVIJI PROIZVODI
 <!-- Slide2 -->
 <div class="wrap-slick2">
 <div class="slick2">
+    @foreach($newShoes as $value)
+          @if($value->statusPicture==3)
     <div class="item-slick2 p-l-15 p-r-15">
-        <!-- Block2 -->
+        
         <div class="block2" id="border">
             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                <img src="{{ asset('images/football/k6.jpg') }}" alt="IMG-PRODUCT">
+                <img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-PRODUCT">
                 <div class="block2-overlay trans-0-4">
                    
                     <div class="block2-btn-addcart w-size1 trans-0-4">
                         <!-- Button -->
-                        <button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-                        Pregledaj
-                        </button>
+                         <a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
+                Pregledaj
+            </a>
                     </div>
                 </div>
             </div>
             <div class="block2-txt p-t-20" id="spanPadding">
-                <a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
-                    Mercular Nike
+                <a href="" class="block2-name dis-block s-text3 p-b-5">
+                    {{$value->name}}
                 </a>
                 <span class="block2-price m-text6 p-r-5">
-                    4500,00 DIN
+                   {{$value->price}} ,00 DIN
                 </span>
             </div>
         </div>
     </div>
-    <div class="item-slick2 p-l-15 p-r-15">
-        <!-- Block2 -->
-        <div class="block2" id="border">
-            <div class="block2-img wrap-pic-w of-hidden pos-relative" id="backGround">
-                <img src="{{ asset('images/football/k7.jpg') }}" alt="IMG-PRODUCT">
-                <div class="block2-overlay trans-0-4" >
-                    <div class="block2-btn-addcart w-size1 trans-0-4">
-                        <!-- Button -->
-                        <button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-                        Pregledaj
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="block2-txt p-t-20" id="spanPadding">
-                <a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
-                    Mercular II Nike
-                </a>
-                <span class="block2-price m-text6 p-r-5">
-                    7500,00 din
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="item-slick2 p-l-15 p-r-15">
-        <!-- Block2 -->
-        <div class="block2" id="border">
-            <div class="block2-img wrap-pic-w of-hidden pos-relative" id="backGround">
-                <img src="{{ asset('images/football/k8.jpg') }}" alt="IMG-PRODUCT">
-                <div class="block2-overlay trans-0-4">
-                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                    </a>
-                    <div class="block2-btn-addcart w-size1 trans-0-4">
-                        <!-- Button -->
-                        <button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-                        Pregledaj
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="block2-txt p-t-20" id="spanPadding">
-                <a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
-                    Mercular A Class Nike
-                </a>
-                <span class="block2-price m-text6 p-r-5">
-                    11500,00 din 
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="item-slick2 p-l-15 p-r-15">
-        <!-- Block2 -->
-        <div class="block2" id="border">
-            <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                <img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-PRODUCT">
-                <div class="block2-overlay trans-0-4">
-                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                    </a>
-                    <div class="block2-btn-addcart w-size1 trans-0-4">
-                        <!-- Button -->
-                        <button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-                        Pregledaj   
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="block2-txt p-t-20" id="spanPadding">
-                <a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-                    Spring Diadora
-                </a>
-                <span class="block2-oldprice m-text7 p-r-5">
-                    7500.00 din 
-                </span>
-                <span class="block2-newprice m-text8 p-r-5">
-                    3500.00 din  
-                </span>
-            </div>
-        </div>
-    </div>
+    @endif
+    @endforeach
+
 </div>
 </div>
 </div>
@@ -192,9 +114,11 @@ NAJNOVIJI PROIZVODI
 </div>
 <div class="container">
 <div class="row">
+    @foreach($forKids as $value)
+      @if($value->statusPicture == 4)
 <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" >
     <div class="hov-img-zoom pos-relative" id="border">
-        <img src="{{ asset('images/kids/dp1.jpg') }}" alt="IMG-BANNER">
+        <img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-BANNER">
         <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15" >
             <span class="m-text9 p-t-45 fs-20-sm" id="sivaBojaSlova">
                 Lakoća Trčanja
@@ -208,22 +132,9 @@ NAJNOVIJI PROIZVODI
         </div>
     </div>
 </div>
-<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" >
-    <div class="hov-img-zoom pos-relative" id="border">
-        <img src="{{ asset('images/kids/dp2.jpg') }}" alt="IMG-BANNER">
-        <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-            <span class="m-text9 p-t-45 fs-20-sm" id="sivaBojaSlova">
-            Lakoća Trčanja
-            </span>
-            <h3 class="l-text1 fs-35-sm" id="sivaBojaSlova">
-            Sa Nama
-            </h3>
-            <a href="{{route('kids')}}" class="s-text4 hov2 p-t-20 " id="sivaBojaSlova">
-                Pregledaj Kolekciju
-            </a>
-        </div>
-    </div>
-</div>
+    @endif
+  @endforeach  
+
 </div>
 </div>
 </section>
@@ -236,12 +147,15 @@ PROIZVODI NA POPUSTU
 </h3>
 </div>
 <div class="row">
+
+    @foreach($forSale as $value)
+      @if($value->statusPicture==5)
 <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
     <!-- Block3 -->
     <div class="block3" id="border"> 
         <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
         <a href="{{route('sale')}}" class="block3-img dis-block hov-img-zoom">
-            <img src="{{ asset('images/kids/dp3.jpg') }}" alt="IMG-BLOG">
+            <img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-BLOG">
         </a>
     </div>
         <div class="block3-txt p-t-14" style="padding: 10px;">
@@ -258,50 +172,9 @@ PROIZVODI NA POPUSTU
         </div>
     </div>
 </div>
-<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
-    <!-- Block3  PROIZVODI NA POPUSTU-->
-    <div class="block3" id="border" style="padding: 10px;">
-        <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-        <a href="{{route('sale')}}" class="block3-img dis-block hov-img-zoom">
-            <img src="{{ asset('images/kids/dp4.jpg') }}" alt="IMG-BLOG">
-        </a>
-    </div>
-        <div class="block3-txt p-t-14" style="padding: 10px;">
-            <h4 class="p-b-7">
-            <a href="blog-detail.php" class="m-text11">
-                Ženske Patike Savršene za šetnju. Otporne na vodu.....
-            </a>
-            </h4>
-            <span class="s-text6">Od</span> <span class="s-text7">Jelena</span>
-            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
-            <p class="s-text8 p-t-16">
-                ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-            </p>
-        </div>
-    </div>
-</div>
-<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
-    <!-- Block3  PROIZVODI NA POPUSTU-->
-    <div class="block3" id="border">
-        <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-        <a href="{{route('sale')}}" class="block3-img dis-block hov-img-zoom">
-            <img src="{{ asset('images/men/pm5.jpg') }}" alt="IMG-BLOG">
-        </a>
-    </div>
-        <div class="block3-txt p-t-14" style="padding: 10px;">
-            <h4 class="p-b-7">
-            <a href="blog-detail.php" class="m-text11">
-                Ženske Patike Savršene za šetnju. Otporne na vodu.....
-            </a>
-            </h4>
-            <span class="s-text6">Od</span> <span class="s-text7">Milica</span>
-            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
-            <p class="s-text8 p-t-16">
-                ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-            </p>
-        </div>
-    </div>
-</div>
+@endif
+@endforeach
+
 </div>
 </div>
 </section>
@@ -314,9 +187,10 @@ PROIZVODI NA POPUSTU
 </h3>
 </div>
 <div class="flex-w">
-<!-- Block4 -->
+@foreach($forWomen as $value)
+    @if($value->statusPicture==7 && $value->category == 'zenska')
 <div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/women/pz1.jpg') }}" alt="IMG-INSTAGRAM">
+<img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-INSTAGRAM">
 <a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
 
     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
@@ -327,58 +201,8 @@ PROIZVODI NA POPUSTU
     </div>
 </a>
 </div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-        </p>
-      
-    </div>
-</a>
-</div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/women/pz3.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-  
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-        </p>
-       
-    </div>
-</a>
-</div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/women/pz3.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-  
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-        </p>
-       
-    </div>
-</a>
-</div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-   
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-        </p>
-       
-    </div>
-</a>
-</div>
+     @endif
+@endforeach
 </div>
 </div>
 </section>
@@ -392,9 +216,10 @@ Muška Obuća
 </h3>
 </div>
 <div class="flex-w">
-<!-- Block4 -->
+@foreach($forMen as $value)
+    @if($value->statusPicture==6 && $value->category == 'muska')
 <div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/men/pm5.jpg') }}" alt="IMG-INSTAGRAM">
+<img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-INSTAGRAM">
 <a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
         <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
@@ -410,77 +235,8 @@ Muška Obuća
     </div>
 </a>
 </div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/men/pm4.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-        </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
-    </div>
-</a>
-</div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/men/pm3.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-        </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
-    </div>
-</a>
-</div>
-<!-- Block4 -->
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/men/pm4.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-        </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
-    </div>
-</a>
-</div>
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{ asset('images/men/pm4.jpg') }}" alt="IMG-INSTAGRAM">
-<a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-        </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
-    </div>
-</a>
-</div>
+ @endif
+@endforeach
 </div>
 </div>
 </section>

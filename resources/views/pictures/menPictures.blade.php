@@ -11,13 +11,13 @@
 	@endif
 </div>
 	<div class="panel-heading">
-		Panel za pregled Najnoviji proizvodi/Ovaj odeljak mora imati <span class="red">TAČNO 4 SLIKE</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($newShoes)}}</span>&nbsp proizvoda za Nova Sezona:</span>   
+		Panel za pregled proizvoda na Ženske/Ovaj odeljak mora imati <span class="red">TAČNO 5 SLIKA</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($forMen)}}</span>&nbsp proizvoda za Ženske Patike:</span>   
 	</div>
 	
 	<div class="panel-body">
-		@foreach($newShoes as $value)
+		@foreach($forMen as $value)
 
-<a href="{{url('deleteNewShoesPicture/' . $value->id)}}">
+<a href="{{url('deleteForMen/' . $value->id)}}">
 	<div class="newSeasonDiv" style="">
 	<img src="{{ asset('images/delete.jpg')}}" alt="" id="buttonPosition">		
 	<img src="{{ asset('images/productPictures/' . $value->image1)}}" alt="" class="slika25"></a>
@@ -30,7 +30,7 @@
 @endforeach
 </div>
 	<div class="panel-footer">
-		Ovim putem brišete slike koje ce biti prikazane na početnoj strani u Najnoviji Proizvodi.
+		Ovim putem brišete slike koje ce biti prikazane na početnoj strani u Muška Obuća.
 	</div>
 		
 	
