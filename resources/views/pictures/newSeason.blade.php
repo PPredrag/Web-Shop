@@ -5,13 +5,16 @@
 <div class="panel panel-success">
 	<div>
 	@if(session('success'))
-	<div class="alert alert-danger" >
+	<div class="alert alert-danger text-center" >
 	{{session('success')}}
 </div>
 	@endif
 </div>
-	<div class="panel-heading">
-		Panel za unos Slika Nova Sezona/Ovaj odeljak mora imati <span class="red">TAČNO 6 SLIKA</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($newSeason)}}</span>&nbsp proizvoda za Nova Sezona:</span>   
+	<div class="panel-heading text-center">
+		Nova Sezona/Ovaj odeljak mora imati <span class="red">TAČNO 6 SLIKA</span>   
+	</div>
+	<div class="panel-heading text-center">
+		 <span style="">Trenutno ima &nbsp <span class="red">{{ count($newSeason)}}</span>&nbsp proizvoda za Nova Sezona</span>   
 	</div>
 	
 	<div class="panel-body">

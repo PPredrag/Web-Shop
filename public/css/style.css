@@ -1,5 +1,5 @@
 .red{
-	color:#ad0505 !important;
+	color:##7e7f82 !important;
 }
 
 /*Border aroud div*/
@@ -138,3 +138,7 @@
 	padding-right:0 !important;
 }
 
+#roundButton{
+  border: 1px solid transparent !important;
+  border-radius: 5px !important;
+}

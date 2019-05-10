@@ -30,35 +30,30 @@
 <!-- Banner -->
 <section class="banner bgwhite p-t-40 p-b-40">
     <div class="sec-title p-b-60">
-<h3 class="m-text5 t-center" id="nasloviPocetna">
-NOVA SEZONA
-</h3>
-</div>
-<div class="container">
-<div class="row">
-@foreach($newSeason as $value)
-
-  @if($value->statusPicture==2)
-    <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-    <!-- block1 -->
-    <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
-        <img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-BENNER">
-        <div class="block1-wrapbtn w-size2">
-            <!-- Button -->
-            <a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
-                Pregledaj
-            </a>
+        <h3 class="m-text5 t-center" id="nasloviPocetna">
+        NOVA SEZONA
+        </h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach($newSeason as $value)
+            @if($value->statusPicture==2)
+            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                <!-- block1 -->
+                <div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
+                    <img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-BENNER">
+                    <div class="block1-wrapbtn w-size2">
+                        <!-- Button -->
+                        <a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
+                            Pregledaj
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @endforeach
         </div>
     </div>
-
-</div>
-    @endif
-    @endforeach
-
-
-
-</div>
-</div>
 </section>
 <!-- New Product -->
 <section class="newproduct bgwhite p-t-45 p-b-105">
@@ -138,7 +133,7 @@ NAJNOVIJI PROIZVODI
 </div>
 </div>
 </section>
-<!-- Blog -->
+<!-- RASPRODAJA -->
 <section class="blog bgwhite p-t-94 p-b-65">
 <div class="container">
 <div class="sec-title p-b-52">
@@ -161,13 +156,12 @@ PROIZVODI NA POPUSTU
         <div class="block3-txt p-t-14" style="padding: 10px;">
             <h4 class="p-b-7">
             <a href="" class="m-text11">
-                Ženske Patike Savršene za šetnju. Otporne na vodu.....
+               Obuća koja je savršena za sve prilike po najpovoljnijim cenama.....
             </a>
             </h4>
-             <span class="s-text6">Od</span> <span class="s-text7">Gordana</span>
-            <span class="s-text6">Datum</span> <span class="s-text7">Februar 18, 2019</span>
+             
             <p class="s-text8 p-t-16">
-               ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
+               Značenje reči SALE kod nas to i stvarno znači!!! Posetite našu stranu sa popustima i do 80% od prodajne cene. Kod nas SALE stvrano znači <a href="{{route('sale')}}"><b style="color:black;">RASPRODAJA</b></a>
             </p>
         </div>
     </div>
@@ -178,68 +172,88 @@ PROIZVODI NA POPUSTU
 </div>
 </div>
 </section>
-<!-- Ženska Obuća -->
-<section class="newproduct bgwhite p-t-45 p-b-105">
+
+<!-- ŽEnska Obuca -->
+<section class="blog bgwhite p-t-94 p-b-65">
 <div class="container">
-<div class="sec-title p-b-60">
-<h3 class="m-text5 t-center" id="nasloviPocetna">
+<div class="sec-title p-b-52">
+<h3 class="m-text5 t-center"  id="nasloviPocetna">
 Ženska Obuća
 </h3>
 </div>
-<div class="flex-w">
-@foreach($forWomen as $value)
-    @if($value->statusPicture==7 && $value->category == 'zenska')
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-INSTAGRAM">
-<a href="{{ route('women')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
+<div class="row">
 
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-           ADIDAS je lider na evropskom tržištu sportske opreme. Ova nemačka kompanija je dobila ime po svom osnivaču Adolfu Adiju Dasleru i prepoznatljiva je na tržištu sportske obuće za sve vodeće sportove: fudbal, košarku, trčanje, kao i po kvalitetnoj sportskoj odeći i aksesoaru.
-        </p>
-
+    @foreach($forWomen as $value)
+      @if($value->statusPicture==7 && $value->category == 'zenska')
+<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+    <!-- Block3 -->
+    <div class="block3" id="border"> 
+        <div class="block2-img wrap-pic-w of-hidden pos-relative ">
+        <a href="{{route('women')}}" class="block3-img dis-block hov-img-zoom">
+            <img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-BLOG">
+        </a>
     </div>
-</a>
+        <div class="block3-txt p-t-14" style="padding: 10px;">
+            <h4 class="p-b-7">
+            <a href="" class="m-text11">
+               Obuća koja je savršena za sve prilike po najpovoljnijim cenama.....
+            </a>
+            </h4>
+             
+            <p class="s-text8 p-t-16">
+               Značenje reči LAKOĆA kod nas to stvarno znači!!! Posetite našu stranu i odaberite jedan od modela kako bi ste sa LAKOĆOM hodali, trčali, šetali... <a href="{{route('women')}}"><b style="color:black;">ŽENSKA OBUĆA</b></a>
+            </p>
+        </div>
+    </div>
 </div>
-     @endif
+@endif
 @endforeach
+
 </div>
 </div>
 </section>
 
 <!-- Muška Obuca -->
-<section class="newproduct bgwhite p-t-45 p-b-105" id="muskaObuca">
+<section class="blog bgwhite p-t-94 p-b-65">
 <div class="container">
-<div class="sec-title p-b-60">
-<h3 class="m-text5 t-center" id="nasloviPocetna">
+<div class="sec-title p-b-52">
+<h3 class="m-text5 t-center"  id="nasloviPocetna">
 Muška Obuća
 </h3>
 </div>
-<div class="flex-w">
-@foreach($forMen as $value)
-    @if($value->statusPicture==6 && $value->category == 'muska')
-<div class="block4 wrap-pic-w" id="border">
-<img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-INSTAGRAM">
-<a href="{{ route('shop')}}" class="block4-overlay sizefull ab-t-l trans-0-4">
-    <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-        <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-        <span class="p-t-2">39</span>
-    </span>
-    <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-        <p class="s-text10 m-b-15 h-size1 of-hidden">
-            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-        </p>
-        <span class="s-text9">
-            Photo by @nancyward
-        </span>
+<div class="row">
+
+    @foreach($forMen as $value)
+      @if($value->statusPicture==6 && $value->category == 'muska')
+<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+    <!-- Block3 -->
+    <div class="block3" id="border"> 
+        <div class="block2-img wrap-pic-w of-hidden pos-relative ">
+        <a href="{{route('shop')}}" class="block3-img dis-block hov-img-zoom">
+            <img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-BLOG">
+        </a>
     </div>
-</a>
+        <div class="block3-txt p-t-14" style="padding: 10px;">
+            <h4 class="p-b-7">
+            <a href="" class="m-text11">
+               Obuća koja je savršena za sve prilike po najpovoljnijim cenama.....
+            </a>
+            </h4>
+             
+            <p class="s-text8 p-t-16">
+               Značenje reči LAKOĆA kod nas to stvarno znači!!! Posetite našu stranu i odaberite jedan od modela kako bi ste sa LAKOĆOM hodali, trčali, šetali,igrali fudbal... <a href="{{route('shop')}}"><b style="color:black;">MUŠKA OBUĆA</b></a>
+            </p>
+        </div>
+    </div>
 </div>
- @endif
+@endif
 @endforeach
+
 </div>
 </div>
 </section>
+
+
 <br><br><br><br><br>
 <!-- SLanje -->
 <section class="shipping bgwhite p-t-62 p-b-46">

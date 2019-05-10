@@ -43,7 +43,12 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamti Me   
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamti Me <br>  
+                                        Za pristup Admin panelu: <br>
+                                        Email: pandza@pandza.com <br>
+                                        Lozinka : 123456
+
+
                                     </label>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@
 	<div class="panel-body">
 		<div class="panel panel-success">
 			@if(session()->has('message'))
-			<div class="alert alert-success text-center">
+			<div class="alert alert-success text-center" id="sakri">
 				{{ session()->get('message') }}
 			</div>
 			@endif

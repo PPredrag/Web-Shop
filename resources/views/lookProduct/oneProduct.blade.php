@@ -48,7 +48,7 @@
 			</h6>
 			<hr>
 			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
-			Naziv Proizvoda:	@foreach($footwearData as $value)
+			Naziv Proizvoda:	@foreach($data as $value)
 			<span class="s-text11 t-center">
 				<b>{{$value->name}}</b>
 			</span>
@@ -57,7 +57,7 @@
 			<hr>
 			
 			<h6 class="h6" id="nasloviPocetna" style="margin-bottom:5%;">
-			Opis Proizvoda:@foreach($footwearData as $value)
+			Opis Proizvoda:@foreach($data as $value)
 			<span class="s-text11 t-center">
 				<b>{{$value->description}}</b>
 			</span>
@@ -66,25 +66,25 @@
 			
 			
 			<hr>
-			@foreach($footwearData as $value)
+			@foreach($data as $value)
 			<span class="s-text11 t-center">
 				Brand : <b>{{$value->brand}}</b>
 			</span>
 			@endforeach
 			<hr>
-			@foreach($footwearData as $value)
+			@foreach($data as $value)
 			<span class="s-text11 t-center">
 				Program : <b>{{$value->category}}</b>
 			</span>
 			@endforeach
 			<hr>
-			@foreach($footwearData as $value)
+			@foreach($data as $value)
 			<span class="s-text11 t-center">
 				Materijal : <b>{{$value->material}}</b>
 			</span>
 			@endforeach
 			<hr>
-			@foreach($footwearData as $value)
+			@foreach($data as $value)
 			<span class="s-text11 t-center" id="darkRed">
 				<h5 class="h5">
 				CENA {{$value->price}},00  din

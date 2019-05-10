@@ -5,13 +5,16 @@
 <div class="panel panel-success">
 	<div>
 	@if(session('success'))
-	<div class="alert alert-danger" >
+	<div class="alert alert-danger text-center" >
 	{{session('success')}}
 </div>
 	@endif
 </div>
-	<div class="panel-heading">
-		Panel za pregled proizvoda na Ženske/Ovaj odeljak mora imati <span class="red">TAČNO 5 SLIKA</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($forMen)}}</span>&nbsp proizvoda za Ženske Patike:</span>   
+	<div class="panel-heading text-center">
+		Muška Obuća/Ovaj odeljak mora imati <span class="red">3,6 ili 9  SLIKA</span> <span style="float: right;">   
+	</div>
+	<div class="panel-heading text-center">
+		Trenutno ima &nbsp <span class="red">{{ count($forMen)}}</span>&nbsp proizvoda za Muška Obuća</span>   
 	</div>
 	
 	<div class="panel-body">
@@ -29,9 +32,9 @@
 
 @endforeach
 </div>
-	<div class="panel-footer">
-		Ovim putem brišete slike koje ce biti prikazane na početnoj strani u Muška Obuća.
-	</div>
+<div class="panel-footer">
+	Ovim putem brišete slike koje ce biti prikazane na početnoj strani u Muška Obuća.
+</div>
 		
 	
 	@endsection

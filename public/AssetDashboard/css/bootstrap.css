@@ -4144,7 +4144,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #428bca;
+  color: #930707;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -4177,8 +4177,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #930707;
+  border-color: #930707;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,

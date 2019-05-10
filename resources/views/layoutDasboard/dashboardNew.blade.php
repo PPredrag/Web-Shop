@@ -36,12 +36,12 @@
                         <span class="icon-bar"></span>
                         </button>
                         
-                        <a class="navbar-brand red" href="#"><i class="fa fa-square-o "></i>&nbsp; ADMIN PANEL</a>
+                        <a class="navbar-brand" href="#">&nbsp; Admin Panel</a>
                     </div>
                    
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{route('welcome')}}" target="_blank"><b class="red">POSETI SAJT</b></a></li>
+                            <li><a href="{{route('welcome')}}" target="_blank"><b style="color:black;">Poseti Sajt</b></a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <li>
                             <form action="{{route('searchProduct')}}" id="searchPro" method="get" >
                             <div class="search-product pos-relative bo4 of-hidden" style="border:0px; border-radius: 0px;">
-                            <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search" placeholder="Pretraži Proizvode..." style="border-width: 0 !important; font-size: 17px;">
+                            <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search" placeholder="Pretraži Proizvode..." style="border-width: 0 !important; font-size: 17px;" value="{{old('search')}}">
 
                             <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
                                 <i class="fs-12 fa fa-search" aria-hidden="true"></i>
@@ -72,12 +72,10 @@
                         <li>
                             <a href="#"><i class="fa fa-picture-o  "></i>Slike<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{route('sliderPictures')}}">Početni Slider</a>
-                                </li>
+                               
                                 <li>
                                     
-                                    <a href="#">Glavna Strana<span class="fa arrow"></span></a>
+                                    <a href="#">Glavna Strana Brisanje<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="{{ route('newSeason')}}">Nova Sezona</a>
@@ -92,18 +90,18 @@
                                             <a href="{{ route('forSale')}}">Proizvodi na popustu</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('forWomen')}}">Ženska Obuića</a>
+                                            <a href="{{ route('forWomen')}}">Ženska Obuća</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('forMen')}}">Muška Obuća</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#">Sve Slike</a>
+                                 <li>
+                                    <a href="{{route('sliderPictures')}}">Unos Početni Slider</a>
                                 </li>
                                 <li>
-                                    <a href="#"><b class="red">Brisanje Slika</b><span class="fa arrow"></span></a>
+                                    <a href="#">Brisanje Slika Slider<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="{{route('showPictureToDelete')}}">Brisanje Početni Slider</a>
@@ -116,7 +114,10 @@
                             <a href="{{route('unosProizvoda')}}"><i class="fa fa-edit "></i>Unos Proizvoda </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-trash-o "></i><span class="red">Brisanje Proizvoda</span></a>
+                            <a href="{{route('sizeEnter')}}"><i class="fa fa-edit "></i>Unos Količine i Veličine </a>
+                        </li>
+                        <li>
+                            <a href="{{route('showDeletePage')}}"><i class="fa fa-trash-o "></i><span style="color: #c60909;">Brisanje Proizvoda</span></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-table "></i>Statistika Proizvoda</a>
@@ -176,13 +177,14 @@
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper" >
                 
-                <div id="page-inner" style="background-image: url({{asset('images/banner/background1.jpg')}});">
+                <div id="page-inner" >
                     <h1 class="text-center red" >Dashboard Panel</h1>
                     <br>
                     <div class="row">
                         <div class="col-md-12">
                             @yield('wrapper')
-                            
+              
+        
                         </div>
                     </div>
                     <!-- /. ROW  -->

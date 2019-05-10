@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Footwear;
 use App\Number;
 use Illuminate\Support\Facades\Session;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class PregledajController extends Controller
 {
@@ -19,24 +19,29 @@ class PregledajController extends Controller
     	//dd($idFootwear);
     	$footwearData = $footwear->getNumberFootwear($id);
     	//dd($footwearData);
-        foreach ($footwearData as  $valQty) {
+        $qty = 0;
+        foreach ($footwearData as $valQty) {
           $qty = $valQty->qty; 
         }
          
-    	return view('lookProduct/oneProduct')->with([
-    												 'data'=>$data,
-                                       				 'footwearData'=>$footwearData,
+
+            return view('lookProduct/oneProduct')->with([
+                                                     'data'=>$data,
+                                                     'footwearData'=>$footwearData,
                                                      'qty'=>$qty,
                                                      'id'=>$id
                                                     ]);
+         
+    	
     }
 
-    public function serchProducts(Request $request){
+        // search products
+    public function serchProducts(Request $request,Footwear $footwear){
+
        $search = $request['search'];
-       if($search != ""){
-        $searchData = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
-                                            ->select('footwear_number.qty','footwears.image1','footwears.image2','footwears.image3','footwears.barcode','footwears.name','footwears.brand','footwears.id')
-                                            ->where('image1','like','%' . $search . '%')
+       $countData = count($footwear->getAllData());
+        
+        $searchData = DB::table('footwears')->where('image1','like','%' . $search . '%')
                                             ->orWhere('image1','like','%' . $search . '%') 
                                             ->orWhere('image2','like','%' . $search . '%')
                                             ->orWhere('image3','like','%' . $search . '%')
@@ -44,27 +49,18 @@ class PregledajController extends Controller
                                             ->orWhere('image1','like','%' . $search . '%')
                                             ->orWhere('name','like','%' . $search . '%')
                                             ->orWhere('category','like','%' . $search . '%')
-                                            ->get(); 
-                                            
-
-        $request->session()->flash('message', 'Rezultat Pretrage:');
-        return view('dashboard/showSearch')->with(['searchData'=>$searchData]);
-        }
-        else {
-            $searchData = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
-                                            ->select('footwear_number.qty','footwears.image1','footwears.image2','footwears.image3','footwears.barcode','footwears.name','footwears.brand','footwears.id')
-                                            ->where('image1','like','%' . $search . '%')
-                                            ->orWhere('image1','like','%' . $search . '%') 
-                                            ->orWhere('image2','like','%' . $search . '%')
-                                            ->orWhere('image3','like','%' . $search . '%')
-                                            ->orWhere('barcode','like','%' . $search . '%')   
-                                            ->orWhere('image1','like','%' . $search . '%')
-                                            ->orWhere('name','like','%' . $search . '%')
-                                            ->orWhere('category','like','%' . $search . '%')
-                                            ->take(0)
-                                            ->get();  
-        $request->session()->flash('message', 'Niste Uneli kriterijum za pretragu');
-        return view('dashboard/showSearch')->with(['searchData'=>$searchData]);
-       }
+                                            ->orderBy('created_at', 'desc')   
+                                            ->paginate(12);    
+           //dd($searchData);                                   
+         if(count($searchData) ==0){
+            $request->session()->flash('message', 'Nema Rezultata za trazen kriterijum');
+            return view('dashboard/showSearch', ['searchData'=>$searchData,'count'=>$countData]);
+         } else{
+             $request->session()->flash('message', 'Rezultat Pretrage:');
+        return view('dashboard/showSearch', ['searchData'=>$searchData,'count'=>$countData]);
+         }                                                            
     }
+
+
 }
+

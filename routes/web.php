@@ -49,12 +49,23 @@ Route::get('/deleteNewSeasonPicture/{id}','PicturesController@deleteNewSeasonPic
 Route::get('/forMen','PicturesController@forMen')->name('forMen');
 Route::get('/forWomen','PicturesController@forWomen')->name('forWomen');
 Route::get('/addToCart/{id}','CartController@addToCart')->name('addToCart');
+Route::get('/managePictures/{id}','DashboardController@managePictures')->name('managePictures');
+Route::post('/changePicturePosition/{id}','DashboardController@changePicturePosition')->name('changePicturePosition');
+Route::get('/sizeEnter', function(){
+	 return view('dashboard/sizeAndQty/sizeEnter');
+})->name('sizeEnter');
+
+Route::get('/findForSize','DashboardController@findForSize')->name('findForSize');
+Route::get('/insertDataQtyNumbers/{id}','DashboardController@insertDataQtyNumbers')->name('insertDataQtyNumbers');
+Route::get('/showDeletePage', function(){
+	 return view('dashboard/delete/showDeletePage');		
+})->name('showDeletePage');
+Route::get('/findForDelete','DashboardController@findForDelete')->name('findForDelete');
+Route::post('/deleteProduct/{id}','DashboardController@deleteProduct')->name('deleteProduct');
+Route::post('/changeQtyDelete/{id}','DashboardController@changeQtyDelete')->name('changeQtyDelete');
+Route::get('/toSale/{id}','DashboardController@toSale')->name('toSale');
+Route::get('/changeToSale/{id}','DashboardController@changeToSale')->name('changeToSale');
 
 
-
-
-
-
-Route::get('/test3','PicturesController@forWomen');
 
 

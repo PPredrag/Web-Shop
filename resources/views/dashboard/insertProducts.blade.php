@@ -2,8 +2,13 @@
 @section('content')
 @endsection
 @section('wrapper')
+@if (!empty($success))
+<div class="alert alert-danger text-center" id="sakri">
+	{{$success}}
+</div>
+@endif
 <div class="panel panel-success">
-	<div class="panel-heading">
+	<div class="panel-heading text-center">
 		Panel za unos Novih Proizvoda
 	</div>
 				@if(session('success'))
@@ -14,7 +19,7 @@
 			<!-- Form For Model Barcode -->
 			<div class="form-group{{ $errors->has('barCode') ? ' has-error' : '' }}" >
 				<label for="barCode">Bar Code Modela</label>
-				<input type="text" class="form-control" id="barCode" placeholder="Naziv Modela" name="barCode" value="{{old('barCode')}}">
+				<input type="text" class="form-control" id="barCode" placeholder="Unesite BarCode" name="barCode" value="{{old('barCode')}}">
 				<small class="form-text text-muted">Unestite Bar Code</small>
 				@if ($errors->has('barCode'))
 				<span class="help-block">
@@ -58,7 +63,7 @@
 			<!-- Form For Colors -->
 			<div class="form-group{{ $errors->has('color1') ? ' has-error' : '' }}">
 				<div class="leftbar p-r-20 p-r-0-sm" id="padingRight">
-					<div class="filter-color p-t-22 p-b-50 bo3">
+					<div class="filter-color p-t-22 p-b-15 bo3">
 						<div class="m-text15 p-b-12">
 							Odaberi Boju
 						</div>
@@ -194,7 +199,6 @@
 					<select class="form-control" id="sale" name="sale">
 						<option value="0">----</option>
 						<option value="1">Nije na Sniženju</option>
-						<option value="2">Sniženje</option>
 					</select>
 				</div>
 				<small class="form-text text-muted">Odaberite da li je proizvod na SNIŽENJU</small>

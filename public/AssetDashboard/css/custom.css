@@ -260,7 +260,7 @@ margin: auto;
    
 }
 .red{
-    color: #bc0505 !important;
+    color: #7e7f82 !important;
 }
 #buttonPosition{
     float: left;
@@ -288,7 +288,18 @@ margin: auto;
     margin-top: 10px;
     width:24%; 
     border: 1px solid #cfd1d3;
+    min-width: 10vw;
+    font-size : 1.2vw;
 }
+
+
+ @media(max-width:768px) {
+     #buttonDashboard{
+   
+    font-size : 1.9vw;
+}
+        
+    }
 .newSeasonDiv{
     width: 32%;
     float: left; 
@@ -296,4 +307,20 @@ margin: auto;
     border: 1px solid #cfd1d3;
 }
 
+ @media(max-width:768px) {
+     .newSeasonDiv{
+   
+    width: 99%;
+}
 
+#responsiveSlika{
+    border: 1px solid #cfd1d3;
+    width: 33%;
+    margin-right: 2px;
+}
+
+@media (max-width: 936px) {
+  #responsiveSlika {
+    width: 99%;
+  }
+}

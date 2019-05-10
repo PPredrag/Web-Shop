@@ -141,58 +141,58 @@
                             <ul class="header-cart-wrapitem">
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-01.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/d2l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-                                            White Shirt With Pleat Detail Back
+                                            Nike Kids Run
                                         </a>
                                         <span class="header-cart-item-info">
-                                            1 x $19.00
+                                            1 x 15000.00 din 
                                         </span>
                                     </div>
                                 </li>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-02.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/p1l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-                                            Converse All Star Hi Black Canvas
+                                            Nike Patike 
                                         </a>
                                         <span class="header-cart-item-info">
-                                            1 x $39.00
+                                            1 x 8500.00 din
                                         </span>
                                     </div>
                                 </li>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-03.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/k1l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-                                            Nixon Porter Leather Watch In Tan
+                                            Nike Kopacke
                                         </a>
                                         <span class="header-cart-item-info">
-                                            1 x $17.00
+                                            1 x 12500.00 din 
                                         </span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="header-cart-total">
-                                Total: $75.00
+                                Ukupno: 36000.00 din 
                             </div>
                             <div class="header-cart-buttons">
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
                                     <a href="{{route('viewCart')}}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                        View Cart
+                                      Korpa
                                     </a>
                                 </div>
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
                                     <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                        Check Out
+                                        Kupi
                                     </a>
                                 </div>
                             </div>
@@ -302,8 +302,8 @@
                               <ul class="nav navbar-nav navbar-right">
                             <!-- Authentication Links -->
                             @guest
-                            <li ><a href="{{ route('login') }}">Login |</a>
-                            <a href="{{ route('register') }}">Register</a>
+                            <li ><a href="{{ route('login') }}">Prijava Korisnika |</a>
+                            <a href="{{ route('register') }}">Registracija</a>
                         </li>
                         
                         @else

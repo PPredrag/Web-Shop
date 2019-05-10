@@ -41,7 +41,6 @@
 		Ovim putem unosite slike koje ce biti prikazane na početnoj strani u Slider delu.
 	</div>
 </div>
-
 @endsection
 @section('footer')
 @endsection

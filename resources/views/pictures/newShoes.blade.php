@@ -5,13 +5,16 @@
 <div class="panel panel-success">
 	<div>
 	@if(session('success'))
-	<div class="alert alert-danger" >
+	<div class="alert alert-danger text-center" >
 	{{session('success')}}
 </div>
 	@endif
 </div>
-	<div class="panel-heading">
-		Panel za pregled Najnoviji proizvodi/Ovaj odeljak mora imati <span class="red">TAČNO 4 SLIKE</span> <span style="float: right;">Trenutno ima &nbsp <span class="red">{{ count($newShoes)}}</span>&nbsp proizvoda za Nova Sezona:</span>   
+	<div class="panel-heading text-center">
+		Najnoviji proizvodi/Ovaj odeljak mora imati <span class="red">TAČNO 4 SLIKE</span>   
+	</div>
+	<div class="panel-heading text-center">
+		<span>Trenutno ima &nbsp <span class="red">{{ count($newShoes)}}</span>&nbsp proizvoda za Najnoviji</span>   
 	</div>
 	
 	<div class="panel-body">
