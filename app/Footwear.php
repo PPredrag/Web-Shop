@@ -10,7 +10,7 @@ use DB;
 class Footwear extends Model
 {
 
-    protected $fillable =  ['id', 'footwear_id','number_id','qty'];
+    protected $fillable =  ['id', 'footwear_id','number_id','qty','statusSale','newPrice'];
     public function numbers(){
     	return $this->belongsToMany('App\Number')
                       ->withPivot('qty'); 

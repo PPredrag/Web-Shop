@@ -2,7 +2,7 @@
 @section('content')
 <!-- Title Page -->
 <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({{ asset('images/banner/sale.jpg
-')}});">
+	')}});">
 	<h2 class="l-text2 t-center" id="sivaBojaSlova">
 	SALE
 	</h2>
@@ -28,7 +28,22 @@
 						</li>
 						<li class="p-t-4">
 							<a href="#" class="s-text13">
-								Trčanje
+								Ženske
+							</a>
+						</li>
+						<li class="p-t-4">
+							<a href="#" class="s-text13">
+								Muške
+							</a>
+						</li>
+						<li class="p-t-4">
+							<a href="#" class="s-text13">
+								Dečije
+							</a>
+						</li>
+						<li class="p-t-4">
+							<a href="#" class="s-text13">
+								Patike
 							</a>
 						</li>
 						<li class="p-t-4">
@@ -38,14 +53,20 @@
 						</li>
 						<li class="p-t-4">
 							<a href="#" class="s-text13">
-								Fitnes
+								Koža
 							</a>
 						</li>
 						<li class="p-t-4">
 							<a href="#" class="s-text13">
-								Slobodno Vreme
+								Platnene
 							</a>
 						</li>
+						<li class="p-t-4">
+							<a href="#" class="s-text13">
+								Koža/Platno
+							</a>
+						</li>
+						
 					</ul>
 					<div class="filter-color p-t-22 p-b-50 bo3">
 						<div class="m-text15 p-b-12">
@@ -94,15 +115,19 @@
 				<!--  -->
 				<div class="flex-sb-m flex-w p-b-35">
 					<div class="flex-w">
-						<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-							<select class="selection-2" name="sorting">
-								<option>Sortiranje Proizvoda</option>
-								<option>Cena Silazno</option>
-								<option>Cena Uzlazno</option>
+						<form action="{{route('sortDesc')}}" method="get">
+							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
+							<select class="selection-2" name="sorting" id="sort1">
+								
+								<option value="asc">Od Najjeftinije</option>
+								<option value="desc">Od Najskuplje</option>
 							</select>
+							<button type="submit">klik</button>
 						</div>
+						{{ csrf_field() }}
+						</form>
 						<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-							<select class="selection-2" name="sorting">
+							<select class="selection-2" name="sorting2">
 								<option>Cena</option>
 								<option>0.00 din - 1000.00 din</option>
 								<option>1000.00 din - 2000.00 din</option>
@@ -113,16 +138,20 @@
 						</div>
 					</div>
 					<span class="s-text8 p-t-5 p-b-5">
-						Prikazano je 1–12 od 15 proizvoda
+						Prikazano je {{count($data)}} od {{$count}} proizvoda
 					</span>
 				</div>
-				<!-- Product -->
+				{{ $data->links() }}
 				<div class="row">
+					
+					
+					@foreach($data as $value)
+					
 					<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
 						<!-- Block2 -->
 						<div class="block2" id="border">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/women/pz4.jpg') }}" alt="IMG-PRODUCT">
+								<img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-PRODUCT">
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
 										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
@@ -130,9 +159,9 @@
 									</a>
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
+										<a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
+											Pregledaj
+										</a>
 									</div>
 								</div>
 							</div>
@@ -141,271 +170,42 @@
 									Spring Diadora
 								</a>
 								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
+									{{$value->price}}.00 din
 								</span>
 								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
+									{{$value->newPrice}}.00 din
 								</span>
 							</div>
 						</div>
 					</div>
-						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/men/pm4.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/kids/dp4.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-				<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/women/pz2.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-	<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/men/pm1.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-			<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/kids/dp5.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-			<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/women/pz9.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/men/pm4.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
-				<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >
-						<!-- Block2 -->
-						<div class="block2" id="border">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/kids/dp1.jpg') }}" alt="IMG-PRODUCT">
-								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
-									<div class="block2-btn-addcart w-size1 trans-0-4">
-										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-0 hov1 s-text1 trans-0-4">
-										Dodaj u Korpu
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="block2-txt p-t-20" id="spanPadding">
-								<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5" >
-									Spring Diadora
-								</a>
-								<span class="block2-oldprice m-text7 p-r-5">
-									7500.00 din
-								</span>
-								<span class="block2-newprice m-text8 p-r-5">
-									3500.00 din
-								</span>
-							</div>
-						</div>
-					</div>
+					
+					@endforeach
+					
+					
+					
+					
 					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
-						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
-					</div>
+					
+					
 				</div>
+				
 			</div>
 		</div>
-	</section>
-	@endsection
-	@section('footer')
-	@endsection
+	</div>
+</div>
+
+
+</section>
+@endsection
+@section('footer')
+<script>
+	
+	$(document).ready(function(){
+		var sortVal = $("#sort1 option:selected").val();
+		$('#sort1').click(function(){
+			alert('sortVal');
+		});
+
+	});
+</script>
+@endsection

@@ -345,9 +345,15 @@ $data = Footwear::findOrFail($id);
 
     $data = $footwear->getData($id);
 
-    return view('dashboard/sale/sale')->with(['data'=> $data]);
+    foreach ($data as  $value) {
+        $status = $value->statusSale;
+        $cenaRas = $value->newPrice;
+    }
+
+    return view('dashboard/sale/sale')->with(['data'=> $data, 'status'=> $status, 'newPrice'=>$cenaRas]);
  }
 
+ // return new Price and status for SALE
 public function changeToSale(Request $request,$id){
     
     $this->validate($request, [
@@ -356,12 +362,9 @@ public function changeToSale(Request $request,$id){
 
   $price = $request->cena;
   $status = 2;
-  
-  $insert = new Footwear();
-  $insert->newPrice = $price;
-  $insert->save();
-  //Footwear::where('id','=', $id)->limit(1)->update(array('statusSale'=>$status));  
-return redirect()->back();
+ 
+  Footwear::where('id','=', $id)->limit(1)->update(array('newPrice'=>$price, 'statusSale'=>$status));  
+    return redirect()->back()->withSuccess('Uspešno ste promenili cenu i status proizvoda');
    
 }
 

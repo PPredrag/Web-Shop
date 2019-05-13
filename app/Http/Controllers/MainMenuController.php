@@ -45,10 +45,7 @@ class MainMenuController extends Controller
     public function kids(){
         return view('kids/kids');
     }
-    // Return view sale
-    public function sale(){
-    	return view('sale/sale');
-    }
+
     // Return view about us
     public function about(){
         return view('about/about');

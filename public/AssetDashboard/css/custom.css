@@ -39,7 +39,7 @@ body {
     text-align:center;
 }
 .user-image-back {
-    background-color:#8B7BFF;
+    background-color:#181919;
 }
 h5,.h5 {
     font-size: 14px;
@@ -153,17 +153,17 @@ font-size: 25px;
 font-weight: 900;
 }
 .navbar-inverse .navbar-toggle {
-border-color: #8B7BFF;
+border-color: #181919;
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-background-color: #8B7BFF;
+background-color: #181919;
 }
 .adjust-nav {
     padding-left:20px;padding-right:20px;
 }
 .navbar-toggle {
-    background-color: #8B7BFF;
+    background-color: #181919;
 }
 
 /*==============================================

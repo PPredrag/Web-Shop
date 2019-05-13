@@ -14,14 +14,15 @@ class PregledajController extends Controller
 	// Function return view of one product with data from Footwear Model
     public function lookProduct(Footwear $footwear,$id){
     	$id= $id;
-    	//dd($idFootwear);
     	$data = $footwear->getData($id);
-    	//dd($idFootwear);
     	$footwearData = $footwear->getNumberFootwear($id);
-    	//dd($footwearData);
         $qty = 0;
         foreach ($footwearData as $valQty) {
           $qty = $valQty->qty; 
+
+        }
+        foreach ($data as $value) {
+            $statusSale = $value->statusSale;
         }
          
 
@@ -29,7 +30,8 @@ class PregledajController extends Controller
                                                      'data'=>$data,
                                                      'footwearData'=>$footwearData,
                                                      'qty'=>$qty,
-                                                     'id'=>$id
+                                                     'id'=>$id,
+                                                     'statusSale'=>$statusSale
                                                     ]);
          
     	

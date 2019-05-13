@@ -14,7 +14,7 @@
 			@foreach($data as $value)
 			<h4 class="h4 t-center" id="nasloviPocetna">
 			{{$value->name}}
-			</h4>		
+			</h4>
 			<div class="hov-img-zoom pos-relative" id="border">
 				<img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-BANNER">
 				<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15" >
@@ -85,12 +85,21 @@
 			@endforeach
 			<hr>
 			@foreach($data as $value)
+			@if($value->statusSale == 2)
+			<span class="s-text11 t-center" id="darkRed">
+				<h5 class="h5">
+			 CENA NA POPUSTU {{$value->newPrice}},00  din
+				</h5>
+				
+			</span>
+			@else			
 			<span class="s-text11 t-center" id="darkRed">
 				<h5 class="h5">
 				CENA {{$value->price}},00  din
 				</h5>
 				
 			</span>
+			@endif
 			@endforeach
 			<hr>
 			<br>
@@ -117,22 +126,19 @@
 			</div>
 			@endforeach
 		</div>
-		 <div class="col-sm-6 col-md-6 col-lg-3">
+		<div class="col-sm-6 col-md-6 col-lg-3">
 			
-
 			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
 				<img src="{{ asset('images/banner/besplatna.png') }}" alt="IMG-BENNER">
 			</div>
-	
-		</div> 
-		 <div class="col-sm-6 col-md-6 col-lg-3">		
-
+			
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-3">
 			<div class="block1 hov-img-zoom pos-relative m-b-30" id="border">
 				<img src="{{ asset('images/banner/besplatna2.png') }}" alt="IMG-BENNER">
 			</div>
-	
+			
 		</div>
-
 		
 		<!-- Main Information-->
 		<section class="shipping bgwhite p-t-62 p-b-46">

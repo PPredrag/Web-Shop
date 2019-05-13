@@ -142,3 +142,16 @@
   border: 1px solid transparent !important;
   border-radius: 5px !important;
 }
+#logRegister{
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 1200px;
+  padding: 0 !important;
+}
+
+#panelFooter{
+  border: 1px solid #d3e0e9 !important;
+}
+
+
+

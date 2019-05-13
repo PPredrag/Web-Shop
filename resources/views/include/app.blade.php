@@ -209,11 +209,9 @@
             </a>-->
             <!-- Button show menu -->
             <div class="btn-show-menu">
-                <!-- Header Icon mobile 
+                Sportska Obuća "Play"
                 <div class="header-icons-mobile">
-                    <a href="#" class="header-wrapicon1 dis-block">
-                        <img src="{{ asset('images/icons/icon-header-01.png') }}" class="header-icon1" alt="ICON">
-                    </a>-->
+                   
                     <span class="linedivide2"></span>
                     <div class="header-wrapicon2">
                         <img src=" {{ asset('images/icons/icon-header-02.png') }}" class="header-icon1 js-show-header-dropdown" alt="ICON">
@@ -223,7 +221,7 @@
                             <ul class="header-cart-wrapitem">
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-01.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/k1l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
@@ -236,7 +234,7 @@
                                 </li>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-02.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/k1l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
@@ -249,7 +247,7 @@
                                 </li>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="{{ asset('images/item-cart-03.jpg') }}" alt="IMG">
+                                        <img src="{{ asset('images/productPictures/k1l.jpg') }}" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
@@ -557,27 +555,7 @@
     });*/
     </script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src=" {{ asset('vendor/noui/nouislider.min.js') }}"></script>
-    <script type="text/javascript">
-    /*[ No ui ]
-    ===========================================================*/
-    var filterBar = document.getElementById('filter-bar');
-    noUiSlider.create(filterBar, {
-    start: [ 50, 200 ],
-    connect: true,
-    range: {
-    'min': 50,
-    'max': 200
-    }
-    });
-    var skipValues = [
-    document.getElementById('value-lower'),
-    document.getElementById('value-upper')
-    ];
-    filterBar.noUiSlider.on('update', function( values, handle ) {
-    skipValues[handle].innerHTML = Math.round(values[handle]) ;
-    });
-    </script>
+
     <!--===============================================================================================-->
     <script src=" {{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>

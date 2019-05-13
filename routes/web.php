@@ -12,7 +12,7 @@
 */
 Route::get('/welcome',['as'=>'welcome','uses'=>'MainMenuController@main']);
 Route::get('/shop',['as'=>'shop','uses'=>'MainMenuController@shop']);
-Route::get('/sale',['as'=>'sale','uses'=>'MainMenuController@sale']);
+Route::get('/sale',['as'=>'sale','uses'=>'SalePageController@showAllProductOnSalePge']);
 Route::get('/viewCart',['as'=>'viewCart','uses'=>'MainMenuController@viewCart']);
 Route::get('/contact',['as'=>'contact','uses'=>'MainMenuController@contact']);
 Auth::routes();
@@ -65,6 +65,16 @@ Route::post('/deleteProduct/{id}','DashboardController@deleteProduct')->name('de
 Route::post('/changeQtyDelete/{id}','DashboardController@changeQtyDelete')->name('changeQtyDelete');
 Route::get('/toSale/{id}','DashboardController@toSale')->name('toSale');
 Route::get('/changeToSale/{id}','DashboardController@changeToSale')->name('changeToSale');
+Route::get('/sortDesc','SalePageController@sortDesc')->name('sortDesc');
+
+
+
+
+
+Route::get('/test', function(){
+
+	return view('test');
+});
 
 
 
