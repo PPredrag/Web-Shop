@@ -66,6 +66,8 @@ Route::post('/changeQtyDelete/{id}','DashboardController@changeQtyDelete')->name
 Route::get('/toSale/{id}','DashboardController@toSale')->name('toSale');
 Route::get('/changeToSale/{id}','DashboardController@changeToSale')->name('changeToSale');
 Route::get('/sortDesc','SalePageController@sortDesc')->name('sortDesc');
+Route::get('/sortPrice','SalePageController@sortPrice')->name('sortPrice');
+Route::get('/sortColor','SalePageController@sortColor')->name('sortColor');
 
 
 

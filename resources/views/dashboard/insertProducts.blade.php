@@ -72,6 +72,7 @@
 							<option value="0" >----</option>
 							<option value="yellow">Žuta</option>
 							<option value="#f4b609">Narandžasta</option>
+							<option value="red">Crvena</option>
 							<option value="grey">Siva</option>
 							<option value="green">Zelena</option>
 							<option value="pink">Roza</option>
@@ -111,6 +112,7 @@
 							<option >----</option>
 							<option value="yellow">Žuta</option>
 							<option value="#f4b609">Narandžasta</option>
+							<option value="red">Crvena</option>
 							<option value="grey">Siva</option>
 							<option value="green">Zelena</option>
 							<option value="pink">Roza</option>

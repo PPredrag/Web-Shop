@@ -152,6 +152,11 @@
 #panelFooter{
   border: 1px solid #d3e0e9 !important;
 }
-
+.letterG{
+  font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: #888888;
+    line-height: 1.8;
+}
 
 

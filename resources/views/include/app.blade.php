@@ -3,6 +3,7 @@
     <head>
         <title>Web Shop</title>
         <meta charset="UTF-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--===============================================================================================-->
         <link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.png')}}"/>
@@ -31,8 +32,8 @@
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href=" {{ asset('vendor/lightbox2/css/lightbox.min.css') }}">
         <!--===============================================================================================-->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+           <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
          <!--===============================================================================================-->
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -512,7 +513,7 @@
     <div id="dropDownSelect1"></div>
     <div id="dropDownSelect2"></div>
     <!--===============================================================================================-->
-    <script type="text/javascript" src=" {{ asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+
     <!--===============================================================================================-->
     <script type="text/javascript" src=" {{ asset('vendor/animsition/js/animsition.min.js') }}"></script>
     <!--===============================================================================================-->
