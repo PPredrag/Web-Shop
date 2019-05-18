@@ -33,6 +33,7 @@ class SalePageController extends Controller
   	return $data;
   }
 
+ // sort product from by price
   public function sortPrice(Request $request){
 
   	$inputData = $request->input('pera');
@@ -40,13 +41,134 @@ class SalePageController extends Controller
   	return $data;
   }
 
-
+// sort product from by color
   public function sortColor(Request $request){
   	$inputData = $request->input('colorValue');
 
   	$data = Footwear::where([['statusSale','=',2], ['color','=',$inputData]])->orderBy('newPrice','asc')->get();
   	return $data;
   	//dd($data);
+  }
+
+
+ 
+   // SECTION FOR SORT WOMEN SALE
+  // function to return sort womenSale
+  function sortWomen(Request $request){
+    $dataInput = $request->women;
+
+    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    //dd($qtySale);
+    $count = count($qtySale);
+    $data = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
+//dd($data);
+    return view('sale/womenSale')->with(['data'=>$data,'count'=>$count]);
+  }
+
+
+  // sort product from by price for womenSale view
+  public function sortPriceWomen(Request $request){
+
+    $inputData = $request->input('dataRange'); // dataRange is data from  ajax -> data:{dataRange:sortPrice}
+    $data = Footwear::where([['statusSale','=',2], ['newPrice','<',$inputData],['category','=','zenska']])->orderBy('newPrice','asc')->get();
+    return $data;
+  }
+
+  // sort product from biger to smaller(desc) or from saller to biger(asc) women View
+  public function sortDescWomen(Request $request){
+    $dataSort = $request->input('sendToController');
+    $data = Footwear::where([['statusSale','=',2],['category','=','zenska']])->orderBy('newPrice',$dataSort)->get();
+    return $data;
+  }
+
+
+  // sort product from by color for WomenView
+  public function sortColorWomen(Request $request){
+    $inputData = $request->input('colorValue');
+
+    $data = Footwear::where([['statusSale','=',2], ['color','=',$inputData],['category','=','zenska']])->orderBy('newPrice','asc')->get();
+    return $data;
+    //dd($data);
+  }
+
+
+   // SECTION FOR SORT MAN SALE
+  // function to return sort womenSale
+  function sortMan(Request $request){
+    $dataInput = $request->man;
+
+    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    //dd($qtySale);
+    $count = count($qtySale);
+    $data = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
+//dd($data);
+    return view('sale/manSale')->with(['data'=>$data,'count'=>$count]);
+  }
+
+
+  // sort product from by price for MANSale view
+  public function sortPriceMan(Request $request){
+
+    $inputData = $request->input('dataRange'); // dataRange is data from  ajax -> data:{dataRange:sortPrice}
+    $data = Footwear::where([['statusSale','=',2], ['newPrice','<',$inputData],['category','=','muska']])->orderBy('newPrice','asc')->get();
+    return $data;
+  }
+
+  // sort product from biger to smaller(desc) or from saller to biger(asc) MAN View
+  public function sortDescMan(Request $request){
+    $dataSort = $request->input('sendToController');
+    $data = Footwear::where([['statusSale','=',2],['category','=','muska']])->orderBy('newPrice',$dataSort)->get();
+    return $data;
+  }
+
+
+  // sort product from by color for MANView
+  public function sortColorMan(Request $request){
+    $inputData = $request->input('colorValue');
+
+    $data = Footwear::where([['statusSale','=',2], ['color','=',$inputData],['category','=','muska']])->orderBy('newPrice','asc')->get();
+    return $data;
+    //dd($data);
+  }
+
+
+  // SECTION FOR SORT Kids SALE
+  // function to return sort womenSale
+  function sortKids(Request $request){
+    $dataInput = $request->kids;
+
+    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    //dd($qtySale);
+    $count = count($qtySale);
+    $data = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
+//dd($data);
+    return view('sale/kidsSale')->with(['data'=>$data,'count'=>$count]);
+  }
+
+
+  // sort product from by price for kidsSale view
+  public function sortPriceKids(Request $request){
+
+    $inputData = $request->input('dataRange'); // dataRange is data from  ajax -> data:{dataRange:sortPrice}
+    $data = Footwear::where([['statusSale','=',2], ['newPrice','<',$inputData],['category','=','decija']])->orderBy('newPrice','asc')->get();
+    return $data;
+  }
+
+  // sort product from biger to smaller(desc) or from saller to biger(asc) kids View
+  public function sortDescKids(Request $request){
+    $dataSort = $request->input('sendToController');
+    $data = Footwear::where([['statusSale','=',2],['category','=','decija']])->orderBy('newPrice',$dataSort)->get();
+    return $data;
+  }
+
+
+  // sort product from by color for KidsView
+  public function sortColorKids(Request $request){
+    $inputData = $request->input('colorValue');
+
+    $data = Footwear::where([['statusSale','=',2], ['color','=',$inputData],['category','=','decija']])->orderBy('newPrice','asc')->get();
+    return $data;
+    //dd($data);
   }
 
 }

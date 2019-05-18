@@ -27,21 +27,26 @@
 							</a>
 						</li>
 						<li class="p-t-4">
-							<form action="{{route('test')}}" method="get">
-							  <input type="hidden" value="2" name="women">
+							<form action="{{route('sortWomen')}}" method="get">
+							  <input type="hidden" value="zenska" name="women">
 								 <button type="submit" class="letterG">Ženske</button>
 						      	{{csrf_field()}}
 							</form>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Muške
-							</a>
+							<form action="{{route('sortMan')}}" method="get">
+							  <input type="hidden" value="muska" name="man">
+								 <button type="submit" class="letterG">Muške</button>
+						      	{{csrf_field()}}
+							</form>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Dečije
-							</a>
+							<form action="{{route('sortKids')}}" method="get">
+							  <input type="hidden" value="decija" name="kids">
+								 <button type="submit" class="letterG">Dečije</button>
+						      	{{csrf_field()}}
+							</form>
+
 						</li>
 						<li class="p-t-4">
 							<a href="#" class="s-text13">
@@ -146,7 +151,7 @@
 						</div>
 					</div>
 					<span class="s-text8 p-t-5 p-b-5" id="countShoes">
-
+						Prikazano je {{count($data)}} od {{$count}} proizvoda
 					</span>
 					<span class="s-text8 p-t-5 p-b-5" id="countJavaScript">
 						
@@ -155,16 +160,17 @@
 				<div class="alert alert-danger text-center" id="rezSearch">
 				Nema rezltata pretrage po ovom kriterijumu
 				</div>
-			
+				{{ $data->links() }}
 				<div class="row" id="orgDiv">
 					
-	
+					
+					@foreach($data as $value)
 					
 					<div class="col-sm-12 col-md-6 col-lg-4 p-b-50"  >
 						<!-- Block2 -->
 						<div class="block2" id="border">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-								<img src="{{ asset('images/productPictures/d1d.jpg') }}" alt="IMG-PRODUCT">
+								<img src="{{ asset('images/productPictures/' . $value->image1) }}" alt="IMG-PRODUCT">
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
 										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
@@ -172,7 +178,7 @@
 									</a>
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->
-										<a href="" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
+										<a href="{{url('lookProduct/' . $value->id)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">
 											Pregledaj
 										</a>
 									</div>
@@ -180,19 +186,19 @@
 							</div>
 							<div class="block2-txt p-t-20" id="spanPadding">
 								<a href="" class="block2-name dis-block s-text3 p-b-5" >
-									
+									{{$value->name}}
 								</a>
 								<span class="block2-oldprice m-text7 p-r-5" id="price">
-									
+									{{$value->price}},00 din
 								</span>
 								<span class="block2-newprice m-text8 p-r-5" id="newPrice">
-									
+									&nbsp{{$value->newPrice}},00 din
 								</span>
 							</div>
 						</div>
 					</div>
 					
-				
+					@endforeach
 					
 					<div>
 					</div>
@@ -220,7 +226,7 @@
 			
 			$.ajax({
 				type:'GET',
-				url:'{{URL::to('sortColor')}}',
+				url:'{{URL::to('sortColorMan')}}',
 				data:{colorValue:color},
 				success:function(data){
 				$('#orgDiv').hide();
@@ -228,11 +234,11 @@
 				$('#memList').empty();
 
 				var count = data.length;
-			var countSpan = 'Prikazano je: '+ count + ' proizvoda'
-			$('#countJavaScript').empty();	
-			$('#countJavaScript').append(countSpan);
+				var countSpan = 'Prikazano je: '+ count + ' proizvoda'
+				$('#countJavaScript').empty();	
+				$('#countJavaScript').append(countSpan);
 
-
+				console.log(data);
 					if(data.length === 0){
 						$('#rezSearch').show();
 					}else{
@@ -286,8 +292,8 @@
 		
 			$.ajax({
 			type:'GET',
-				url:'{{URL::to('sortPrice')}}',
-			data:{pera:sortPrice},
+			url:'{{URL::to('sortPriceMan')}}',
+			data:{dataRange:sortPrice},
 			success:function(data){
 				$('#orgDiv').hide();
 				$('#memList').show();
@@ -296,7 +302,11 @@
 			var countSpan = 'Prikazano je: '+ count + ' proizvoda'
 			$('#countJavaScript').empty();	
 			$('#countJavaScript').append(countSpan);
-
+			if(data.length === 0){
+						$('#rezSearch').show();
+					}else{
+						$('#rezSearch').hide();
+			
 
 			$.each(data,function(key,value){
 	var element='<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >'+
@@ -322,7 +332,7 @@
 						' </div> </div></div>  ';
 					$('#memList').append(element); //append it to anywhere in DOM using selector
 							});
-			$('#sort2').val(defaultValue);
+						  }
 						}
 					});
 				});
@@ -339,7 +349,7 @@
 					$('#sort1').change(function(e){
 					$('#countJavaScript').hide();
 					$('#countShoes').show();	
-					var host = "{{URL::to('/sortDesc')}}";
+					var host = "{{URL::to('/sortDescMan')}}";
 					$('#rezSearch').hide();
 					var search = $('#sort1').val();
 					e.preventDefault();

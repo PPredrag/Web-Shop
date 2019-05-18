@@ -68,15 +68,29 @@ Route::get('/changeToSale/{id}','DashboardController@changeToSale')->name('chang
 Route::get('/sortDesc','SalePageController@sortDesc')->name('sortDesc');
 Route::get('/sortPrice','SalePageController@sortPrice')->name('sortPrice');
 Route::get('/sortColor','SalePageController@sortColor')->name('sortColor');
+// section for Women SAle sort
+Route::get('/sortWomen','SalePageController@sortWomen')->name('sortWomen');
+Route::get('/sortPriceWomen','SalePageController@sortPriceWomen')->name('sortPriceWomen');
+Route::get('/sortDescWomen','SalePageController@sortDescWomen')->name('sortDescWomen');
+Route::get('/sortColorWomen','SalePageController@sortColorWomen')->name('sortColorWomen');
+// section for Women SAle sort
+Route::get('/sortMan','SalePageController@sortMan')->name('sortMan');
+Route::get('/sortPriceMan','SalePageController@sortPriceMan')->name('sortPriceMan');
+Route::get('/sortDescMan','SalePageController@sortDescMan')->name('sortDescMan');
+Route::get('/sortColorMan','SalePageController@sortColorMan')->name('sortColorMan');
+
+
+// section for Kids Sale sort
+Route::get('/sortKids','SalePageController@sortKids')->name('sortKids');
+Route::get('/sortPriceKids','SalePageController@sortPriceKids')->name('sortPriceKids');
+Route::get('/sortDescKids','SalePageController@sortDescKids')->name('sortDescKids');
+Route::get('/sortColorKids','SalePageController@sortColorKids')->name('sortColorKids');
 
 
 
 
 
-Route::get('/test', function(){
 
-	return view('test');
-});
 
 
 

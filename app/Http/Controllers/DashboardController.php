@@ -254,7 +254,8 @@ class DashboardController extends Controller
         ]);
         $idFootweare = $id;
         $footweareNumber = $request['number'];
-        $footweareQty = $request['qty'];
+        $footweareQty = $request->kolicina;
+        //dd($footweareQty);
         $product = Footwear::find($idFootweare);
          // data from Number Model to check if data exists for ID Footwear and Number   
         $numberSize = $number->dataExists($id,$footweareNumber);

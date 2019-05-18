@@ -9,7 +9,7 @@
 		</div>
 		@if($status == 2)
 			<div class="alert alert-danger text-center" >
-			Ovaj Artikal se već nalazi u Rasprodaji/SALE, cena je {{$newPrice}},00din
+			Ovaj Artikal se nalazi u Rasprodaji/SALE, cena je {{$newPrice}},00din
 			
 		</div>
 		@endif

@@ -27,20 +27,26 @@
 							</a>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Ženske
-								<input type="hidden" value="2">
-							</a>
+							<form action="{{route('sortWomen')}}" method="get">
+							  <input type="hidden" value="zenska" name="women">
+								 <button type="submit" class="letterG">Ženske</button>
+						      	{{csrf_field()}}
+							</form>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Muške
-							</a>
+							<form action="{{route('sortMan')}}" method="get">
+							  <input type="hidden" value="muska" name="man">
+								 <button type="submit" class="letterG">Muške</button>
+						      	{{csrf_field()}}
+							</form>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Dečije
-							</a>
+							<form action="{{route('sortKids')}}" method="get">
+							  <input type="hidden" value="decija" name="kids">
+								 <button type="submit" class="letterG">Dečije</button>
+						      	{{csrf_field()}}
+							</form>
+
 						</li>
 						<li class="p-t-4">
 							<a href="#" class="s-text13">
@@ -70,14 +76,14 @@
 						
 					</ul>
 					<div class="filter-color p-t-22 p-b-50 bo3">
-						<div class=" p-b-12 letterG">
+						<div class="letterG">
 							Odaberi Boju
 						</div>
 		
 				<div class="leftbar p-r-20 p-r-0-sm" id="padingRight">
 					<div class="filter-color p-t-22 p-b-15 bo3">
 					
-						<select class="form-control " id="color">
+						<select class="form-control letterG" id="color">
 							<option value="" >Odaberite Boju</option>
 							<option value="yellow">Žuta</option>
 							<option value="#f4b609">Narandžasta</option>
@@ -147,6 +153,9 @@
 					<span class="s-text8 p-t-5 p-b-5" id="countShoes">
 						Prikazano je {{count($data)}} od {{$count}} proizvoda
 					</span>
+					<span class="s-text8 p-t-5 p-b-5" id="countJavaScript">
+						
+					</span>
 				</div>
 				<div class="alert alert-danger text-center" id="rezSearch">
 				Nema rezltata pretrage po ovom kriterijumu
@@ -180,10 +189,10 @@
 									{{$value->name}}
 								</a>
 								<span class="block2-oldprice m-text7 p-r-5" id="price">
-									{{$value->price}}.00 din
+									{{$value->price}},00 din
 								</span>
 								<span class="block2-newprice m-text8 p-r-5" id="newPrice">
-									{{$value->newPrice}}.00 din
+									&nbsp{{$value->newPrice}},00 din
 								</span>
 							</div>
 						</div>
@@ -194,6 +203,7 @@
 					<div>
 					</div>
 				</div>
+			
 				<div class="row" id="memList">
 
 				</div>
@@ -207,9 +217,12 @@
 	// Ajax to color select
 	$(document).ready(function(){
 		$('#rezSearch').hide();
+		$('#countJavaScript').hide();
 		$('#color').change(function(e){
 			e.preventDefault();
 			var color = $('#color').val();
+			$('#countShoes').hide();
+			$('#countJavaScript').show();
 			
 			$.ajax({
 				type:'GET',
@@ -219,6 +232,13 @@
 				$('#orgDiv').hide();
 				$('#memList').show();
 				$('#memList').empty();
+
+				var count = data.length;
+				var countSpan = 'Prikazano je: '+ count + ' proizvoda'
+				$('#countJavaScript').empty();	
+				$('#countJavaScript').append(countSpan);
+
+				console.log(data);
 					if(data.length === 0){
 						$('#rezSearch').show();
 					}else{
@@ -262,10 +282,12 @@
 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	}
 	});
-		
+		$('#countJavaScript').hide();
 		$('#sort2').change(function(e){
 			e.preventDefault();
 			$('#rezSearch').hide();
+			$('#countShoes').hide();
+			$('#countJavaScript').show();
 			var sortPrice = $('#sort2').val();
 		
 			$.ajax({
@@ -276,6 +298,11 @@
 				$('#orgDiv').hide();
 				$('#memList').show();
 				$('#memList').empty();
+			var count = data.length;
+			var countSpan = 'Prikazano je: '+ count + ' proizvoda'
+			$('#countJavaScript').empty();	
+			$('#countJavaScript').append(countSpan);
+
 
 			$.each(data,function(key,value){
 	var element='<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >'+
@@ -301,6 +328,7 @@
 						' </div> </div></div>  ';
 					$('#memList').append(element); //append it to anywhere in DOM using selector
 							});
+
 						}
 					});
 				});
@@ -315,6 +343,8 @@
 			});
 					$('#memList').hide();
 					$('#sort1').change(function(e){
+					$('#countJavaScript').hide();
+					$('#countShoes').show();	
 					var host = "{{URL::to('/sortDesc')}}";
 					$('#rezSearch').hide();
 					var search = $('#sort1').val();
