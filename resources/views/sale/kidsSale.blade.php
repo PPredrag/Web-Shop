@@ -20,7 +20,7 @@
 					<h4 class="m-text14 p-b-7" >
 					Kategorije
 					</h4>
-					<ul class="p-b-54">
+					<ul class="p-b-5">
 						<li class="p-t-4">
 							<a href="{{route('sale')}}" class="s-text13 active1">
 								Sve
@@ -49,29 +49,18 @@
 
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Patike
-							</a>
+							<form action="{{route('sortSneakers')}}" method="get">
+							  <input type="hidden" value="patike" name="patike">
+								 <button type="submit" class="letterG">Patike</button>
+						      	{{csrf_field()}}
+							</form>
 						</li>
 						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Kopačke
-							</a>
-						</li>
-						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Koža
-							</a>
-						</li>
-						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Platnene
-							</a>
-						</li>
-						<li class="p-t-4">
-							<a href="#" class="s-text13">
-								Koža/Platno
-							</a>
+							<form action="{{route('sortFootball')}}" method="get">
+							  <input type="hidden" value="kopacke" name="kopacke">
+								 <button type="submit" class="letterG">Kopačke</button>
+						      	{{csrf_field()}}
+							</form>
 						</li>
 						
 					</ul>
@@ -112,8 +101,8 @@
 				</div>
 			
 					</div>
-					<div class="search-product pos-relative bo4 of-hidden">
-						<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Pretraži Proizvode...">
+				<div class="search-product pos-relative bo4 of-hidden">
+						<input class="s-text7 size6 p-l-23 p-r-50" id="search-product" type="text" name="product" placeholder="Pretraži Proizvode...">
 						<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
 						<i class="fs-12 fa fa-search" aria-hidden="true"></i>
 						</button>
@@ -213,6 +202,63 @@
 	@endsection
 	@section('footer')
 	<script>
+	// Ajax to search ALL product by key type
+	$(document).ready(function(){
+		$('#rezSearch').hide();
+		$('#countJavaScript').hide();
+		$('#search-product').keyup(function(e){
+			e.preventDefault();
+			$('#countShoes').hide();
+			$('#orgDiv').hide();
+			$('#countJavaScript').show();
+			var inputValue = $('#search-product').val();
+			console.log(inputValue)
+			$.ajax({
+				type:'GET',
+				url:'{{URL::to('searchSaleProducts')}}',
+				data:{search:inputValue},
+				success:function(data){
+				$('#memList').show();
+				$('#memList').empty();
+				var count = data.length;
+				var countSpan = 'Prikazano je: '+ count + ' proizvoda'
+				$('#countJavaScript').empty();	
+				$('#countJavaScript').append(countSpan);
+						if(data.length === 0){
+						$('#rezSearch').show();
+					}else{
+						$('#rezSearch').hide();
+		$.each(data,function(key,value){
+			var element='<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >'+
+						'<div class="block2" id="border">' +
+						'<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">'+
+						'<img src="{{asset("images/productPictures/")}}/'+value.image1+'"  alt="">' +
+						'<div class="block2-overlay trans-0-4">' +
+						'<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">' +
+						'<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>' +
+						'<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i> </a>' +
+						'<div class="block2-btn-addcart w-size1 trans-0-4">' +
+						'<a href="{{url("lookProduct/" )}}/'+value.id+'" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" id="border">' +
+						'Pregledaj' +
+						'</a>' +
+						'</div>' +
+						'</div>' +
+						'</div>' +
+						'<div class="block2-txt p-t-20" id="spanPadding">' +
+						'<a href="" class="block2-name dis-block s-text3 p-b-5" >' +value.name +
+						' </a>' +
+						' <span class="block2-oldprice m-text7 p-r-5"> '+value.price+' 00 din</span> '+
+						' <span class="block2-newprice m-text8 p-r-5"> '+value.newPrice+' 00 din</span> '+				 
+						' </div> </div></div>  ';
+			$('#memList').append(element); //append it to anywhere in DOM using selector
+							});
+						}
+				}
+
+			});
+		});
+		
+	});	
 
 	// Ajax to color select
 	$(document).ready(function(){

@@ -2,10 +2,16 @@
 @section('content')
 @endsection
 @section('wrapper')
+@if(session('success'))
+		<div class="alert alert-danger text-center" id="sakri">
+				{{session('success')}}
+				</div>
+		@endif
 <div class="panel panel-success">
-	<div class="panel-heading">
+	<div class="panel-heading text-center">
 		Panel za unos slika na početnoj strani Slider delu.
 	</div>
+	
 	<div class="panel-body">
 		<form method="post" action="{{route('imageAdd')}}"  enctype="multipart/form-data">
 			<div class="form-group{{ $errors->has('statusPicture') ? ' has-error' : '' }}">
@@ -33,11 +39,8 @@
 			{{ csrf_field() }}
 		</form>
 		</br>
-		@if(session('success'))
-		<p class="zeleno" id="sakri">{{session('success')}}</p>
-		@endif
 	</div>
-	<div class="panel-footer">
+	<div class="panel-footer text-center">
 		Ovim putem unosite slike koje ce biti prikazane na početnoj strani u Slider delu.
 	</div>
 </div>

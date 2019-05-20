@@ -171,4 +171,106 @@ class SalePageController extends Controller
     //dd($data);
   }
 
+
+
+
+  // SECTION FOR SORT Sneakers SALE
+  // function to return sort womenSale
+  function sortSneakers(Request $request){
+    $dataInput = $request->patike;
+
+    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    //dd($qtySale);
+    $count = count($qtySale);
+    $data = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
+//dd($data);
+    return view('sale/sneakers')->with(['data'=>$data,'count'=>$count]);
+  }
+
+
+  // sort product from by price for kidsSale view
+  public function sortPriceSneakers(Request $request){
+
+    $inputData = $request->input('dataRange'); // dataRange is data from  ajax -> data:{dataRange:sortPrice}
+    $data = Footwear::where([['statusSale','=',2], ['newPrice','<',$inputData],['type','=','patike']])->orderBy('newPrice','asc')->get();
+    return $data;
+  }
+
+  // sort product from biger to smaller(desc) or from saller to biger(asc) kids View
+  public function sortDescSneakers(Request $request){
+    $dataSort = $request->input('sendToController');
+    $data = Footwear::where([['statusSale','=',2],['type','=','patike']])->orderBy('newPrice',$dataSort)->get();
+    return $data;
+  }
+
+
+  // sort product from by color for KidsView
+  public function sortColorSneakers(Request $request){
+    $inputData = $request->input('colorValue');
+
+    $data = Footwear::where([['statusSale','=',2], ['color','=',$inputData],['type','=','patike']])->orderBy('newPrice','asc')->get();
+    return $data;
+    //dd($data);
+  }
+
+
+
+  // SECTION FOR SORT Football SALE
+  // function to return sort womenSale
+  function sortFootball(Request $request){
+    $dataInput = $request->kopacke;
+
+    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    //dd($qtySale);
+    $count = count($qtySale);
+    $data = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
+//dd($data);
+    return view('sale/football')->with(['data'=>$data,'count'=>$count]);
+  }
+
+
+  // sort product from by price for kidsSale view
+  public function sortPriceFootball(Request $request){
+
+    $inputData = $request->input('dataRange'); // dataRange is data from  ajax -> data:{dataRange:sortPrice}
+    $data = Footwear::where([['statusSale','=',2], ['newPrice','<',$inputData],['type','=','kopacke']])->orderBy('newPrice','asc')->get();
+    return $data;
+  }
+
+  // sort product from biger to smaller(desc) or from saller to biger(asc) kids View
+  public function sortDescFootball(Request $request){
+    $dataSort = $request->input('sendToController');
+    $data = Footwear::where([['statusSale','=',2],['type','=','kopacke']])->orderBy('newPrice',$dataSort)->get();
+    return $data;
+  }
+
+
+  // sort product from by color for KidsView
+  public function sortColorFootball(Request $request){
+    $inputData = $request->input('colorValue');
+
+    $data = Footwear::where([['statusSale','=',2], ['color','=',$inputData],['type','=','kopacke']])->orderBy('newPrice','asc')->get();
+    return $data;
+    //dd($data);
+  }
+
+  // function to searc all data base on keyup (client input)
+  public function searchSaleProducts(Request $request){
+
+    $search = $request->search;
+    $status = 2;
+
+
+    $data = DB::table('footwears')->where(function($q) use ($status){
+                                   $q->where('statusSale','=',$status); 
+                                  })->where(function($q) use ($search){
+                                    $q->where('brand','like','%' . $search . '%')
+                                      ->orWhere('description','like','%' . $search . '%')   
+                                      ->orWhere('name','like','%' . $search . '%')
+                                      ->orWhere('category','like','%' . $search . '%');                              
+                                })->orderBy('newPrice','asc')->get();
+
+    return $data;
+  }
+
 }

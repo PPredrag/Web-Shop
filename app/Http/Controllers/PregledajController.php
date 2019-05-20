@@ -44,11 +44,9 @@ class PregledajController extends Controller
        $countData = count($footwear->getAllData());
         
         $searchData = DB::table('footwears')->where('image1','like','%' . $search . '%')
-                                            ->orWhere('image1','like','%' . $search . '%') 
                                             ->orWhere('image2','like','%' . $search . '%')
                                             ->orWhere('image3','like','%' . $search . '%')
                                             ->orWhere('barcode','like','%' . $search . '%')   
-                                            ->orWhere('image1','like','%' . $search . '%')
                                             ->orWhere('name','like','%' . $search . '%')
                                             ->orWhere('category','like','%' . $search . '%')
                                             ->orderBy('created_at', 'desc')   

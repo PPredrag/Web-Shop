@@ -259,7 +259,7 @@
 			});
 		});
 		
-	});	
+	});
 
 	// Ajax to color select
 	$(document).ready(function(){
@@ -273,7 +273,7 @@
 			
 			$.ajax({
 				type:'GET',
-				url:'{{URL::to('sortColorMan')}}',
+				url:'{{URL::to('sortColorFootball')}}',
 				data:{colorValue:color},
 				success:function(data){
 				$('#orgDiv').hide();
@@ -339,7 +339,7 @@
 		
 			$.ajax({
 			type:'GET',
-			url:'{{URL::to('sortPriceMan')}}',
+				url:'{{URL::to('sortPriceFootball')}}',
 			data:{dataRange:sortPrice},
 			success:function(data){
 				$('#orgDiv').hide();
@@ -349,11 +349,11 @@
 			var countSpan = 'Prikazano je: '+ count + ' proizvoda'
 			$('#countJavaScript').empty();	
 			$('#countJavaScript').append(countSpan);
-			if(data.length === 0){
+
+					if(data.length === 0){
 						$('#rezSearch').show();
 					}else{
 						$('#rezSearch').hide();
-			
 
 			$.each(data,function(key,value){
 	var element='<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >'+
@@ -379,8 +379,8 @@
 						' </div> </div></div>  ';
 					$('#memList').append(element); //append it to anywhere in DOM using selector
 							});
-						  }
-						}
+
+						}}
 					});
 				});
 				
@@ -396,7 +396,7 @@
 					$('#sort1').change(function(e){
 					$('#countJavaScript').hide();
 					$('#countShoes').show();	
-					var host = "{{URL::to('/sortDescMan')}}";
+					var host = "{{URL::to('/sortDescFootball')}}";
 					$('#rezSearch').hide();
 					var search = $('#sort1').val();
 					e.preventDefault();

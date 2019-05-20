@@ -86,7 +86,19 @@ Route::get('/sortPriceKids','SalePageController@sortPriceKids')->name('sortPrice
 Route::get('/sortDescKids','SalePageController@sortDescKids')->name('sortDescKids');
 Route::get('/sortColorKids','SalePageController@sortColorKids')->name('sortColorKids');
 
+// section for Sneakers
+Route::get('/sortSneakers','SalePageController@sortSneakers')->name('sortSneakers');
+Route::get('/sortPriceSneakers','SalePageController@sortPriceSneakers')->name('sortPriceSneakers');
+Route::get('/sortDescSneakers','SalePageController@sortDescSneakers')->name('sortDescSneakers');
+Route::get('/sortColorSneakers','SalePageController@sortColorSneakers')->name('sortColorSneakers');
 
+// section for Football
+Route::get('/sortFootball','SalePageController@sortFootball')->name('sortFootball');
+Route::get('/sortPriceFootball','SalePageController@sortPriceFootball')->name('sortPriceFootball');
+Route::get('/sortDescFootball','SalePageController@sortDescFootball')->name('sortDescFootball');
+Route::get('/sortColorFootball','SalePageController@sortColorFootball')->name('sortColorFootball');
+
+Route::get('/searchSaleProducts','SalePageController@searchSaleProducts')->name('searchSaleProducts');
 
 
 

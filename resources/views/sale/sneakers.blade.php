@@ -102,7 +102,7 @@
 				</div>
 			
 					</div>
-					<div class="search-product pos-relative bo4 of-hidden">
+				<div class="search-product pos-relative bo4 of-hidden">
 						<input class="s-text7 size6 p-l-23 p-r-50" id="search-product" type="text" name="product" placeholder="Pretraži Proizvode...">
 						<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
 						<i class="fs-12 fa fa-search" aria-hidden="true"></i>
@@ -273,7 +273,7 @@
 			
 			$.ajax({
 				type:'GET',
-				url:'{{URL::to('sortColorMan')}}',
+				url:'{{URL::to('sortColorSneakers')}}',
 				data:{colorValue:color},
 				success:function(data){
 				$('#orgDiv').hide();
@@ -339,7 +339,7 @@
 		
 			$.ajax({
 			type:'GET',
-			url:'{{URL::to('sortPriceMan')}}',
+				url:'{{URL::to('sortPriceSneakers')}}',
 			data:{dataRange:sortPrice},
 			success:function(data){
 				$('#orgDiv').hide();
@@ -349,11 +349,11 @@
 			var countSpan = 'Prikazano je: '+ count + ' proizvoda'
 			$('#countJavaScript').empty();	
 			$('#countJavaScript').append(countSpan);
-			if(data.length === 0){
+			console.log(data);
+					if(data.length === 0){
 						$('#rezSearch').show();
 					}else{
 						$('#rezSearch').hide();
-			
 
 			$.each(data,function(key,value){
 	var element='<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" >'+
@@ -379,8 +379,8 @@
 						' </div> </div></div>  ';
 					$('#memList').append(element); //append it to anywhere in DOM using selector
 							});
-						  }
-						}
+
+						}}
 					});
 				});
 				
@@ -396,7 +396,7 @@
 					$('#sort1').change(function(e){
 					$('#countJavaScript').hide();
 					$('#countShoes').show();	
-					var host = "{{URL::to('/sortDescMan')}}";
+					var host = "{{URL::to('/sortDescSneakers')}}";
 					$('#rezSearch').hide();
 					var search = $('#sort1').val();
 					e.preventDefault();

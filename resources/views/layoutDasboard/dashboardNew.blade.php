@@ -30,7 +30,7 @@
                 <div class="adjust-nav">
                     <div class="navbar-header">
                         <!-- Hamburger Meni-->
-                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -38,7 +38,7 @@
                         
                         <a class="navbar-brand" href="#">&nbsp; Admin Panel</a>
                     </div>
-                   
+                    
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{route('welcome')}}" target="_blank"><b style="color:black;">Poseti Sajt</b></a></li>
@@ -52,14 +52,13 @@
                     <ul class="nav" id="main-menu" style="background-color: gray !important;">
                         <li>
                             <form action="{{route('searchProduct')}}" id="searchPro" method="get" >
-                            <div class="search-product pos-relative bo4 of-hidden" style="border:0px; border-radius: 0px;">
-                            <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search" placeholder="Pretraži Proizvode..." style="border-width: 0 !important; font-size: 17px;" value="{{old('search')}}">
-
-                            <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
-                                <i class="fs-12 fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        </form>
+                                <div class="search-product pos-relative bo4 of-hidden" style="border:0px; border-radius: 0px;">
+                                    <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search" placeholder="Pretraži Proizvode..." style="border-width: 0 !important; font-size: 17px;" value="{{old('search')}}">
+                                    <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+                                    <i class="fs-12 fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </li>
                         <br>
                         <!--<li class="text-center user-image-back">
@@ -70,12 +69,11 @@
                             <a href="{{route('home')}}"><i class="fa fa-desktop "></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-picture-o  "></i>Slike<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-picture-o  "></i>Slike Glavna Strana<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                               
+                                
                                 <li>
-                                    
-                                    <a href="#">Glavna Strana Brisanje<span class="fa arrow"></span></a>
+                                    <a href="#" style="color: #c60909;">Glavna Strana Brisanje<span class="fa arrow"  style="color: #c60909;"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="{{ route('newSeason')}}">Nova Sezona</a>
@@ -97,16 +95,21 @@
                                         </li>
                                     </ul>
                                 </li>
-                                 <li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-picture-o  "></i>Slike Glavni Slider<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
                                     <a href="{{route('sliderPictures')}}">Unos Početni Slider</a>
                                 </li>
                                 <li>
-                                    <a href="#">Brisanje Slika Slider<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="{{route('showPictureToDelete')}}">Brisanje Početni Slider</a>
-                                        </li>
-                                   </ul>
+                                    
+                                    <li>
+                                        <a href="{{route('showPictureToDelete')}}" style="color: #c60909;">Brisanje Početni Slider</a>
+                                    </li>
+                                    
                                 </li>
                             </ul>
                         </li>
@@ -183,8 +186,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             @yield('wrapper')
-              
-        
+                            
+                            
                         </div>
                     </div>
                     <!-- /. ROW  -->

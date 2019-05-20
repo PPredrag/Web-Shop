@@ -159,4 +159,8 @@
     line-height: 1.8;
 }
 
-
+.alert-danger{
+  color:white !important;
+  background-color: #7f7f7f !important;
+  border-color: #7f7f7f !important;
+}
