@@ -17,7 +17,7 @@ class SalePageController extends Controller
     // show all SALE product on SALE page
   public function showAllProductOnSalePge(Footwear $footwear){
   	
-  	$data = DB::table('footwears')->where('statusSale','=',2)->paginate(48);
+  	$data = DB::table('footwears')->where('statusSale','=',2)->paginate(30);
   	//dd($data);
   	$qtySale = Footwear::where('statusSale','=',2)->get();
   	//dd($qtySale);
@@ -179,7 +179,7 @@ class SalePageController extends Controller
   function sortSneakers(Request $request){
     $dataInput = $request->patike;
 
-    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    $qtySale = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->get();
     //dd($qtySale);
     $count = count($qtySale);
     $data = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
@@ -216,11 +216,11 @@ class SalePageController extends Controller
 
 
   // SECTION FOR SORT Football SALE
-  // function to return sort womenSale
+  // function to return sort Football
   function sortFootball(Request $request){
     $dataInput = $request->kopacke;
 
-    $qtySale = Footwear::where([['statusSale','=',2],['category','=', $dataInput]])->get();
+    $qtySale = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->get();
     //dd($qtySale);
     $count = count($qtySale);
     $data = Footwear::where([['statusSale','=',2],['type','=', $dataInput]])->orderBy('newPrice','asc')->paginate(24);
@@ -253,6 +253,79 @@ class SalePageController extends Controller
     return $data;
     //dd($data);
   }
+
+
+ // sort sale part by number Select for ALL SALE
+
+  public function sortNumber(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number]])->get(); 
+
+    return $data;
+  }
+
+ // sort sale part by number Select for Football SALE
+
+  public function sortNumberFootball(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number],['type','=','kopacke']])->get(); 
+
+    return $data;
+  }
+  // sort sale part by number Select for Kids SALE
+
+  public function sortNumberKids(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number],['category','=','decija']])->get(); 
+
+    return $data;
+  }
+
+  // sort sale part by number Select for Man SALE
+  public function sortNumberMan(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number],['category','=','muska']])->get(); 
+
+    return $data;
+  }
+
+
+  // sort sale part by number Select for Sneakers SALE
+  public function sortNumberSneakers(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number],['type','=','patike']])->get(); 
+
+    return $data;
+  }
+
+ // sort sale part by number Select for Sneakers SALE
+  public function sortNumberWomen(Request $request ,Footwear $footwear){
+
+    $number = $request->numberSelect;
+    $data = DB::table('footwears')->join('footwear_number','footwears.id','=','footwear_number.footwear_id')
+                                      ->select('footwears.name','footwears.barcode','footwears.brand','footwears.description','footwears.price','footwears.newPrice','footwears.category','footwear_number.number_id','footwears.image1','footwears.id')
+                                      ->where([['statusSale','=', 2],['number_id','=',$number],['category','=','zenska']])->get(); 
+
+    return $data;
+  }
+
+
+
 
   // function to searc all data base on keyup (client input)
   public function searchSaleProducts(Request $request){

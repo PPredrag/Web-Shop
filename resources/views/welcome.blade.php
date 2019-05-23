@@ -229,7 +229,7 @@ Muška Obuća
     <!-- Block3 -->
     <div class="block3" id="border"> 
         <div class="block2-img wrap-pic-w of-hidden pos-relative ">
-        <a href="{{route('shop')}}" class="block3-img dis-block hov-img-zoom">
+        <a href="{{route('men')}}" class="block3-img dis-block hov-img-zoom">
             <img src="{{asset('images/productPictures/' . $value->image1)}}" alt="IMG-BLOG">
         </a>
     </div>
@@ -241,7 +241,7 @@ Muška Obuća
             </h4>
              
             <p class="s-text8 p-t-16">
-               Značenje reči LAKOĆA kod nas to stvarno znači!!! Posetite našu stranu i odaberite jedan od modela kako bi ste sa LAKOĆOM hodali, trčali, šetali,igrali fudbal... <a href="{{route('shop')}}"><b style="color:black;">MUŠKA OBUĆA</b></a>
+               Značenje reči LAKOĆA kod nas to stvarno znači!!! Posetite našu stranu i odaberite jedan od modela kako bi ste sa LAKOĆOM hodali, trčali, šetali,igrali fudbal... <a href="{{route('men')}}"><b style="color:black;">MUŠKA OBUĆA</b></a>
             </p>
         </div>
     </div>

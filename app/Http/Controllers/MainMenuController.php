@@ -33,10 +33,7 @@ class MainMenuController extends Controller
                                     ]);
 
     }
-    // Return view men
-    public function shop(){
-    	return view('men/men');
-    }
+
     // Return view women
     public function women(){
         return view('women/women');

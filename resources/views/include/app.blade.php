@@ -110,7 +110,7 @@
                                 <a href="{{ route('sale')}}">Sale</a>
                             </li>
                             <li>
-                                <a href="{{ route('shop')}}">Muškarci</a>
+                                <a href="{{ route('men')}}">Muškarci</a>
                             </li>
                             
                             <li>
@@ -350,7 +350,7 @@
                         <a href="{{ route('sale')}}">Sale</a>
                     </li>
                     <li class="item-menu-mobile">
-                        <a href="{{ route('shop')}}">Muškarci</a>
+                        <a href="{{ route('men')}}">Muškarci</a>
                     </li>
                    
                     <li class="item-menu-mobile">
@@ -397,7 +397,7 @@
                 </h4>
                 <ul>
                     <li class="p-b-9">
-                        <a href="{{ route('shop')}}" class="s-text7">
+                        <a href="{{ route('men')}}" class="s-text7">
                             Muška 
                         </a>
                     </li>

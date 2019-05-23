@@ -134,6 +134,42 @@
   display: inline-block;
 
 }
+.krug11{
+  height: 25px;
+  width: 25px;
+  background-color: #724305;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: inline-block;
+
+}
+.krug12{
+  height: 25px;
+  width: 25px;
+  background-color: #1be5de;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: inline-block;
+
+}
+.krug13{
+  height: 25px;
+  width: 25px;
+  background-color: #51ef39;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: inline-block;
+
+}
+.krug14{
+  height: 25px;
+  width: 25px;
+  background-color: #242624;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: inline-block;
+
+}
 #padingRight{
 	padding-right:0 !important;
 }

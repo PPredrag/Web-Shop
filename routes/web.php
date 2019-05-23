@@ -11,7 +11,7 @@
 |
 */
 Route::get('/welcome',['as'=>'welcome','uses'=>'MainMenuController@main']);
-Route::get('/shop',['as'=>'shop','uses'=>'MainMenuController@shop']);
+Route::get('/men',['as'=>'men','uses'=>'MenController@getMenViewdData']);
 Route::get('/sale',['as'=>'sale','uses'=>'SalePageController@showAllProductOnSalePge']);
 Route::get('/viewCart',['as'=>'viewCart','uses'=>'MainMenuController@viewCart']);
 Route::get('/contact',['as'=>'contact','uses'=>'MainMenuController@contact']);
@@ -98,10 +98,22 @@ Route::get('/sortPriceFootball','SalePageController@sortPriceFootball')->name('s
 Route::get('/sortDescFootball','SalePageController@sortDescFootball')->name('sortDescFootball');
 Route::get('/sortColorFootball','SalePageController@sortColorFootball')->name('sortColorFootball');
 
+// section for numberSort
+Route::get('/sortNumber','SalePageController@sortNumber')->name('sortNumber');
+Route::get('/sortNumberFootball','SalePageController@sortNumberFootball')->name('sortNumberFootball');
+Route::get('/sortNumberKids','SalePageController@sortNumberKids')->name('sortNumberKids');
+Route::get('/sortNumberMan','SalePageController@sortNumberMan')->name('sortNumberMan');
+Route::get('/sortNumberSneakers','SalePageController@sortNumberSneakers')->name('sortNumberSneakers');
+Route::get('/sortNumberWomen','SalePageController@sortNumberWomen')->name('sortNumberWomen');
 Route::get('/searchSaleProducts','SalePageController@searchSaleProducts')->name('searchSaleProducts');
+ // Section foa a Men Page
+Route::get('/sortDescMen','MenController@sortDescMen')->name('sortDescMen');
+Route::get('/sortPriceMen','MenController@sortPriceMen')->name('sortPriceMen');
+Route::get('/sortNumberMen','MenController@sortNumberMen')->name('sortNumberMen');
+Route::get('/sortColorMen','MenController@sortColorMen')->name('sortColorMen');
+Route::get('/searchMenProducts','MenController@searchMenProducts')->name('searchMenProducts');
 
-
-
+Route::get('/test','SalePageController@test')->name('test');
 
 
 

@@ -80,6 +80,10 @@
 							<option value="purple">Ljubicasta</option>
 							<option value="black">Crna</option>
 							<option value="white">Bela</option>
+							<option value="#724305">Braon</option>
+							<option value="#1be5de">Svetlo Plava</option>
+							<option value="#51ef39">Svetlo Zelena</option>
+							<option value="#242624">Tamno Siva</option>
 						</select>
 						<br>
 						<span class="krug1"></span>
@@ -92,6 +96,10 @@
 						<span class="krug8"></span>
 						<span class="krug9"></span>
 						<span class="krug10"></span>
+						<span class="krug11"></span>
+						<span class="krug12"></span>
+						<span class="krug13"></span>
+						<span class="krug14"></span>
 					</div>
 				</div>
 				@if ($errors->has('color1'))
@@ -120,6 +128,10 @@
 							<option value="purple">Ljubicasta</option>
 							<option value="black">Crna</option>
 							<option value="white">Bela</option>
+							<option value="#724305">Braon</option>
+							<option value="#1be5de">Svetlo Plava</option>
+							<option value="#51ef39">Svetlo Zelena</option>
+							<option value="#242624">Tamno Siva</option>
 						</select>
 						<br>
 						<span class="krug1"></span>
@@ -132,6 +144,10 @@
 						<span class="krug8"></span>
 						<span class="krug9"></span>
 						<span class="krug10"></span>
+						<span class="krug11"></span>
+						<span class="krug12"></span>
+						<span class="krug13"></span>
+						<span class="krug14"></span>
 					</div>
 				</div>
 				@if ($errors->has('color2'))

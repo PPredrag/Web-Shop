@@ -74,17 +74,23 @@ class Footwear extends Model
     public function getPicturesForWomen(){
 
         $data = DB::table('footwears')->where([['category','=','zenska'],
-                                                ['statusPicture','=',7]
-                                               
+                                                ['statusPicture','=',7]                                          
                                                 ])->get();
         return $data;
     }
 
+        // get all data
     public function getAllData(){
 
         $data = DB::table('footwears')->get();
         return $data;
     }
 
-    
-}
+     // get data for Men View
+    public function menView(){
+
+        $data = Footwear::where([['category','=','muska'],['statusSale','=',1]])->paginate(30);
+       return $data; 
+    }
+
+   }
